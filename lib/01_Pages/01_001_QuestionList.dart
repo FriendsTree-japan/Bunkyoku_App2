@@ -29,7 +29,8 @@ class _QuizeListState extends State<QuizeList> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    child: Text('3',style: TextStyle(fontSize: 28)),
+                    child: Text('3'
+                        ,style: TextStyle(fontSize: 28)),
                   ),
                   Container(
                     child: Text('/100',style: TextStyle(fontSize: 18)),
