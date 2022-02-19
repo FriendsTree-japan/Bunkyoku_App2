@@ -19,3 +19,5 @@ class QuizA{
   QuizA({required this.QID,required this.Answer,required this.Picture,
     required this.Commentary,required this.Tips});
 }
+
+//lateは箱だけ用意して値を後で入れても大丈夫という意味。ただしrequred（入力必須）を必要がある。

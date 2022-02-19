@@ -4,7 +4,6 @@ import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
 import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
 
 class QuizeList extends StatefulWidget {
-
   @override
   _QuizeListState createState() => _QuizeListState();
 }
@@ -67,6 +66,7 @@ class _QuizeListState extends State<QuizeList> {
                       child: Text(i.toString(), style: TextStyle(color: Colors.white),),
                       onPressed: () {
                         _questionNum = i.toString();
+                        //toString()で型変換をできる。
                         Navigator.push(context,
                           MaterialPageRoute(builder: (BuildContext context) => QuizQ_000(_questionNum),),
                         );

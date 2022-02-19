@@ -18,3 +18,8 @@ class ColorConfig {
     Blue = Color(0xFF12C2CD);
   }
 }
+
+Map<String,List<String>> map = {
+  'FirstName':['りんご','ひめ'],
+  'SecondName': ['りんご','ひめ']
+};
