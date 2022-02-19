@@ -49,7 +49,7 @@ class _QuizQ_000 extends State<QuizQ_000> {
               icon: Icon(Icons.star_border,color: Colors.white,),
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => QuizA_000()));
+                    MaterialPageRoute(builder: (context) => QuizA_000(QuesitonNum)));
               },
             ),
           ],
@@ -99,7 +99,10 @@ class _QuizQ_000 extends State<QuizQ_000> {
                 primary: Colors.orange,
                 onPrimary: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => QuizA_000(QuesitonNum)));
+              },
             ),
             OutlinedButton(
               child: Text(QuizQ_List().list[QuesitonNum]!.Select2,
@@ -108,7 +111,10 @@ class _QuizQ_000 extends State<QuizQ_000> {
                 primary: Colors.orange,
                 onPrimary: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => QuizA_000(QuesitonNum)));
+              },
             ),
             OutlinedButton(
               child: Text(QuizQ_List().list[QuesitonNum]!.Select3,
@@ -117,7 +123,10 @@ class _QuizQ_000 extends State<QuizQ_000> {
                 primary: Colors.orange,
                 onPrimary: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => QuizA_000(QuesitonNum)));
+              },
             ),
             OutlinedButton(
               child: Text(QuizQ_List().list[QuesitonNum]!.Select4,
@@ -126,7 +135,10 @@ class _QuizQ_000 extends State<QuizQ_000> {
                 primary: Colors.orange,
                 onPrimary: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => QuizA_000(QuesitonNum)));
+              },
             ),
           ],
         ),),

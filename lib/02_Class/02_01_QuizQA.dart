@@ -9,3 +9,13 @@ class QuizQ{
   QuizQ({required this.QID,required this.Picture,required this.problem,
     required this.Select1,required this.Select2,required this.Select3,required this.Select4});
 }
+
+class QuizA{
+  late String QID;
+  late String Answer;
+  late String Picture;
+  late String Commentary;
+  late String Tips;
+  QuizA({required this.QID,required this.Answer,required this.Picture,
+    required this.Commentary,required this.Tips});
+}
