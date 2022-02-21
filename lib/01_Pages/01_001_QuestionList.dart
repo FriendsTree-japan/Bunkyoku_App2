@@ -9,11 +9,11 @@ class QuizeList extends StatefulWidget {
 }
 
 class _QuizeListState extends State<QuizeList> {
+  String _questionNum = '';
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     ColorConfig().init(context);
-    String _questionNum = '';
     return Scaffold(
       appBar: AppBar(
         title: Text('文京区アプリ'),
@@ -65,6 +65,7 @@ class _QuizeListState extends State<QuizeList> {
                     child: TextButton(
                       child: Text(i.toString(), style: TextStyle(color: Colors.white),),
                       onPressed: () {
+                        //String _questionNum = '$i';
                         _questionNum = i.toString();
                         //toString()で型変換をできる。
                         Navigator.push(context,
