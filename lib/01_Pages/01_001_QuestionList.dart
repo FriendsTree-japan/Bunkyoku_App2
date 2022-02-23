@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '01_002_QuizQ.dart';
+import 'package:bunkyoku_app2/01_Pages/01_002_QuizQ.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
 import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
 
@@ -12,6 +12,7 @@ class _QuizeListState extends State<QuizeList> {
   String _questionNum = '';
   @override
   Widget build(BuildContext context) {
+    QuizListSizeConfig().init(context);
     SizeConfig().init(context);
     ColorConfig().init(context);
     return Scaffold(
@@ -56,8 +57,8 @@ class _QuizeListState extends State<QuizeList> {
                 for (int i = 1; i <= 100; i++)
                   Container(
                     alignment: Alignment.center,
-                    width: 100,
-                    height: 100,
+                    width: QuizListSizeConfig.containerHeightSize,
+                    height: QuizListSizeConfig.containerWidthSize,
                     decoration: BoxDecoration(
                       color: ColorConfig.Blue,
                       borderRadius: BorderRadius.circular(10),
