@@ -1,3 +1,5 @@
+import 'package:bunkyoku_app2/02_Class/02_06_QuizStatus.dart';
+import 'package:bunkyoku_app2/03_Unity/03_01_SqliteDb.dart';
 import 'package:flutter/material.dart';
 import 'package:bunkyoku_app2/01_Pages/01_002_QuizQ.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
@@ -10,6 +12,8 @@ class QuizeList extends StatefulWidget {
 
 class _QuizeListState extends State<QuizeList> {
   String _questionNum = '';
+  Future<List<QuizStatus>> result = QuizStatusDb().getDataList();
+
   @override
   Widget build(BuildContext context) {
     QuizListSizeConfig().init(context);
@@ -29,55 +33,80 @@ class _QuizeListState extends State<QuizeList> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    child: Text('3'
-                        ,style: TextStyle(fontSize: 28)),
+                    child: Text('3', style: TextStyle(fontSize: 28)),
                   ),
                   Container(
-                    child: Text('/100',style: TextStyle(fontSize: 18)),
+                    child: Text('/100', style: TextStyle(fontSize: 18)),
                   ),
                 ],
               ),
               Container(
-                child: Text('がんばれ〜',style: TextStyle(fontSize: 20)),
+                child: Text('がんばれ〜', style: TextStyle(fontSize: 20)),
               ),
             ],
           ),
-          Expanded(
-            child:GridView(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                mainAxisSpacing: 20,
-                crossAxisSpacing: 16.0,
-                crossAxisCount: 3,
-                childAspectRatio:1,
-              ),
-              // scrollDirection: Axis.vertical,
-              primary: false,
-              padding: const EdgeInsets.fromLTRB(32,10,32,32),
-              children:<Widget> [
-                for (int i = 1; i <= 100; i++)
-                  Container(
-                    alignment: Alignment.center,
-                    width: QuizListSizeConfig.containerHeightSize,
-                    height: QuizListSizeConfig.containerWidthSize,
-                    decoration: BoxDecoration(
-                      color: ColorConfig.Blue,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: TextButton(
-                      child: Text(i.toString(), style: TextStyle(color: Colors.white),),
-                      onPressed: () {
-                        //String _questionNum = '$i';
-                        _questionNum = i.toString();
-                        //toString()で型変換をできる。
-                        Navigator.push(context,
-                          MaterialPageRoute(builder: (BuildContext context) => QuizQ_000(_questionNum),),
-                        );
-                      },
-                    ),
-                  ),
-              ],
-            ),
-          )// This trailing comma makes auto-formatting nicer for build methods.
+          FutureBuilder(
+              future: result,
+              builder: (BuildContext context,
+                  AsyncSnapshot<List<QuizStatus>> snapshot) {
+                if (snapshot.connectionState != ConnectionState.done) {
+                  return new Align(
+                      child: Center(
+                    child: new CircularProgressIndicator(),
+                  ));
+                } else if (snapshot.hasError) {
+                  return new Text('Error: ${snapshot.error!}');
+                } else if (snapshot.hasData) {
+                  final List<QuizStatus> quizList =
+                      snapshot.data ?? <QuizStatus>[];
+                  return Expanded(
+                    child: GridView.builder(
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          mainAxisSpacing: 20,
+                          crossAxisSpacing: 16.0,
+                          childAspectRatio: 1,
+                          crossAxisCount: 3,
+                        ),
+                        primary: false,
+                        padding: const EdgeInsets.fromLTRB(32, 10, 32, 32),//カラム数
+                        shrinkWrap: true,
+                        itemCount: quizList.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Container(
+                            alignment: Alignment.center,
+                            width: QuizListSizeConfig.containerHeightSize,
+                            height: QuizListSizeConfig.containerWidthSize,
+                            decoration: BoxDecoration(
+                              color: quizList[index].correctFlg == "1"
+                                  ? ColorConfig.Gray
+                                  : ColorConfig.Blue,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: TextButton(
+                              child: Text(
+                                quizList[index].problemId,
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              onPressed: () {
+                                //String _questionNum = '$i';
+                                _questionNum = quizList[index].problemId;
+                                //toString()で型変換をできる。
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        QuizQ_000(_questionNum),
+                                  ),
+                                );
+                              },
+                            ),
+                          );
+                        }),
+                  );
+                } else {
+                  return Text("データが存在しません");
+                }
+              }),
         ],
       ),
     );
