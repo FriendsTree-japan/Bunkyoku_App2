@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import '01_002_QuizQ.dart';
+import 'package:bunkyoku_app2/01_Pages/01_002_QuizQ.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
 import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
 
 class QuizeList extends StatefulWidget {
-
   @override
   _QuizeListState createState() => _QuizeListState();
 }
 
 class _QuizeListState extends State<QuizeList> {
+  String _questionNum = '';
   @override
   Widget build(BuildContext context) {
+    QuizListSizeConfig().init(context);
     SizeConfig().init(context);
     ColorConfig().init(context);
-    String _questionNum = '';
     return Scaffold(
       appBar: AppBar(
         title: Text('文京区アプリ'),
@@ -57,8 +57,8 @@ class _QuizeListState extends State<QuizeList> {
                 for (int i = 1; i <= 100; i++)
                   Container(
                     alignment: Alignment.center,
-                    width: 100,
-                    height: 100,
+                    width: QuizListSizeConfig.containerHeightSize,
+                    height: QuizListSizeConfig.containerWidthSize,
                     decoration: BoxDecoration(
                       color: ColorConfig.Blue,
                       borderRadius: BorderRadius.circular(10),
@@ -66,7 +66,9 @@ class _QuizeListState extends State<QuizeList> {
                     child: TextButton(
                       child: Text(i.toString(), style: TextStyle(color: Colors.white),),
                       onPressed: () {
+                        //String _questionNum = '$i';
                         _questionNum = i.toString();
+                        //toString()で型変換をできる。
                         Navigator.push(context,
                           MaterialPageRoute(builder: (BuildContext context) => QuizQ_000(_questionNum),),
                         );

@@ -5,13 +5,22 @@ import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
 
 class QuizA_000 extends StatefulWidget {
   late final String QuesitonNum;
-  QuizA_000(this.QuesitonNum);
+  late final String selectQ;
+  QuizA_000(this.QuesitonNum,this.selectQ);
   @override
   State<QuizA_000> createState() => _QuizA_000();
 }
 
 class _QuizA_000 extends State<QuizA_000> {
   late final String QuesitonNum = widget.QuesitonNum;
+  late final String selectQ = widget.selectQ;
+  Widget _buildChild() {
+    if (selectQ == QuizA_List().list[QuesitonNum]!.Answer) {
+      return Text('正解');
+    }
+    return Text('不正解');
+  }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -62,7 +71,7 @@ class _QuizA_000 extends State<QuizA_000> {
               ),
             ),
             Container(
-              child: Text('正解',style: TextStyle(fontSize: 32),),
+              child: _buildChild(),
             ),
             Container(
               padding: const EdgeInsets.all(5.0),
