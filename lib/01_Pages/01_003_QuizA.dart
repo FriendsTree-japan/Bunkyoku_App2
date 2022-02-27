@@ -147,7 +147,7 @@ class _QuizA_000 extends State<QuizA_000> {
                       BoxShadow(
                         color: Colors.black.withOpacity(0.2),
                         spreadRadius: 2,
-                        blurRadius: 10,
+                        blurRadius: 20,
                         offset: Offset(0, 6),
                       )
                     ]

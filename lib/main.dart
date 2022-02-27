@@ -45,6 +45,7 @@ class _HomePageState extends State<HomePage>
   late PageController _pageController;
   int _currentIndex = 0;
 
+
   List<BottomNavigationBarItem> myBottomNavBarItems() {
     return [
       BottomNavigationBarItem(icon: Icon(Icons.home_outlined),label: "クイズ一覧"),

@@ -12,6 +12,118 @@ class QuizeList extends StatefulWidget {
 
 class _QuizeListState extends State<QuizeList> {
   String _questionNum = '';
+
+  Widget _buildQuizListContainer(problemId, correctFlg, unanswerFlg) {
+    late String _problemId = problemId;
+    late String _correctFlg = correctFlg;
+    late String _unanswerFlg = unanswerFlg;
+    if (_unanswerFlg == "0") {
+      return Stack(
+        children: [
+          Container(
+            alignment: Alignment.center,
+            width: QuizListSizeConfig.containerHeightSize,
+            height: QuizListSizeConfig.containerWidthSize,
+            decoration: BoxDecoration(
+              color: ColorConfig.White,
+              border: Border.all(color: ColorConfig.Black),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: TextButton(
+              child: Text(
+                problemId,
+                style: TextStyle(color: ColorConfig.Black),
+              ),
+              onPressed: () {
+                //String _questionNum = '$i';
+                _questionNum = _problemId;
+                //toString()で型変換をできる。
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => QuizQ_000(_questionNum),
+                  ),
+                );
+              },
+            ),
+          ),
+          Align(
+            alignment: Alignment.topRight,
+            child: Container(
+              height: 15,
+              width: 40,
+              decoration: BoxDecoration(
+                color: ColorConfig.Red,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Text(
+                'new',textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ),
+        ],
+      );
+    } else {
+      if (_correctFlg == "0") {
+        return Container(
+          alignment: Alignment.center,
+          width: QuizListSizeConfig.containerHeightSize,
+          height: QuizListSizeConfig.containerWidthSize,
+          decoration: BoxDecoration(
+            color: ColorConfig.White,
+            border: Border.all(color: ColorConfig.Blue),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: TextButton(
+            child: Text(
+              problemId,
+              style: TextStyle(color: Colors.white),
+            ),
+            onPressed: () {
+              //String _questionNum = '$i';
+              _questionNum = problemId;
+              //toString()で型変換をできる。
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => QuizQ_000(_questionNum),
+                ),
+              );
+            },
+          ),
+        );
+      } else {
+        return Container(
+          alignment: Alignment.center,
+          width: QuizListSizeConfig.containerHeightSize,
+          height: QuizListSizeConfig.containerWidthSize,
+          decoration: BoxDecoration(
+            color: ColorConfig.Blue,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: TextButton(
+            child: Text(
+              problemId,
+              style: TextStyle(color: Colors.white),
+            ),
+            onPressed: () {
+              //String _questionNum = '$i';
+              _questionNum = problemId;
+              //toString()で型変換をできる。
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => QuizQ_000(_questionNum),
+                ),
+              );
+            },
+          ),
+        );
+      }
+    }
+  }
+
   Future<List<QuizStatus>> result = QuizStatusDb().getDataList();
 
   @override
@@ -68,39 +180,44 @@ class _QuizeListState extends State<QuizeList> {
                           crossAxisCount: 3,
                         ),
                         primary: false,
-                        padding: const EdgeInsets.fromLTRB(32, 10, 32, 32),//カラム数
+                        padding: const EdgeInsets.fromLTRB(32, 10, 32, 32),
+                        //カラム数
                         shrinkWrap: true,
                         itemCount: quizList.length,
                         itemBuilder: (BuildContext context, int index) {
-                          return Container(
-                            alignment: Alignment.center,
-                            width: QuizListSizeConfig.containerHeightSize,
-                            height: QuizListSizeConfig.containerWidthSize,
-                            decoration: BoxDecoration(
-                              color: quizList[index].correctFlg == "1"
-                                  ? ColorConfig.Gray
-                                  : ColorConfig.Blue,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: TextButton(
-                              child: Text(
-                                quizList[index].problemId,
-                                style: TextStyle(color: Colors.white),
-                              ),
-                              onPressed: () {
-                                //String _questionNum = '$i';
-                                _questionNum = quizList[index].problemId;
-                                //toString()で型変換をできる。
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        QuizQ_000(_questionNum),
-                                  ),
-                                );
-                              },
-                            ),
-                          );
+                          return _buildQuizListContainer(
+                              quizList[index].problemId,
+                              quizList[index].correctFlg,
+                              quizList[index].unansweredFlg);
+                          //   Container(
+                          //   alignment: Alignment.center,
+                          //   width: QuizListSizeConfig.containerHeightSize,
+                          //   height: QuizListSizeConfig.containerWidthSize,
+                          //   decoration: BoxDecoration(
+                          //     color: quizList[index].correctFlg == "1"
+                          //         ? ColorConfig.Gray
+                          //         : ColorConfig.Blue,
+                          //     borderRadius: BorderRadius.circular(10),
+                          //   ),
+                          //   child: TextButton(
+                          //     child: Text(
+                          //       quizList[index].problemId,
+                          //       style: TextStyle(color: Colors.white),
+                          //     ),
+                          //     onPressed: () {
+                          //       //String _questionNum = '$i';
+                          //       _questionNum = quizList[index].problemId;
+                          //       //toString()で型変換をできる。
+                          //       Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //           builder: (BuildContext context) =>
+                          //               QuizQ_000(_questionNum),
+                          //         ),
+                          //       );
+                          //     },
+                          //   ),
+                          // );
                         }),
                   );
                 } else {
