@@ -256,7 +256,6 @@ class _QuizQ_000 extends State<QuizQ_000> {
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: Colors.green,
-                    width: 30,
                   ),
                 ),
                 child: Image.asset(QuizQ_List().list[QuesitonNum]!.Picture),
@@ -264,6 +263,7 @@ class _QuizQ_000 extends State<QuizQ_000> {
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
               Container(
+                width:240,
                 child: Text(
                   QuizQ_List().list[QuesitonNum]!.problem,
                   style: TextStyle(fontSize: 16),
