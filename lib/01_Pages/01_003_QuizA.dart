@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:bunkyoku_app2/02_Class/02_03_QuizA.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
 import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
+import 'package:bunkyoku_app2/03_Unity/03_01_SqliteDb.dart';
 
 class QuizA_000 extends StatefulWidget {
   late final String QuesitonNum;
@@ -181,6 +182,7 @@ class _QuizA_000 extends State<QuizA_000> {
                     // radius: BorderRadius.circular(40),
                   ),
                   onPressed: () {
+                    QuizStatusDb().updateData('1', '1');
                     //★正解フラグや解答フラグを更新する処理を追加が必要
                     // Navigator.push(
                     //     context,

@@ -153,6 +153,7 @@ import 'package:bunkyoku_app2/02_Class/02_01_QuizQA.dart';
 import 'package:bunkyoku_app2/02_Class/02_02_QuizQ.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
 import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
+import 'package:bunkyoku_app2/02_Class/02_06_QuizStatus.dart';
 
 class QuizQ_000 extends StatefulWidget {
   late final String QuesitonNum;
@@ -208,9 +209,10 @@ class _QuizQ_000 extends State<QuizQ_000> {
                 Icons.star_border,
                 color: Colors.white,
               ),
-              onPressed: () {
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: (context) => QuizA_000(QuesitonNum)));
+              onPressed: () async {
+                //①QuizStatusクラスのproblemIdに、QuizQ_List().list[QuesitonNum]!.QID,を入れる
+                //※このときすでにデータがあれば更新処理は実施しないように制御する。
+                //②QuizStatusクラスのfavoriteFlgが0であれば1、1であれば0を代入する
               },
             ),
           ],

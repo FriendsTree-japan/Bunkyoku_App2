@@ -68,6 +68,26 @@ class QuizStatusDb {
     });
     return quizStatusList;
   }
+  Future<void> updateData(String problemId ,String favoriteFlg) async {
+    debugPrint("Updata start");
+    String dbPath = await getDatabasesPath();
+    String path = join(dbPath, "quizStatus.db");
+    final database = await openDatabase(
+      path,
+      version: 1,
+    );
+    final Database db = await database;
+    var values = <String, dynamic>{
+      "favoriteFlg": favoriteFlg,
+    };
+    await db.update(
+      'quizStatus',
+      values,
+      where: "problemId = ?",
+      whereArgs: [problemId],
+      conflictAlgorithm: ConflictAlgorithm.abort,
+    );
+  }
 }
 
 // //データ選択(List表示)
@@ -93,3 +113,5 @@ class QuizStatusDb {
 //     );
 //   });
 //   return quizStatusList;
+
+
