@@ -154,6 +154,7 @@ import 'package:bunkyoku_app2/02_Class/02_02_QuizQ.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
 import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
 import 'package:bunkyoku_app2/02_Class/02_06_QuizStatus.dart';
+import 'package:bunkyoku_app2/03_Unity/03_01_SqliteDb.dart';
 
 class QuizQ_000 extends StatefulWidget {
   late final String QuesitonNum;
@@ -210,6 +211,7 @@ class _QuizQ_000 extends State<QuizQ_000> {
                 color: Colors.white,
               ),
               onPressed: () async {
+                QuizStatusDb().updateData('1', '1');
                 //①QuizStatusクラスのproblemIdに、QuizQ_List().list[QuesitonNum]!.QID,を入れる
                 //※このときすでにデータがあれば更新処理は実施しないように制御する。
                 //②QuizStatusクラスのfavoriteFlgが0であれば1、1であれば0を代入する
