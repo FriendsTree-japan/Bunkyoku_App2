@@ -211,7 +211,7 @@ class _QuizQ_000 extends State<QuizQ_000> {
                 color: Colors.white,
               ),
               onPressed: () async {
-                QuizStatusDb().updateData('1', '1');
+                QuizStatusDb().updateData(QuizQ_List().list[QuesitonNum]!.QID, '1');
                 //①QuizStatusクラスのproblemIdに、QuizQ_List().list[QuesitonNum]!.QID,を入れる
                 //※このときすでにデータがあれば更新処理は実施しないように制御する。
                 //②QuizStatusクラスのfavoriteFlgが0であれば1、1であれば0を代入する

@@ -90,8 +90,8 @@ class QuizStatusDb {
   }
 }
 
-// //データ選択(List表示)
-// Future<List<QuizStatus>> getDataList() async {
+//データ選択(List表示)
+// Future<List<QuizStatus>> getDataList(String problemId) async {
 //   String dbPath = await getDatabasesPath();
 //   String path = join(dbPath, "quizStatus.db");
 //   final database = await openDatabase(
@@ -112,6 +112,7 @@ class QuizStatusDb {
 //       favoriteFlg: mapsQuizStatus[i]['favoriteFlg'],
 //     );
 //   });
+//   quizStatusList.problemId;
 //   return quizStatusList;
-
+// }
 
