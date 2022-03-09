@@ -158,8 +158,9 @@ import 'package:bunkyoku_app2/03_Unity/03_01_SqliteDb.dart';
 
 class QuizQ_000 extends StatefulWidget {
   late final String QuesitonNum;
+  late String myFavariteFlg;
 
-  QuizQ_000(this.QuesitonNum);
+  QuizQ_000(this.QuesitonNum,this.myFavariteFlg);
 
   @override
   State<QuizQ_000> createState() => _QuizQ_000();
@@ -168,6 +169,7 @@ class QuizQ_000 extends StatefulWidget {
 class _QuizQ_000 extends State<QuizQ_000> {
   late final String QuesitonNum = widget.QuesitonNum;
   late String SelectQ = '';
+  late String myFavariteFlg = widget.myFavariteFlg;
 
   @override
   Widget build(BuildContext context) {
@@ -196,7 +198,7 @@ class _QuizQ_000 extends State<QuizQ_000> {
                 ),
               ],
             ),
-            onPressed: () => Navigator.of(context).pop(),
+            onPressed: () => Navigator.pop(context,true),
           ),
           title: Row(
             children: [
@@ -207,14 +209,25 @@ class _QuizQ_000 extends State<QuizQ_000> {
           actions: [
             IconButton(
               icon: Icon(
-                Icons.star_border,
-                color: Colors.white,
+                Icons.star,
+                color: myFavariteFlg == '0' ? Colors.white : Colors.yellow,
               ),
               onPressed: () async {
-                QuizStatusDb().updateData(QuizQ_List().list[QuesitonNum]!.QID, '1');
+                if(myFavariteFlg == '0') {
+                  QuizStatusDb().updateData(
+                      QuizQ_List().list[QuesitonNum]!.QID, '1');
+                }else{
+                  QuizStatusDb().updateData(
+                      QuizQ_List().list[QuesitonNum]!.QID, '0');
+                }
+
+                myFavariteFlg = await QuizStatusDb().setFavoriteFlg(QuesitonNum);
+
                 //①QuizStatusクラスのproblemIdに、QuizQ_List().list[QuesitonNum]!.QID,を入れる
                 //※このときすでにデータがあれば更新処理は実施しないように制御する。
                 //②QuizStatusクラスのfavoriteFlgが0であれば1、1であれば0を代入する
+                setState(() {
+                });
               },
             ),
           ],

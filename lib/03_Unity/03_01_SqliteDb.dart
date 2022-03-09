@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import '03_01_SharedPreferences.dart';
 
 class QuizStatusDb {
+
   void createData() async {
     debugPrint("createData start");
     String dbPath = await getDatabasesPath();
@@ -35,7 +36,31 @@ class QuizStatusDb {
     }
   }
 
-  //クイズステータスデータの取得
+  //データ選択(List表示)お気に入り
+  Future<List<QuizStatus>> getFavoriteDataList() async {
+    String dbPath = await getDatabasesPath();
+    String path = join(dbPath, "quizStatus.db");
+    final database = await openDatabase(
+      path,
+      version: 1,
+    );
+    final Database db = await database;
+    List<QuizStatus> quizStatusList = <QuizStatus>[];
+
+    final List<Map<String, dynamic>> mapsQuizStatus =
+    await db.rawQuery('SELECT * FROM quizStatus where favoriteFlg = "1"');
+
+    quizStatusList = new List.generate(mapsQuizStatus.length, (i) {
+      return QuizStatus(
+        problemId: mapsQuizStatus[i]['problemId'].toString(),
+        unansweredFlg: mapsQuizStatus[i]['unansweredFlg'],
+        correctFlg: mapsQuizStatus[i]['correctFlg'],
+        favoriteFlg: mapsQuizStatus[i]['favoriteFlg'],
+      );
+    });
+    return quizStatusList;
+  }
+
 
 //データ選択(List表示)
   Future<List<QuizStatus>> getDataList() async {
@@ -48,13 +73,6 @@ class QuizStatusDb {
     final Database db = await database;
     List<QuizStatus> quizStatusList = <QuizStatus>[];
 
-    // final List<Map> mapsQuizStatus =
-    // await db.query("quizStatus");
-    // return mapsQuizStatus.map((Map m) {
-    //   String problemId = m["problemId"];
-    //   String unansweredFlg = m["unansweredFlg"];
-    //   String correctFlg = m["correctFlg"];
-    //   String favoriteFlg = m["favoriteFlg"];
     final List<Map<String, dynamic>> mapsQuizStatus =
     await db.rawQuery('SELECT * FROM quizStatus');
 
@@ -68,7 +86,8 @@ class QuizStatusDb {
     });
     return quizStatusList;
   }
-  Future<void> updateData(String problemId ,String favoriteFlg) async {
+
+  Future<void> updateData(String problemId, String favoriteFlg) async {
     debugPrint("Updata start");
     String dbPath = await getDatabasesPath();
     String path = join(dbPath, "quizStatus.db");
@@ -88,31 +107,37 @@ class QuizStatusDb {
       conflictAlgorithm: ConflictAlgorithm.abort,
     );
   }
-}
 
 //データ選択(List表示)
-// Future<List<QuizStatus>> getDataList(String problemId) async {
-//   String dbPath = await getDatabasesPath();
-//   String path = join(dbPath, "quizStatus.db");
-//   final database = await openDatabase(
-//     path,
-//     version: 1,
-//   );
-//   final Database db = await database;
-//   List<QuizStatus> quizStatusList = <QuizStatus>[];
-//
-//   final List<Map<String, dynamic>> mapsQuizStatus =
-//   await db.rawQuery('SELECT * FROM quizStatus');
-//
-//   quizStatusList = new List.generate(mapsQuizStatus.length, (i) {
-//     return QuizStatus(
-//       problemId: mapsQuizStatus[i]['problemId'],
-//       unansweredFlg: mapsQuizStatus[i]['unansweredFlg'],
-//       correctFlg: mapsQuizStatus[i]['correctFlg'],
-//       favoriteFlg: mapsQuizStatus[i]['favoriteFlg'],
-//     );
-//   });
-//   quizStatusList.problemId;
-//   return quizStatusList;
-// }
+  Future<String> setFavoriteFlg(String problemId) async {
+    String myFavariteFlg = '0';
+    String dbPath = await getDatabasesPath();
+    String path = join(dbPath, "quizStatus.db");
+    final database = await openDatabase(
+      path,
+      version: 1,
+    );
+    final Database db = await database;
+    List<QuizStatus> quizStatusList = <QuizStatus>[];
 
+    // final List<Map<String, dynamic>> mapsQuizStatus =
+    // await db.rawQuery('SELECT * FROM quizStatus');
+
+    final List<Map<String, dynamic>> myFavariteFlgWork;
+
+    myFavariteFlgWork = await db.rawQuery(
+        'SELECT favoriteFlg FROM quizStatus where problemId = "$problemId" ');
+    print(myFavariteFlgWork);
+    myFavariteFlg = myFavariteFlgWork[0]['favoriteFlg'];
+    return Future.value(myFavariteFlg);
+
+    // quizStatusList = new List.generate(mapsQuizStatus.length, (i) {
+    //   return QuizStatus(
+    //     problemId: mapsQuizStatus[i]['problemId'],
+    //     unansweredFlg: mapsQuizStatus[i]['unansweredFlg'],
+    //     correctFlg: mapsQuizStatus[i]['correctFlg'],
+    //     favoriteFlg: mapsQuizStatus[i]['favoriteFlg'],
+    //   );
+    // });
+  }
+}

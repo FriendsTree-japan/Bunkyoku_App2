@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '01_Pages/01_004_Favorite.dart';
 import '02_Class/02_04_Size.dart';
 import '02_Class/02_05_Color.dart';
 import '03_Unity/03_01_SharedPreferences.dart';
@@ -82,7 +83,7 @@ class _HomePageState extends State<HomePage>
           },
           children: [
             QuizeList(),
-            QuizeList(),
+            Favorite(),
             Setting(),
           ]
       ),

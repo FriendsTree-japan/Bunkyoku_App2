@@ -6,7 +6,7 @@ class QuizQ_List {
     QuizQ(
       QID: '1',
       Picture: 'images/Test.jpg',
-      problem: '下記4つのうちどれでしょうか\n下記4つのうちどれでしょうか',
+      problem: '下記4つのうちどれでしょうか',
       Select1: 'ねこ',
       Select2: 'いぬ',
       Select3: 'たこ',

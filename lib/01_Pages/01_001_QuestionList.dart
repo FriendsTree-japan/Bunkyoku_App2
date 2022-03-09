@@ -17,6 +17,7 @@ class _QuizeListState extends State<QuizeList> {
     late String _problemId = problemId;
     late String _correctFlg = correctFlg;
     late String _unanswerFlg = unanswerFlg;
+    String myFavariteFlg = '0';
     if (_unanswerFlg == "0") {
       return Stack(
         children: [
@@ -34,16 +35,21 @@ class _QuizeListState extends State<QuizeList> {
                 problemId,
                 style: TextStyle(color: ColorConfig.Black),
               ),
-              onPressed: () {
+              onPressed: () async{
                 //String _questionNum = '$i';
                 _questionNum = _problemId;
+                myFavariteFlg = await QuizStatusDb().setFavoriteFlg(_questionNum);
                 //toString()で型変換をできる。
-                Navigator.push(
+                bool? result = await Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => QuizQ_000(_questionNum),
+                  new MaterialPageRoute<bool>(
+                    builder: (BuildContext context) => QuizQ_000(_questionNum,myFavariteFlg),
                   ),
                 );
+                if (result!) {
+                  setState(() {
+                  });
+                }
               },
             ),
           ),
@@ -80,14 +86,15 @@ class _QuizeListState extends State<QuizeList> {
               problemId,
               style: TextStyle(color: Colors.white),
             ),
-            onPressed: () {
+            onPressed: () async{
+              myFavariteFlg = await QuizStatusDb().setFavoriteFlg(_questionNum);
               //String _questionNum = '$i';
               _questionNum = problemId;
               //toString()で型変換をできる。
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => QuizQ_000(_questionNum),
+                  builder: (BuildContext context) => QuizQ_000(_questionNum,myFavariteFlg),
                 ),
               );
             },
@@ -107,14 +114,15 @@ class _QuizeListState extends State<QuizeList> {
               problemId,
               style: TextStyle(color: Colors.white),
             ),
-            onPressed: () {
+            onPressed: () async{
               //String _questionNum = '$i';
               _questionNum = problemId;
+              myFavariteFlg = await QuizStatusDb().setFavoriteFlg(_questionNum);
               //toString()で型変換をできる。
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => QuizQ_000(_questionNum),
+                  builder: (BuildContext context) => QuizQ_000(_questionNum,myFavariteFlg),
                 ),
               );
             },
