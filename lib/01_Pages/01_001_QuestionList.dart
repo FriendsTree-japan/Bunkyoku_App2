@@ -84,7 +84,7 @@ class _QuizeListState extends State<QuizeList> {
           child: TextButton(
             child: Text(
               problemId,
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: ColorConfig.Black),
             ),
             onPressed: () async{
               myFavariteFlg = await QuizStatusDb().setFavoriteFlg(_questionNum);

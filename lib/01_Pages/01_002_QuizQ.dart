@@ -214,10 +214,10 @@ class _QuizQ_000 extends State<QuizQ_000> {
               ),
               onPressed: () async {
                 if(myFavariteFlg == '0') {
-                  QuizStatusDb().updateData(
+                  QuizStatusDb().updateFavoriteFlg(
                       QuizQ_List().list[QuesitonNum]!.QID, '1');
                 }else{
-                  QuizStatusDb().updateData(
+                  QuizStatusDb().updateFavoriteFlg(
                       QuizQ_List().list[QuesitonNum]!.QID, '0');
                 }
 

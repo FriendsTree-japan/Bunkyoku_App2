@@ -20,6 +20,7 @@ class _QuizA_000 extends State<QuizA_000> {
 
   Widget _buildChild() {
     if (selectQ == QuizA_List().list[QuesitonNum]!.Answer) {
+      QuizStatusDb().updateFlg(QuizA_List().list[QuesitonNum]!.QID, 'correct');
       return Text('正解', style: TextStyle(fontSize: 24));
     }
     return Text('不正解', style: TextStyle(fontSize: 24));
@@ -52,7 +53,7 @@ class _QuizA_000 extends State<QuizA_000> {
                 ),
               ],
             ),
-            onPressed: () => Navigator.of(context).pop(),
+            onPressed: () => Navigator.pop(context,true),
           ),
           title: Row(
             children: [
@@ -182,7 +183,7 @@ class _QuizA_000 extends State<QuizA_000> {
                     // radius: BorderRadius.circular(40),
                   ),
                   onPressed: () {
-                    QuizStatusDb().updateData('1', '1');
+                    QuizStatusDb().updateFlg(QuizA_List().list[QuesitonNum]!.QID, 'unanwer');
                     //★正解フラグや解答フラグを更新する処理を追加が必要
                     // Navigator.push(
                     //     context,

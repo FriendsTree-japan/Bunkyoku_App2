@@ -87,7 +87,7 @@ class QuizStatusDb {
     return quizStatusList;
   }
 
-  Future<void> updateData(String problemId, String favoriteFlg) async {
+  Future<void> updateFavoriteFlg(String problemId, String favoriteFlg) async {
     debugPrint("Updata start");
     String dbPath = await getDatabasesPath();
     String path = join(dbPath, "quizStatus.db");
@@ -106,6 +106,44 @@ class QuizStatusDb {
       whereArgs: [problemId],
       conflictAlgorithm: ConflictAlgorithm.abort,
     );
+  }
+
+  Future<Object> updateFlg(
+      String problemId, String flgType) async {
+    debugPrint("Updata start");
+    debugPrint(problemId);
+    debugPrint(flgType);
+    String dbPath = await getDatabasesPath();
+    String path = join(dbPath, "quizStatus.db");
+    final database = await openDatabase(
+      path,
+      version: 1,
+    );
+    final Database db = await database;
+
+    if (flgType == 'unanwer') {
+      var values = <String, dynamic>{
+        "unansweredFlg": '1',
+      };
+      return db.update(
+        'quizStatus',
+        values,
+        where: "problemId = ?",
+        whereArgs: [problemId],
+        conflictAlgorithm: ConflictAlgorithm.abort,
+      );
+    } else {
+      var values = <String, dynamic>{
+        "correctFlg": '1',
+      };
+      return db.update(
+        'quizStatus',
+        values,
+        where: "problemId = ?",
+        whereArgs: [problemId],
+        conflictAlgorithm: ConflictAlgorithm.abort,
+      );
+    }
   }
 
 //データ選択(List表示)
