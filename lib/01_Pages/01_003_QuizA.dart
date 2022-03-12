@@ -1,3 +1,4 @@
+import 'package:bunkyoku_app2/01_Pages/01_002_QuizQ.dart';
 import 'package:flutter/material.dart';
 import 'package:bunkyoku_app2/02_Class/02_03_QuizA.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
@@ -17,6 +18,9 @@ class QuizA_000 extends StatefulWidget {
 class _QuizA_000 extends State<QuizA_000> {
   late final String QuesitonNum = widget.QuesitonNum;
   late final String selectQ = widget.selectQ;
+  String _questionNum = '';
+  int _intNextQuestionNum = 0;
+  String _nextQuestionNum = '';
 
   Widget _buildChild() {
     if (selectQ == QuizA_List().list[QuesitonNum]!.Answer) {
@@ -25,6 +29,75 @@ class _QuizA_000 extends State<QuizA_000> {
     }
     return Text('不正解', style: TextStyle(fontSize: 24));
   }
+
+  Widget _buildNextPageContainer(String problemId,String myFavariteFlg) {
+    String myFavariteFlg = '0';
+    if (problemId != "2") {
+      return Container(
+        height: 50,
+        width: 240,
+        decoration: BoxDecoration(boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            spreadRadius: 2,
+            blurRadius: 20,
+            offset: Offset(0, 6),
+          )
+        ]),
+        child: OutlinedButton(
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'Next ',
+                    textAlign: TextAlign.center,
+                    style:
+                    TextStyle(color: ColorConfig.Blue, fontSize: 24),
+                  ),
+                  Text(
+                    '>',
+                    textAlign: TextAlign.center,
+                    style:
+                    TextStyle(color: ColorConfig.Blue, fontSize: 40),
+                  ),
+                ]),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.white,
+              side: BorderSide(color: ColorConfig.Blue),
+              onPrimary: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+
+              // radius: BorderRadius.circular(40),
+            ),
+            onPressed: () async {
+              _questionNum = QuesitonNum;
+              // print(_questionNum.runtimeType);
+              _intNextQuestionNum = int.parse(_questionNum) + 1;
+              // print(_intNextQuestionNum.runtimeType);
+              _nextQuestionNum = _intNextQuestionNum.toString();
+
+              QuizStatusDb().updateFlg(
+                  QuizA_List().list[QuesitonNum]!.QID, 'unanwer');
+              bool? result = await Navigator.push(
+                context,
+                new MaterialPageRoute<bool>(
+                  //とりあえずmyFavariteFlgは１にしておく（→ゆーすけ）
+                  builder: (BuildContext context) =>
+                      QuizQ_000(_nextQuestionNum, '1'),
+                ),
+              );
+            }
+        ),
+      );
+    } else {
+      //問題番号が１００の時は、「次へ」を表示しない。
+      return Container(child:Text(''));
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -161,57 +234,7 @@ class _QuizA_000 extends State<QuizA_000> {
               ),
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Container(
-                height: 50,
-                width: 240,
-                decoration: BoxDecoration(boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
-                    spreadRadius: 2,
-                    blurRadius: 20,
-                    offset: Offset(0, 6),
-                  )
-                ]),
-                child: OutlinedButton(
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Next ',
-                          textAlign: TextAlign.center,
-                          style:
-                              TextStyle(color: ColorConfig.Blue, fontSize: 24),
-                        ),
-                        Text(
-                          '>',
-                          textAlign: TextAlign.center,
-                          style:
-                              TextStyle(color: ColorConfig.Blue, fontSize: 40),
-                        ),
-                      ]),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    side: BorderSide(color: ColorConfig.Blue),
-                    onPrimary: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-
-                    // radius: BorderRadius.circular(40),
-                  ),
-                  onPressed: () {
-                    QuizStatusDb().updateFlg(
-                        QuizA_List().list[QuesitonNum]!.QID, 'unanwer');
-                    //★正解フラグや解答フラグを更新する処理を追加が必要
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) =>
-                    //             QuizA_000()));
-                  },
-                ),
-              ),
+              _buildNextPageContainer(QuesitonNum,'1')
             ],
           ),
         ),
