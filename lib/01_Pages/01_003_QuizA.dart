@@ -32,6 +32,7 @@ class _QuizA_000 extends State<QuizA_000> {
 
   Widget _buildNextPageContainer(String problemId,String myFavariteFlg) {
     String myFavariteFlg = '0';
+    //★状態を見たいので一旦「２」にしているがリリース時には「１００」に変更すること！
     if (problemId != "2") {
       return Container(
         height: 50,
