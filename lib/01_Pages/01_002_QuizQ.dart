@@ -154,7 +154,7 @@ import 'package:bunkyoku_app2/02_Class/02_02_QuizQ.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
 import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
 import 'package:bunkyoku_app2/02_Class/02_06_QuizStatus.dart';
-import 'package:bunkyoku_app2/03_Unity/03_01_SqliteDb.dart';
+import 'package:bunkyoku_app2/03_Unity/03_02_SqliteDb.dart';
 
 class QuizQ_000 extends StatefulWidget {
   late final String QuesitonNum;

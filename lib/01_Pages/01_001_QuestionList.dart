@@ -1,5 +1,5 @@
 import 'package:bunkyoku_app2/02_Class/02_06_QuizStatus.dart';
-import 'package:bunkyoku_app2/03_Unity/03_01_SqliteDb.dart';
+import 'package:bunkyoku_app2/03_Unity/03_02_SqliteDb.dart';
 import 'package:flutter/material.dart';
 import 'package:bunkyoku_app2/01_Pages/01_002_QuizQ.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
@@ -132,10 +132,11 @@ class _QuizeListState extends State<QuizeList> {
     }
   }
 
-  Future<List<QuizStatus>> result = QuizStatusDb().getDataList();
+
 
   @override
   Widget build(BuildContext context) {
+    Future<List<QuizStatus>> result = QuizStatusDb().getDataList();
     QuizListSizeConfig().init(context);
     SizeConfig().init(context);
     ColorConfig().init(context);
@@ -165,7 +166,7 @@ class _QuizeListState extends State<QuizeList> {
               ),
             ],
           ),
-          FutureBuilder(
+          FutureBuilder (
               future: result,
               builder: (BuildContext context,
                   AsyncSnapshot<List<QuizStatus>> snapshot) {
@@ -192,40 +193,11 @@ class _QuizeListState extends State<QuizeList> {
                         //カラム数
                         shrinkWrap: true,
                         itemCount: quizList.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return _buildQuizListContainer(
+                        itemBuilder: (BuildContext context, int index){
+                          return _buildQuizListContainer (
                               quizList[index].problemId,
                               quizList[index].correctFlg,
                               quizList[index].unansweredFlg);
-                          //   Container(
-                          //   alignment: Alignment.center,
-                          //   width: QuizListSizeConfig.containerHeightSize,
-                          //   height: QuizListSizeConfig.containerWidthSize,
-                          //   decoration: BoxDecoration(
-                          //     color: quizList[index].correctFlg == "1"
-                          //         ? ColorConfig.Gray
-                          //         : ColorConfig.Blue,
-                          //     borderRadius: BorderRadius.circular(10),
-                          //   ),
-                          //   child: TextButton(
-                          //     child: Text(
-                          //       quizList[index].problemId,
-                          //       style: TextStyle(color: Colors.white),
-                          //     ),
-                          //     onPressed: () {
-                          //       //String _questionNum = '$i';
-                          //       _questionNum = quizList[index].problemId;
-                          //       //toString()で型変換をできる。
-                          //       Navigator.push(
-                          //         context,
-                          //         MaterialPageRoute(
-                          //           builder: (BuildContext context) =>
-                          //               QuizQ_000(_questionNum),
-                          //         ),
-                          //       );
-                          //     },
-                          //   ),
-                          // );
                         }),
                   );
                 } else {

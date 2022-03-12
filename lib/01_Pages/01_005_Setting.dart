@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
 import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
+import 'package:bunkyoku_app2/03_Unity/03_03_UrlMove.dart';
 
 class Setting extends StatefulWidget {
   @override
@@ -48,7 +49,8 @@ class _SettingState extends State<Setting> {
               textStyle: const TextStyle(fontSize: 20),
             ),
             onPressed: () {
-              _RulesURL();
+              UrlMove().UrlMoving('https://dented-handball-204.notion.site/0fe2fc1cf0ca465abdb85616658c9106');
+              // _RulesURL();
             },
             child: const Text('利用規約',style: TextStyle(color: Colors.black)),
           ),
@@ -57,7 +59,8 @@ class _SettingState extends State<Setting> {
               textStyle: const TextStyle(fontSize: 20),
             ),
             onPressed: () {
-              _FAQURL();
+              UrlMove().UrlMoving('https://dented-handball-204.notion.site/0fe2fc1cf0ca465abdb85616658c9106');
+              // _FAQURL();
             },
             child: const Text('問い合わせ',style: TextStyle(color: Colors.black)),
           ),
@@ -66,42 +69,14 @@ class _SettingState extends State<Setting> {
               textStyle: const TextStyle(fontSize: 20),
             ),
             onPressed: () {
-              _FriendsTreeURL();
+              UrlMove().UrlMoving('https://dented-handball-204.notion.site/0fe2fc1cf0ca465abdb85616658c9106');
+              //'https://dented-handball-204.notion.site/0fe2fc1cf0ca465abdb85616658c9106'
+              // _FriendsTreeURL();
             },
             child: const Text('Follow us!!',style: TextStyle(color: Colors.black)),
           ),
         ],
       ),
     );
-  }
-}
-
-void _RulesURL() async {
-  const url =
-      'https://dented-handball-204.notion.site/9fbc188c11d14c9d95fb2c959fa33043';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
-  }
-}
-
-void _FAQURL() async {
-  const url =
-      'https://dented-handball-204.notion.site/0fe2fc1cf0ca465abdb85616658c9106';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
-  }
-}
-
-void _FriendsTreeURL() async {
-  const url =
-      'https://dented-handball-204.notion.site/0fe2fc1cf0ca465abdb85616658c9106';
-  if (await canLaunch(url)) {
-    await launch(url);
-  } else {
-    throw 'Could not launch $url';
   }
 }

@@ -8,7 +8,7 @@ import '03_01_SharedPreferences.dart';
 
 class QuizStatusDb {
 
-  void createData() async {
+  Future<void> createData() async {
     debugPrint("createData start");
     String dbPath = await getDatabasesPath();
     String path = join(dbPath, "quizStatus.db");
@@ -58,6 +58,7 @@ class QuizStatusDb {
         favoriteFlg: mapsQuizStatus[i]['favoriteFlg'],
       );
     });
+
     return quizStatusList;
   }
 
@@ -76,6 +77,10 @@ class QuizStatusDb {
     final List<Map<String, dynamic>> mapsQuizStatus =
     await db.rawQuery('SELECT * FROM quizStatus');
 
+    //select文
+    final List<Map<String,dynamic>> Cnt = await db.rawQuery('SELECT count(*) as Cnt FROM quizStatus');
+    print(Cnt[0]['Cnt']);
+
     quizStatusList = new List.generate(mapsQuizStatus.length, (i) {
       return QuizStatus(
         problemId: mapsQuizStatus[i]['problemId'].toString(),
@@ -83,7 +88,10 @@ class QuizStatusDb {
         correctFlg: mapsQuizStatus[i]['correctFlg'],
         favoriteFlg: mapsQuizStatus[i]['favoriteFlg'],
       );
+
     });
+    // await Future.delayed(Duration(seconds: 3));
+    // debugPrint("3秒間たったよ");
     return quizStatusList;
   }
 
