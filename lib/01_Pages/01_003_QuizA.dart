@@ -32,6 +32,8 @@ class _QuizA_000 extends State<QuizA_000> {
     ColorConfig().init(context);
     BasePaddingConfig().init(context);
     QuizSelectButtonSizeConfig().init(context);
+    Future<String> correctCount = QuizStatusDb().getCorrectCount();
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -53,14 +55,32 @@ class _QuizA_000 extends State<QuizA_000> {
                 ),
               ],
             ),
-            onPressed: () => Navigator.pop(context,true),
+            onPressed: () => Navigator.pop(context, true),
           ),
-          title: Row(
-            children: [
-              Text('3'),
-              Text('/100'),
-            ],
-          ),
+          title: FutureBuilder(
+              future: correctCount,
+              builder: (BuildContext context,
+                  AsyncSnapshot<String> snapshot){
+                if (snapshot.connectionState != ConnectionState.done){
+                  return new Align(
+                      child: Center(
+                        child: new CircularProgressIndicator(),
+                      ));
+                }else if (snapshot.hasError) {
+                  return new Text('Error: ${snapshot.error!}');
+                }else if (snapshot.hasData){
+                  String? correctCount = snapshot.data;
+                  return RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(text: " $correctCount ",style: TextStyle(fontSize: 25),),
+                        TextSpan(text: "/100",style: TextStyle(fontSize: 18),)],
+                    ),
+                  );
+                }else{
+                  return Text("データが存在しません");
+                }
+              }),
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: ColorConfig.Blue,
         ),
@@ -144,16 +164,14 @@ class _QuizA_000 extends State<QuizA_000> {
               Container(
                 height: 50,
                 width: 240,
-                decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        spreadRadius: 2,
-                        blurRadius: 20,
-                        offset: Offset(0, 6),
-                      )
-                    ]
-                ),
+                decoration: BoxDecoration(boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    spreadRadius: 2,
+                    blurRadius: 20,
+                    offset: Offset(0, 6),
+                  )
+                ]),
                 child: OutlinedButton(
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -183,7 +201,8 @@ class _QuizA_000 extends State<QuizA_000> {
                     // radius: BorderRadius.circular(40),
                   ),
                   onPressed: () {
-                    QuizStatusDb().updateFlg(QuizA_List().list[QuesitonNum]!.QID, 'unanwer');
+                    QuizStatusDb().updateFlg(
+                        QuizA_List().list[QuesitonNum]!.QID, 'unanwer');
                     //★正解フラグや解答フラグを更新する処理を追加が必要
                     // Navigator.push(
                     //     context,

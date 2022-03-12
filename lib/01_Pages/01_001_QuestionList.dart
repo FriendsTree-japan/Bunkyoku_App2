@@ -140,6 +140,8 @@ class _QuizeListState extends State<QuizeList> {
     QuizListSizeConfig().init(context);
     SizeConfig().init(context);
     ColorConfig().init(context);
+    Future<String> correctCount = QuizStatusDb().getCorrectCount();
+
     return Scaffold(
       appBar: AppBar(
         title: Text('文京区アプリ'),
@@ -149,18 +151,30 @@ class _QuizeListState extends State<QuizeList> {
         children: [
           Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    child: Text('3', style: TextStyle(fontSize: 28)),
-                  ),
-                  Container(
-                    child: Text('/100', style: TextStyle(fontSize: 18)),
-                  ),
-                ],
-              ),
+              FutureBuilder(
+                  future: correctCount,
+                  builder: (BuildContext context,
+                      AsyncSnapshot<String> snapshot){
+                    if (snapshot.connectionState != ConnectionState.done){
+                      return new Align(
+                          child: Center(
+                            child: new CircularProgressIndicator(),
+                          ));
+                    }else if (snapshot.hasError) {
+                      return new Text('Error: ${snapshot.error!}');
+                    }else if (snapshot.hasData){
+                      String? correctCount = snapshot.data;
+                      return RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(text: " $correctCount ",style: TextStyle(fontSize: 25,color: ColorConfig.Black),),
+                            TextSpan(text: "/100",style: TextStyle(fontSize: 13,color: ColorConfig.Black),)],
+                        ),
+                      );
+                    }else{
+                      return Text("データが存在しません");
+                    }
+                  }),
               Container(
                 child: Text('がんばれ〜', style: TextStyle(fontSize: 20)),
               ),

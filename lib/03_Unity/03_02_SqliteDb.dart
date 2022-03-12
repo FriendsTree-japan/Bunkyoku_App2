@@ -7,7 +7,6 @@ import 'package:flutter/cupertino.dart';
 import '03_01_SharedPreferences.dart';
 
 class QuizStatusDb {
-
   Future<void> createData() async {
     debugPrint("createData start");
     String dbPath = await getDatabasesPath();
@@ -15,10 +14,10 @@ class QuizStatusDb {
 
     Database database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
-          await db.execute(
-            "CREATE TABLE IF NOT EXISTS quizStatus (problemId INTEGER PRIMARY KEY, unansweredFlg TEXT, correctFlg TEXT , favoriteFlg TEXT)",
-          );
-        });
+      await db.execute(
+        "CREATE TABLE IF NOT EXISTS quizStatus (problemId INTEGER PRIMARY KEY, unansweredFlg TEXT, correctFlg TEXT , favoriteFlg TEXT)",
+      );
+    });
     debugPrint("createData end");
     String? firstLoginFlg = SharedPrefs.getFirstLoginFlg();
 
@@ -48,7 +47,7 @@ class QuizStatusDb {
     List<QuizStatus> quizStatusList = <QuizStatus>[];
 
     final List<Map<String, dynamic>> mapsQuizStatus =
-    await db.rawQuery('SELECT * FROM quizStatus where favoriteFlg = "1"');
+        await db.rawQuery('SELECT * FROM quizStatus where favoriteFlg = "1"');
 
     quizStatusList = new List.generate(mapsQuizStatus.length, (i) {
       return QuizStatus(
@@ -62,7 +61,6 @@ class QuizStatusDb {
     return quizStatusList;
   }
 
-
 //データ選択(List表示)
   Future<List<QuizStatus>> getDataList() async {
     String dbPath = await getDatabasesPath();
@@ -75,10 +73,11 @@ class QuizStatusDb {
     List<QuizStatus> quizStatusList = <QuizStatus>[];
 
     final List<Map<String, dynamic>> mapsQuizStatus =
-    await db.rawQuery('SELECT * FROM quizStatus');
+        await db.rawQuery('SELECT * FROM quizStatus');
 
     //select文
-    final List<Map<String,dynamic>> Cnt = await db.rawQuery('SELECT count(*) as Cnt FROM quizStatus');
+    final List<Map<String, dynamic>> Cnt =
+        await db.rawQuery('SELECT count(*) as Cnt FROM quizStatus');
     print(Cnt[0]['Cnt']);
 
     quizStatusList = new List.generate(mapsQuizStatus.length, (i) {
@@ -88,7 +87,6 @@ class QuizStatusDb {
         correctFlg: mapsQuizStatus[i]['correctFlg'],
         favoriteFlg: mapsQuizStatus[i]['favoriteFlg'],
       );
-
     });
     // await Future.delayed(Duration(seconds: 3));
     // debugPrint("3秒間たったよ");
@@ -116,8 +114,7 @@ class QuizStatusDb {
     );
   }
 
-  Future<Object> updateFlg(
-      String problemId, String flgType) async {
+  Future<Object> updateFlg(String problemId, String flgType) async {
     debugPrint("Updata start");
     debugPrint(problemId);
     debugPrint(flgType);
@@ -176,14 +173,23 @@ class QuizStatusDb {
     print(myFavariteFlgWork);
     myFavariteFlg = myFavariteFlgWork[0]['favoriteFlg'];
     return Future.value(myFavariteFlg);
+  }
 
-    // quizStatusList = new List.generate(mapsQuizStatus.length, (i) {
-    //   return QuizStatus(
-    //     problemId: mapsQuizStatus[i]['problemId'],
-    //     unansweredFlg: mapsQuizStatus[i]['unansweredFlg'],
-    //     correctFlg: mapsQuizStatus[i]['correctFlg'],
-    //     favoriteFlg: mapsQuizStatus[i]['favoriteFlg'],
-    //   );
-    // });
+  //正答数の取得
+  Future<String> getCorrectCount() async {
+    String quizCorrecSCnt = '0';
+    String dbPath = await getDatabasesPath();
+    String path = join(dbPath, "quizStatus.db");
+    final database = await openDatabase(
+      path,
+      version: 1,
+    );
+    final Database db = await database;
+    final List<Map<String, dynamic>> quizCorrecSelectCnt;
+    quizCorrecSelectCnt = await db.rawQuery(
+        'SELECT count(*) as CorrectCnt FROM quizStatus where correctFlg = "1"');
+    quizCorrecSCnt = quizCorrecSelectCnt[0]['CorrectCnt'].toString();
+    print(quizCorrecSCnt.runtimeType);
+    return Future.value(quizCorrecSCnt);
   }
 }
