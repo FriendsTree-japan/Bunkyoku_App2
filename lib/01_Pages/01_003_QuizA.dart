@@ -1,4 +1,5 @@
 import 'package:bunkyoku_app2/01_Pages/01_002_QuizQ.dart';
+import 'package:bunkyoku_app2/02_Class/02_02_QuizQ.dart';
 import 'package:flutter/material.dart';
 import 'package:bunkyoku_app2/02_Class/02_03_QuizA.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
@@ -8,8 +9,9 @@ import 'package:bunkyoku_app2/03_Unity/03_02_SqliteDb.dart';
 class QuizA_000 extends StatefulWidget {
   late final String QuesitonNum;
   late final String selectQ;
+  late String myFavariteFlg;
 
-  QuizA_000(this.QuesitonNum, this.selectQ);
+  QuizA_000(this.QuesitonNum, this.selectQ, this.myFavariteFlg);
 
   @override
   State<QuizA_000> createState() => _QuizA_000();
@@ -21,6 +23,7 @@ class _QuizA_000 extends State<QuizA_000> {
   String _questionNum = '';
   int _intNextQuestionNum = 0;
   String _nextQuestionNum = '';
+  late String myFavariteFlg = widget.myFavariteFlg;
 
   Widget _buildChild() {
     if (selectQ == QuizA_List().list[QuesitonNum]!.Answer) {
@@ -87,7 +90,7 @@ class _QuizA_000 extends State<QuizA_000> {
                 new MaterialPageRoute<bool>(
                   //とりあえずmyFavariteFlgは１にしておく（→ゆーすけ）
                   builder: (BuildContext context) =>
-                      QuizQ_000(_nextQuestionNum, '1'),
+                      QuizQ_000(_nextQuestionNum),
                 ),
               );
             }
@@ -155,6 +158,29 @@ class _QuizA_000 extends State<QuizA_000> {
                   return Text("データが存在しません");
                 }
               }),
+          actions: [
+            IconButton(
+              icon: Icon(
+                Icons.bookmark_outlined,
+                color: myFavariteFlg == '0' ? Colors.white : Colors.yellow,
+              ),
+              onPressed: () async {
+                if(myFavariteFlg == '0') {
+                  QuizStatusDb().updateFavoriteFlg(
+                      QuizA_List().list[QuesitonNum]!.QID, '1');
+                }else{
+                  QuizStatusDb().updateFavoriteFlg(
+                      QuizA_List().list[QuesitonNum]!.QID, '0');
+                }
+                myFavariteFlg = await QuizStatusDb().setFavoriteFlg(QuesitonNum);
+                //①QuizStatusクラスのproblemIdに、QuizQ_List().list[QuesitonNum]!.QID,を入れる
+                //※このときすでにデータがあれば更新処理は実施しないように制御する。
+                //②QuizStatusクラスのfavoriteFlgが0であれば1、1であれば0を代入する
+                setState(() {
+                });
+              },
+            ),
+          ],
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: ColorConfig.Blue,
         ),

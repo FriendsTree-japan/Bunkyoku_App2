@@ -7,10 +7,9 @@ import 'package:bunkyoku_app2/03_Unity/03_02_SqliteDb.dart';
 
 class QuizQ_000 extends StatefulWidget {
   late final String QuesitonNum;
-  late String myFavariteFlg;
 
 
-  QuizQ_000(this.QuesitonNum,this.myFavariteFlg);
+  QuizQ_000(this.QuesitonNum);
   @override
   State<QuizQ_000> createState() => _QuizQ_000();
 }
@@ -18,7 +17,7 @@ class QuizQ_000 extends StatefulWidget {
 class _QuizQ_000 extends State<QuizQ_000> {
   late final String QuesitonNum = widget.QuesitonNum;
   late String SelectQ = '';
-  late String myFavariteFlg = widget.myFavariteFlg;
+  late String myFavariteFlg = "0";
   late String correctCount = '';
 
   @override
@@ -76,29 +75,6 @@ class _QuizQ_000 extends State<QuizQ_000> {
                         return Text("データが存在しません");
                       }
                     }),
-          actions: [
-            IconButton(
-              icon: Icon(
-                Icons.star,
-                color: myFavariteFlg == '0' ? Colors.white : Colors.yellow,
-              ),
-              onPressed: () async {
-                if(myFavariteFlg == '0') {
-                  QuizStatusDb().updateFavoriteFlg(
-                      QuizQ_List().list[QuesitonNum]!.QID, '1');
-                }else{
-                  QuizStatusDb().updateFavoriteFlg(
-                      QuizQ_List().list[QuesitonNum]!.QID, '0');
-                }
-                myFavariteFlg = await QuizStatusDb().setFavoriteFlg(QuesitonNum);
-                //①QuizStatusクラスのproblemIdに、QuizQ_List().list[QuesitonNum]!.QID,を入れる
-                //※このときすでにデータがあれば更新処理は実施しないように制御する。
-                //②QuizStatusクラスのfavoriteFlgが0であれば1、1であれば0を代入する
-                setState(() {
-                });
-              },
-            ),
-          ],
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: ColorConfig.Blue,
         ),
@@ -179,13 +155,20 @@ class _QuizQ_000 extends State<QuizQ_000> {
                     side: BorderSide(color: ColorConfig.Blue),
                     onPrimary: Colors.white,
                   ),
-                  onPressed: () {
+                  onPressed: () async{
                     SelectQ = QuizQ_List().list[QuesitonNum]!.Select1;
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                QuizA_000(QuesitonNum, SelectQ)));
+                    myFavariteFlg = await QuizStatusDb().setFavoriteFlg(QuesitonNum);
+                    //toString()で型変換をできる。
+                    bool? result = await Navigator.push(
+                      context,
+                      new MaterialPageRoute<bool>(
+                        builder: (BuildContext context) => QuizA_000(QuesitonNum, SelectQ,myFavariteFlg),
+                      ),
+                    );
+                    if (result!) {
+                      setState(() {
+                      });
+                    }
                   },
                 ),
               ),
@@ -213,13 +196,20 @@ class _QuizQ_000 extends State<QuizQ_000> {
                     side: BorderSide(color: ColorConfig.Blue),
                     onPrimary: Colors.white,
                   ),
-                  onPressed: () {
+                  onPressed: () async{
                     SelectQ = QuizQ_List().list[QuesitonNum]!.Select2;
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                QuizA_000(QuesitonNum, SelectQ)));
+                    myFavariteFlg = await QuizStatusDb().setFavoriteFlg(QuesitonNum);
+                    //toString()で型変換をできる。
+                    bool? result = await Navigator.push(
+                      context,
+                      new MaterialPageRoute<bool>(
+                        builder: (BuildContext context) => QuizA_000(QuesitonNum, SelectQ,myFavariteFlg),
+                      ),
+                    );
+                    if (result!) {
+                      setState(() {
+                      });
+                    }
                   },
                 ),
               ),
@@ -247,14 +237,21 @@ class _QuizQ_000 extends State<QuizQ_000> {
                     side: BorderSide(color: ColorConfig.Blue),
                     onPrimary: Colors.white,
                   ),
-                  onPressed: () {
+                  onPressed: () async{
                     SelectQ = QuizQ_List().list[QuesitonNum]!.Select3;
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                QuizA_000(QuesitonNum, SelectQ)));
-                  },
+                    myFavariteFlg = await QuizStatusDb().setFavoriteFlg(QuesitonNum);
+                    //toString()で型変換をできる。
+                    bool? result = await Navigator.push(
+                      context,
+                      new MaterialPageRoute<bool>(
+                        builder: (BuildContext context) => QuizA_000(QuesitonNum, SelectQ,myFavariteFlg),
+                      ),
+                    );
+                    if (result!) {
+                      setState(() {
+                      });
+                    }
+                    },
                 ),
               ),
               Padding(
@@ -281,13 +278,20 @@ class _QuizQ_000 extends State<QuizQ_000> {
                     side: BorderSide(color: ColorConfig.Blue),
                     onPrimary: Colors.white,
                   ),
-                  onPressed: () {
+                  onPressed: () async{
                     SelectQ = QuizQ_List().list[QuesitonNum]!.Select4;
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                QuizA_000(QuesitonNum, SelectQ)));
+                    myFavariteFlg = await QuizStatusDb().setFavoriteFlg(QuesitonNum);
+                    //toString()で型変換をできる。
+                    bool? result = await Navigator.push(
+                      context,
+                      new MaterialPageRoute<bool>(
+                        builder: (BuildContext context) => QuizA_000(QuesitonNum, SelectQ,myFavariteFlg),
+                      ),
+                    );
+                    if (result!) {
+                      setState(() {
+                      });
+                    }
                   },
                 ),
               ),

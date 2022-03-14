@@ -98,7 +98,7 @@ class _Favorite extends State<Favorite> {
                                       bool? result = await Navigator.push(
                                           context,
                                         new MaterialPageRoute<bool>(
-                                          builder: (BuildContext context) => QuizQ_000(quizStatusList[index].problemId,quizStatusList[index].favoriteFlg),
+                                          builder: (BuildContext context) => QuizQ_000(quizStatusList[index].problemId),
                                       ),);
                                       if (result!) {
                                         setState(() {
