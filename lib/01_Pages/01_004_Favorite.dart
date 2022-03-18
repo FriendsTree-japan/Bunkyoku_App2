@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
 import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
 import '../02_Class/02_06_QuizStatus.dart';
-import 'package:bunkyoku_app2/03_Unity/03_01_SqliteDb.dart';
+import 'package:bunkyoku_app2/03_Unity/03_02_SqliteDb.dart';
 
 class Favorite extends StatefulWidget {
   @override
@@ -98,7 +98,7 @@ class _Favorite extends State<Favorite> {
                                       bool? result = await Navigator.push(
                                           context,
                                         new MaterialPageRoute<bool>(
-                                          builder: (BuildContext context) => QuizQ_000(quizStatusList[index].problemId,quizStatusList[index].favoriteFlg),
+                                          builder: (BuildContext context) => QuizQ_000(quizStatusList[index].problemId),
                                       ),);
                                       if (result!) {
                                         setState(() {

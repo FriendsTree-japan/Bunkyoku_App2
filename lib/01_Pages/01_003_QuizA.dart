@@ -1,14 +1,17 @@
+import 'package:bunkyoku_app2/01_Pages/01_002_QuizQ.dart';
+import 'package:bunkyoku_app2/02_Class/02_02_QuizQ.dart';
 import 'package:flutter/material.dart';
 import 'package:bunkyoku_app2/02_Class/02_03_QuizA.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
 import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
-import 'package:bunkyoku_app2/03_Unity/03_01_SqliteDb.dart';
+import 'package:bunkyoku_app2/03_Unity/03_02_SqliteDb.dart';
 
 class QuizA_000 extends StatefulWidget {
   late final String QuesitonNum;
   late final String selectQ;
+  late String myFavariteFlg;
 
-  QuizA_000(this.QuesitonNum, this.selectQ);
+  QuizA_000(this.QuesitonNum, this.selectQ, this.myFavariteFlg);
 
   @override
   State<QuizA_000> createState() => _QuizA_000();
@@ -17,6 +20,10 @@ class QuizA_000 extends StatefulWidget {
 class _QuizA_000 extends State<QuizA_000> {
   late final String QuesitonNum = widget.QuesitonNum;
   late final String selectQ = widget.selectQ;
+  String _questionNum = '';
+  int _intNextQuestionNum = 0;
+  String _nextQuestionNum = '';
+  late String myFavariteFlg = widget.myFavariteFlg;
 
   Widget _buildChild() {
     if (selectQ == QuizA_List().list[QuesitonNum]!.Answer) {
@@ -26,12 +33,84 @@ class _QuizA_000 extends State<QuizA_000> {
     return Text('不正解', style: TextStyle(fontSize: 24));
   }
 
+  Widget _buildNextPageContainer(String problemId,String myFavariteFlg) {
+    String myFavariteFlg = '0';
+    //★状態を見たいので一旦「２」にしているがリリース時には「１００」に変更すること！
+    if (problemId != "2") {
+      return Container(
+        height: 50,
+        width: 240,
+        decoration: BoxDecoration(boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            spreadRadius: 2,
+            blurRadius: 20,
+            offset: Offset(0, 6),
+          )
+        ]),
+        child: OutlinedButton(
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'Next ',
+                    textAlign: TextAlign.center,
+                    style:
+                    TextStyle(color: ColorConfig.Blue, fontSize: 24),
+                  ),
+                  Text(
+                    '>',
+                    textAlign: TextAlign.center,
+                    style:
+                    TextStyle(color: ColorConfig.Blue, fontSize: 40),
+                  ),
+                ]),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.white,
+              side: BorderSide(color: ColorConfig.Blue),
+              onPrimary: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+
+              // radius: BorderRadius.circular(40),
+            ),
+            onPressed: () async {
+              _questionNum = QuesitonNum;
+              // print(_questionNum.runtimeType);
+              _intNextQuestionNum = int.parse(_questionNum) + 1;
+              // print(_intNextQuestionNum.runtimeType);
+              _nextQuestionNum = _intNextQuestionNum.toString();
+
+              QuizStatusDb().updateFlg(
+                  QuizA_List().list[QuesitonNum]!.QID, 'unanwer');
+              bool? result = await Navigator.push(
+                context,
+                new MaterialPageRoute<bool>(
+                  //とりあえずmyFavariteFlgは１にしておく（→ゆーすけ）
+                  builder: (BuildContext context) =>
+                      QuizQ_000(_nextQuestionNum),
+                ),
+              );
+            }
+        ),
+      );
+    } else {
+      //問題番号が１００の時は、「次へ」を表示しない。
+      return Container(child:Text(''));
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     ColorConfig().init(context);
     BasePaddingConfig().init(context);
     QuizSelectButtonSizeConfig().init(context);
+    Future<String> correctCount = QuizStatusDb().getCorrectCount();
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -53,14 +132,55 @@ class _QuizA_000 extends State<QuizA_000> {
                 ),
               ],
             ),
-            onPressed: () => Navigator.pop(context,true),
+            onPressed: () => Navigator.pop(context, true),
           ),
-          title: Row(
-            children: [
-              Text('3'),
-              Text('/100'),
-            ],
-          ),
+          title: FutureBuilder(
+              future: correctCount,
+              builder: (BuildContext context,
+                  AsyncSnapshot<String> snapshot){
+                if (snapshot.connectionState != ConnectionState.done){
+                  return new Align(
+                      child: Center(
+                        child: new CircularProgressIndicator(),
+                      ));
+                }else if (snapshot.hasError) {
+                  return new Text('Error: ${snapshot.error!}');
+                }else if (snapshot.hasData){
+                  String? correctCount = snapshot.data;
+                  return RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(text: " $correctCount ",style: TextStyle(fontSize: 25),),
+                        TextSpan(text: "/100",style: TextStyle(fontSize: 18),)],
+                    ),
+                  );
+                }else{
+                  return Text("データが存在しません");
+                }
+              }),
+          actions: [
+            IconButton(
+              icon: Icon(
+                Icons.bookmark_outlined,
+                color: myFavariteFlg == '0' ? Colors.white : Colors.yellow,
+              ),
+              onPressed: () async {
+                if(myFavariteFlg == '0') {
+                  QuizStatusDb().updateFavoriteFlg(
+                      QuizA_List().list[QuesitonNum]!.QID, '1');
+                }else{
+                  QuizStatusDb().updateFavoriteFlg(
+                      QuizA_List().list[QuesitonNum]!.QID, '0');
+                }
+                myFavariteFlg = await QuizStatusDb().setFavoriteFlg(QuesitonNum);
+                //①QuizStatusクラスのproblemIdに、QuizQ_List().list[QuesitonNum]!.QID,を入れる
+                //※このときすでにデータがあれば更新処理は実施しないように制御する。
+                //②QuizStatusクラスのfavoriteFlgが0であれば1、1であれば0を代入する
+                setState(() {
+                });
+              },
+            ),
+          ],
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: ColorConfig.Blue,
         ),
@@ -141,58 +261,7 @@ class _QuizA_000 extends State<QuizA_000> {
               ),
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Container(
-                height: 50,
-                width: 240,
-                decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        spreadRadius: 2,
-                        blurRadius: 20,
-                        offset: Offset(0, 6),
-                      )
-                    ]
-                ),
-                child: OutlinedButton(
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Next ',
-                          textAlign: TextAlign.center,
-                          style:
-                              TextStyle(color: ColorConfig.Blue, fontSize: 24),
-                        ),
-                        Text(
-                          '>',
-                          textAlign: TextAlign.center,
-                          style:
-                              TextStyle(color: ColorConfig.Blue, fontSize: 40),
-                        ),
-                      ]),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    side: BorderSide(color: ColorConfig.Blue),
-                    onPrimary: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-
-                    // radius: BorderRadius.circular(40),
-                  ),
-                  onPressed: () {
-                    QuizStatusDb().updateFlg(QuizA_List().list[QuesitonNum]!.QID, 'unanwer');
-                    //★正解フラグや解答フラグを更新する処理を追加が必要
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) =>
-                    //             QuizA_000()));
-                  },
-                ),
-              ),
+              _buildNextPageContainer(QuesitonNum,'1')
             ],
           ),
         ),

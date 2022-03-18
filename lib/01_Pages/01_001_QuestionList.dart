@@ -1,5 +1,5 @@
 import 'package:bunkyoku_app2/02_Class/02_06_QuizStatus.dart';
-import 'package:bunkyoku_app2/03_Unity/03_01_SqliteDb.dart';
+import 'package:bunkyoku_app2/03_Unity/03_02_SqliteDb.dart';
 import 'package:flutter/material.dart';
 import 'package:bunkyoku_app2/01_Pages/01_002_QuizQ.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
@@ -38,12 +38,11 @@ class _QuizeListState extends State<QuizeList> {
               onPressed: () async{
                 //String _questionNum = '$i';
                 _questionNum = _problemId;
-                myFavariteFlg = await QuizStatusDb().setFavoriteFlg(_questionNum);
                 //toString()で型変換をできる。
                 bool? result = await Navigator.push(
                   context,
                   new MaterialPageRoute<bool>(
-                    builder: (BuildContext context) => QuizQ_000(_questionNum,myFavariteFlg),
+                    builder: (BuildContext context) => QuizQ_000(_questionNum),
                   ),
                 );
                 if (result!) {
@@ -87,14 +86,13 @@ class _QuizeListState extends State<QuizeList> {
               style: TextStyle(color: ColorConfig.Black),
             ),
             onPressed: () async{
-              myFavariteFlg = await QuizStatusDb().setFavoriteFlg(_questionNum);
               //String _questionNum = '$i';
               _questionNum = problemId;
               //toString()で型変換をできる。
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => QuizQ_000(_questionNum,myFavariteFlg),
+                  builder: (BuildContext context) => QuizQ_000(_questionNum),
                 ),
               );
             },
@@ -117,12 +115,11 @@ class _QuizeListState extends State<QuizeList> {
             onPressed: () async{
               //String _questionNum = '$i';
               _questionNum = problemId;
-              myFavariteFlg = await QuizStatusDb().setFavoriteFlg(_questionNum);
               //toString()で型変換をできる。
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (BuildContext context) => QuizQ_000(_questionNum,myFavariteFlg),
+                  builder: (BuildContext context) => QuizQ_000(_questionNum),
                 ),
               );
             },
@@ -132,13 +129,16 @@ class _QuizeListState extends State<QuizeList> {
     }
   }
 
-  Future<List<QuizStatus>> result = QuizStatusDb().getDataList();
+
 
   @override
   Widget build(BuildContext context) {
+    Future<List<QuizStatus>> result = QuizStatusDb().getDataList();
     QuizListSizeConfig().init(context);
     SizeConfig().init(context);
     ColorConfig().init(context);
+    Future<String> correctCount = QuizStatusDb().getCorrectCount();
+
     return Scaffold(
       appBar: AppBar(
         title: Text('文京区アプリ'),
@@ -148,24 +148,36 @@ class _QuizeListState extends State<QuizeList> {
         children: [
           Column(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    child: Text('3', style: TextStyle(fontSize: 28)),
-                  ),
-                  Container(
-                    child: Text('/100', style: TextStyle(fontSize: 18)),
-                  ),
-                ],
-              ),
+              FutureBuilder(
+                  future: correctCount,
+                  builder: (BuildContext context,
+                      AsyncSnapshot<String> snapshot){
+                    if (snapshot.connectionState != ConnectionState.done){
+                      return new Align(
+                          child: Center(
+                            child: new CircularProgressIndicator(),
+                          ));
+                    }else if (snapshot.hasError) {
+                      return new Text('Error: ${snapshot.error!}');
+                    }else if (snapshot.hasData){
+                      String? correctCount = snapshot.data;
+                      return RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(text: " $correctCount ",style: TextStyle(fontSize: 25,color: ColorConfig.Black),),
+                            TextSpan(text: "/100",style: TextStyle(fontSize: 13,color: ColorConfig.Black),)],
+                        ),
+                      );
+                    }else{
+                      return Text("データが存在しません");
+                    }
+                  }),
               Container(
                 child: Text('がんばれ〜', style: TextStyle(fontSize: 20)),
               ),
             ],
           ),
-          FutureBuilder(
+          FutureBuilder (
               future: result,
               builder: (BuildContext context,
                   AsyncSnapshot<List<QuizStatus>> snapshot) {
@@ -192,40 +204,11 @@ class _QuizeListState extends State<QuizeList> {
                         //カラム数
                         shrinkWrap: true,
                         itemCount: quizList.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          return _buildQuizListContainer(
+                        itemBuilder: (BuildContext context, int index){
+                          return _buildQuizListContainer (
                               quizList[index].problemId,
                               quizList[index].correctFlg,
                               quizList[index].unansweredFlg);
-                          //   Container(
-                          //   alignment: Alignment.center,
-                          //   width: QuizListSizeConfig.containerHeightSize,
-                          //   height: QuizListSizeConfig.containerWidthSize,
-                          //   decoration: BoxDecoration(
-                          //     color: quizList[index].correctFlg == "1"
-                          //         ? ColorConfig.Gray
-                          //         : ColorConfig.Blue,
-                          //     borderRadius: BorderRadius.circular(10),
-                          //   ),
-                          //   child: TextButton(
-                          //     child: Text(
-                          //       quizList[index].problemId,
-                          //       style: TextStyle(color: Colors.white),
-                          //     ),
-                          //     onPressed: () {
-                          //       //String _questionNum = '$i';
-                          //       _questionNum = quizList[index].problemId;
-                          //       //toString()で型変換をできる。
-                          //       Navigator.push(
-                          //         context,
-                          //         MaterialPageRoute(
-                          //           builder: (BuildContext context) =>
-                          //               QuizQ_000(_questionNum),
-                          //         ),
-                          //       );
-                          //     },
-                          //   ),
-                          // );
                         }),
                   );
                 } else {
