@@ -9,7 +9,7 @@ import '03_01_SharedPreferences.dart';
 class QuizStatusDb {
   static int userMaxQuizQidValue = 0;
   //問題追加時に必ず更新する必要がある
-  static int maxQuizQidValue = 130;
+  static int maxQuizQidValue = 150;
 
   Future<void> createData() async {
     debugPrint("createData start");

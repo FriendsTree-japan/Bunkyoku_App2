@@ -6,10 +6,13 @@ import '03_Unity/03_01_SharedPreferences.dart';
 import '03_Unity/03_02_SqliteDb.dart';
 import '01_Pages/01_001_QuestionList.dart';
 import '01_Pages/01_005_Setting.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+
 
 
 void main()async{
   WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
   await SharedPrefs.setInstance();
   await checkFirstLogin();
   runApp(MyApp());
