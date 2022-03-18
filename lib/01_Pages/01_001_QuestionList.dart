@@ -183,7 +183,7 @@ class _QuizeListState extends State<QuizeList> {
                     child: GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           mainAxisSpacing: 20,
-                          crossAxisSpacing: 16.0,
+                          crossAxisSpacing: 13.0,
                           childAspectRatio: 1,
                           crossAxisCount: 3,
                         ),
