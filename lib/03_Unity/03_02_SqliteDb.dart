@@ -7,6 +7,10 @@ import 'package:flutter/cupertino.dart';
 import '03_01_SharedPreferences.dart';
 
 class QuizStatusDb {
+  static int userMaxQuizQidValue = 0;
+  //問題追加時に必ず更新する必要がある
+  static int maxQuizQidValue = 130;
+
   Future<void> createData() async {
     debugPrint("createData start");
     String dbPath = await getDatabasesPath();
@@ -22,7 +26,7 @@ class QuizStatusDb {
     String? firstLoginFlg = SharedPrefs.getFirstLoginFlg();
 
     if (firstLoginFlg == "0") {
-      for (int i = 1; i <= 100; i++) {
+      for (int i = 1; i <= maxQuizQidValue; i++) {
         String query =
             'INSERT INTO quizStatus(problemId,unansweredFlg, correctFlg, favoriteFlg) '
             'VALUES($i,"0", "0", "0")';
@@ -34,6 +38,28 @@ class QuizStatusDb {
       await SharedPrefs.setFirstLoginFlg("1");
     }
   }
+
+  Future<void> updateData() async {
+    debugPrint("updateData start");
+    String dbPath = await getDatabasesPath();
+    String path = join(dbPath, "quizStatus.db");
+    final database = await openDatabase(
+      path,
+      version: 1,
+    );
+    int userMaxQuizQidValueNext = userMaxQuizQidValue + 1 ;
+      for (int i = userMaxQuizQidValueNext; i <= maxQuizQidValue; i++) {
+        String query =
+            'INSERT INTO quizStatus(problemId,unansweredFlg, correctFlg, favoriteFlg) '
+            'VALUES($i,"0", "0", "0")';
+        await database.transaction((txn) async {
+          int id = await txn.rawInsert(query);
+          print("insert: $i");
+        });
+      debugPrint("updateData end");
+    }
+  }
+
 
   //データ選択(List表示)お気に入り
   Future<List<QuizStatus>> getFavoriteDataList() async {
@@ -191,5 +217,19 @@ class QuizStatusDb {
     quizCorrecSCnt = quizCorrecSelectCnt[0]['CorrectCnt'].toString();
     print(quizCorrecSCnt.runtimeType);
     return Future.value(quizCorrecSCnt);
+  }
+  //現在の問題数の取得
+  Future<void> getMaxQuizQid() async {
+    String dbPath = await getDatabasesPath();
+    String path = join(dbPath, "quizStatus.db");
+    final database = await openDatabase(
+      path,
+      version: 1,
+    );
+    final Database db = await database;
+    final List<Map<String, dynamic>> getMaxQuizQid;
+    getMaxQuizQid = await db.rawQuery(
+        'SELECT max(problemId) as maxQuizQidValue FROM quizStatus');
+    userMaxQuizQidValue = getMaxQuizQid[0]['maxQuizQidValue'];
   }
 }

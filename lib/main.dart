@@ -16,9 +16,15 @@ void main()async{
 }
 Future<void>checkFirstLogin() async{
   String? firstLoginFlg = SharedPrefs.getFirstLoginFlg();
+  await QuizStatusDb().getMaxQuizQid();
+
   if(firstLoginFlg == ''){
     await SharedPrefs.setFirstLoginFlg("0");
     await QuizStatusDb().createData();
+  }else{
+    if(QuizStatusDb.userMaxQuizQidValue < QuizStatusDb.maxQuizQidValue){
+      await QuizStatusDb().updateData();
+    }
   }
 }
 
