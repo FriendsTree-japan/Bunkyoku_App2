@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '01_Pages/01_004_Favorite.dart';
 import '02_Class/02_04_Size.dart';
 import '02_Class/02_05_Color.dart';
@@ -10,6 +11,7 @@ import '01_Pages/01_005_Setting.dart';
 
 void main()async{
   WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
   await SharedPrefs.setInstance();
   await checkFirstLogin();
   runApp(MyApp());

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:bunkyoku_app2/01_Pages/01_003_QuizA.dart';
 import 'package:bunkyoku_app2/02_Class/02_02_QuizQ.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
 import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
 import 'package:bunkyoku_app2/03_Unity/03_02_SqliteDb.dart';
+import 'package:bunkyoku_app2/99_Others/99_01_GoogleAdmob.dart';
 
 class QuizQ_000 extends StatefulWidget {
   late final String QuesitonNum;
-
 
   QuizQ_000(this.QuesitonNum);
   @override
@@ -19,6 +20,20 @@ class _QuizQ_000 extends State<QuizQ_000> {
   late String SelectQ = '';
   late String myFavariteFlg = "0";
   late String correctCount = '';
+  InterstitialAd? _interstitialAd;
+  AdInterstitial adInterstitial = new AdInterstitial();
+
+  @override
+  void initState() {
+    super.initState();
+    adInterstitial.createAd();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _interstitialAd?.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -292,6 +307,34 @@ class _QuizQ_000 extends State<QuizQ_000> {
                       setState(() {
                       });
                     }
+                  },
+                ),
+              ),
+              Padding(
+                  padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+              Container(
+                height: QuizSelectButtonSizeConfig.height,
+                width: QuizSelectButtonSizeConfig.width,
+                decoration: BoxDecoration(boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    spreadRadius: 2,
+                    blurRadius: 10,
+                    offset: Offset(0, 6),
+                  )
+                ]),
+                child: OutlinedButton(
+                  child: Text(
+                    'Google広告を表示する'
+                    ,style: TextStyle(color: ColorConfig.Blue, fontSize: 24),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    side: BorderSide(color: ColorConfig.Blue),
+                    onPrimary: Colors.white,
+                  ),
+                  onPressed: () {
+                    adInterstitial.showAd();
                   },
                 ),
               ),
