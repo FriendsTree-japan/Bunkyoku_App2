@@ -236,11 +236,11 @@ class _QuizA_000 extends State<QuizA_000> {
                 alignment: Alignment.center,
                 height: 169.0,
                 width: 256.0,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.green,
-                  ),
-                ),
+                // decoration: BoxDecoration(
+                //   border: Border.all(
+                //     color: Colors.green,
+                //   ),
+                // ),
                 child: Image.asset(QuizA_List().list[QuesitonNum]!.Picture),
               ),
               Padding(
