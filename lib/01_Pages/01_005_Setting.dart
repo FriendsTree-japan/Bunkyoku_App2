@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/services.dart';
+import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
 import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
 import 'package:bunkyoku_app2/03_Unity/03_03_UrlMove.dart';
+import 'package:bunkyoku_app2/99_Others/99_02_RevenueCat.dart';
 
 class Setting extends StatefulWidget {
   @override
@@ -28,7 +31,16 @@ class _SettingState extends State<Setting> {
             style: TextButton.styleFrom(
               textStyle: const TextStyle(fontSize: 20),
             ),
-            onPressed: () {},
+            onPressed: () {
+              // Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
+              //         builder: (context) =>
+              //             PurchaseButton(
+              //               package: noAdsPackage,
+              //               label: '広告を削除',
+              //             )));
+            },
             child: const Text('広告をやめる' ,style: TextStyle(color: Colors.black)),
           ),
           TextButton(
