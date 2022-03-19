@@ -7,8 +7,6 @@ import '03_Unity/03_01_SharedPreferences.dart';
 import '03_Unity/03_02_SqliteDb.dart';
 import '01_Pages/01_001_QuestionList.dart';
 import '01_Pages/01_005_Setting.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-
 
 void main()async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,12 +17,13 @@ void main()async{
 }
 Future<void>checkFirstLogin() async{
   String? firstLoginFlg = SharedPrefs.getFirstLoginFlg();
-  await QuizStatusDb().getMaxQuizQid();
+  print(firstLoginFlg);
 
-  if(firstLoginFlg == ''){
+  if(firstLoginFlg == ''|| firstLoginFlg == '0'){
     await SharedPrefs.setFirstLoginFlg("0");
     await QuizStatusDb().createData();
   }else{
+    await QuizStatusDb().getMaxQuizQid();
     if(QuizStatusDb.userMaxQuizQidValue < QuizStatusDb.maxQuizQidValue){
       await QuizStatusDb().updateData();
     }

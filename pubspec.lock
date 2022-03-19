@@ -212,13 +212,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.4"
-  purchases_flutter:
-    dependency: "direct main"
-    description:
-      name: purchases_flutter
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.4.3"
   shared_preferences:
     dependency: "direct main"
     description:

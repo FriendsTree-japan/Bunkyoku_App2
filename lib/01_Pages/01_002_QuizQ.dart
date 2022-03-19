@@ -312,32 +312,32 @@ class _QuizQ_000 extends State<QuizQ_000> {
               ),
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Container(
-                height: QuizSelectButtonSizeConfig.height,
-                width: QuizSelectButtonSizeConfig.width,
-                decoration: BoxDecoration(boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
-                    spreadRadius: 2,
-                    blurRadius: 10,
-                    offset: Offset(0, 6),
-                  )
-                ]),
-                child: OutlinedButton(
-                  child: Text(
-                    'Google広告を表示する'
-                    ,style: TextStyle(color: ColorConfig.Blue, fontSize: 24),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    side: BorderSide(color: ColorConfig.Blue),
-                    onPrimary: Colors.white,
-                  ),
-                  onPressed: () {
-                    adInterstitial.showAd();
-                  },
-                ),
-              ),
+              // Container(
+              //   height: QuizSelectButtonSizeConfig.height,
+              //   width: QuizSelectButtonSizeConfig.width,
+              //   decoration: BoxDecoration(boxShadow: [
+              //     BoxShadow(
+              //       color: Colors.black.withOpacity(0.2),
+              //       spreadRadius: 2,
+              //       blurRadius: 10,
+              //       offset: Offset(0, 6),
+              //     )
+              //   ]),
+              //   child: OutlinedButton(
+              //     child: Text(
+              //       'Google広告を表示する'
+              //       ,style: TextStyle(color: ColorConfig.Blue, fontSize: 24),
+              //     ),
+              //     style: ElevatedButton.styleFrom(
+              //       primary: Colors.white,
+              //       side: BorderSide(color: ColorConfig.Blue),
+              //       onPrimary: Colors.white,
+              //     ),
+              //     onPressed: () {
+              //       adInterstitial.showAd();
+              //     },
+              //   ),
+              // ),
             ],
           ),
         ),

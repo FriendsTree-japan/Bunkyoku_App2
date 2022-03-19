@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/services.dart';
-import 'package:purchases_flutter/purchases_flutter.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
 import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
 import 'package:bunkyoku_app2/03_Unity/03_03_UrlMove.dart';
-import 'package:bunkyoku_app2/99_Others/99_02_RevenueCat.dart';
 
 class Setting extends StatefulWidget {
   @override
