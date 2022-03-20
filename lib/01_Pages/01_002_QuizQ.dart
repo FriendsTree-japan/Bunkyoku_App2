@@ -89,12 +89,9 @@ class _QuizQ_000 extends State<QuizQ_000> {
                         return new Text('Error: ${snapshot.error!}');
                       }else if (snapshot.hasData){
                         String? correctCount = snapshot.data;
-                        return RichText(
-                          text: TextSpan(
-                            children: [
-                              TextSpan(text: " $correctCount ",style: TextStyle(fontSize: 25),),
-                              TextSpan(text: "/100",style: TextStyle(fontSize: 18),)],
-                          ),
+                        return Text('No.' + QuizQ_List().list[QuesitonNum]!.QID,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 24),
                         );
                       }else{
                         return Text("データが存在しません");
@@ -103,36 +100,31 @@ class _QuizQ_000 extends State<QuizQ_000> {
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: ColorConfig.Blue,
         ),
+        backgroundColor: ColorConfig.SkyBlue,
         body: Center(
           child: Column(
             children: [
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Container(
-                height: 37,
-                width: 80,
-                decoration: BoxDecoration(
-                  border: Border.all(color: ColorConfig.Blue),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Container(
-                  alignment: Alignment.center,
-                  child: Text(
-                    'No.' + QuizQ_List().list[QuesitonNum]!.QID,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 24),
-                  ),
-                  //QestionList()でインスタンス化
-                ),
-              ),
+              // Container(
+              //   height: 37,
+              //   width: 80,
+              //   decoration: BoxDecoration(
+              //     border: Border.all(color: ColorConfig.Blue),
+              //     borderRadius: BorderRadius.circular(10),
+              //   ),
+              //   child: Container(
+              //     alignment: Alignment.center,
+              //     child: Text(
+              //       'No.' + QuizQ_List().list[QuesitonNum]!.QID,
+              //       textAlign: TextAlign.center,
+              //       style: TextStyle(fontSize: 24),
+              //     ),
+              //     //QestionList()でインスタンス化
+              //   ),
+              // ),
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Container(
-                child: Text(
-                  '問題',
-                  style: TextStyle(fontSize: 32),
-                ),
-              ),
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
               Container(
@@ -153,7 +145,7 @@ class _QuizQ_000 extends State<QuizQ_000> {
                 child: Text(
                   QuizQ_List().list[QuesitonNum]!.problem,
                   style: TextStyle(fontSize: 16),
-                  textAlign: TextAlign.center,
+                  textAlign: TextAlign.left,
                 ),
               ),
               Padding(
@@ -161,14 +153,6 @@ class _QuizQ_000 extends State<QuizQ_000> {
               Container(
                 height: QuizSelectButtonSizeConfig.height,
                 width: QuizSelectButtonSizeConfig.width,
-                decoration: BoxDecoration(boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
-                    spreadRadius: 2,
-                    blurRadius: 10,
-                    offset: Offset(0, 6),
-                  )
-                ]),
                 child: OutlinedButton(
                   child: Text(
                     QuizQ_List().list[QuesitonNum]!.Select1,
@@ -208,14 +192,6 @@ class _QuizQ_000 extends State<QuizQ_000> {
               Container(
                 height: QuizSelectButtonSizeConfig.height,
                 width: QuizSelectButtonSizeConfig.width,
-                decoration: BoxDecoration(boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
-                    spreadRadius: 2,
-                    blurRadius: 10,
-                    offset: Offset(0, 6),
-                  )
-                ]),
                 child: OutlinedButton(
                   child: Text(
                     QuizQ_List().list[QuesitonNum]!.Select2,
@@ -255,14 +231,6 @@ class _QuizQ_000 extends State<QuizQ_000> {
               Container(
                 height: QuizSelectButtonSizeConfig.height,
                 width: QuizSelectButtonSizeConfig.width,
-                decoration: BoxDecoration(boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
-                    spreadRadius: 2,
-                    blurRadius: 10,
-                    offset: Offset(0, 6),
-                  )
-                ]),
                 child: OutlinedButton(
                   child: Text(
                     QuizQ_List().list[QuesitonNum]!.Select3,
@@ -302,14 +270,6 @@ class _QuizQ_000 extends State<QuizQ_000> {
               Container(
                 height: QuizSelectButtonSizeConfig.height,
                 width: QuizSelectButtonSizeConfig.width,
-                decoration: BoxDecoration(boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
-                    spreadRadius: 2,
-                    blurRadius: 10,
-                    offset: Offset(0, 6),
-                  )
-                ]),
                 child: OutlinedButton(
                   child: Text(
                     QuizQ_List().list[QuesitonNum]!.Select4,
@@ -346,32 +306,6 @@ class _QuizQ_000 extends State<QuizQ_000> {
               ),
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              // Container(
-              //   height: QuizSelectButtonSizeConfig.height,
-              //   width: QuizSelectButtonSizeConfig.width,
-              //   decoration: BoxDecoration(boxShadow: [
-              //     BoxShadow(
-              //       color: Colors.black.withOpacity(0.2),
-              //       spreadRadius: 2,
-              //       blurRadius: 10,
-              //       offset: Offset(0, 6),
-              //     )
-              //   ]),
-              //   child: OutlinedButton(
-              //     child: Text(
-              //       'Google広告を表示する'
-              //       ,style: TextStyle(color: ColorConfig.Blue, fontSize: 24),
-              //     ),
-              //     style: ElevatedButton.styleFrom(
-              //       primary: Colors.white,
-              //       side: BorderSide(color: ColorConfig.Blue),
-              //       onPrimary: Colors.white,
-              //     ),
-              //     onPressed: () {
-              //       adInterstitial.showAd();
-              //     },
-              //   ),
-              // ),
             ],
           ),
         ),

@@ -57,9 +57,9 @@ class _HomePageState extends State<HomePage>
 
   List<BottomNavigationBarItem> myBottomNavBarItems() {
     return [
-      BottomNavigationBarItem(icon: Icon(Icons.home),label: "クイズ一覧"),
-      BottomNavigationBarItem(icon: Icon(Icons.bookmark_outlined),label: "お気に入り"),
-      BottomNavigationBarItem(icon: Icon(Icons.settings),label: "設定"),
+      BottomNavigationBarItem(icon: Icon(Icons.home_outlined),label: "ホーム"),
+      BottomNavigationBarItem(icon: Icon(Icons.bookmark_outline_outlined ),label: "お気に入り"),
+      BottomNavigationBarItem(icon: Icon(Icons.settings_outlined),label: "設定"),
     ];
   }
 

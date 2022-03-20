@@ -22,39 +22,11 @@ class _SettingState extends State<Setting> {
         backgroundColor: ColorConfig.Blue,
         automaticallyImplyLeading: false,
       ),
+      backgroundColor: ColorConfig.SkyBlue,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          TextButton(
-            style: TextButton.styleFrom(
-              textStyle: const TextStyle(fontSize: 20),
-            ),
-            onPressed: () {
-              // Navigator.push(
-              //     context,
-              //     MaterialPageRoute(
-              //         builder: (context) =>
-              //             PurchaseButton(
-              //               package: noAdsPackage,
-              //               label: '広告を削除',
-              //             )));
-            },
-            child: const Text('広告をやめる' ,style: TextStyle(color: Colors.black)),
-          ),
-          TextButton(
-            style: TextButton.styleFrom(
-              textStyle: const TextStyle(fontSize: 20),
-            ),
-            onPressed: () {
-              showLicensePage(
-                context: context,
-                applicationName: '文京区クイズアプリ',
-                applicationVersion: '1.0.0',
-              );
-            },
-            child: const Text('ライセンス',style: TextStyle(color: Colors.black)),
-          ),
           TextButton(
             style: TextButton.styleFrom(
               textStyle: const TextStyle(fontSize: 20),
@@ -80,11 +52,24 @@ class _SettingState extends State<Setting> {
               textStyle: const TextStyle(fontSize: 20),
             ),
             onPressed: () {
-              UrlMove().UrlMoving('https://dented-handball-204.notion.site/0fe2fc1cf0ca465abdb85616658c9106');
+              UrlMove().UrlMoving('https://twitter.com/StreeFriend?t=dyuXC4141UOl_52xV8X2dw&s=06');
               //'https://dented-handball-204.notion.site/0fe2fc1cf0ca465abdb85616658c9106'
               // _FriendsTreeURL();
             },
             child: const Text('Follow us!!',style: TextStyle(color: Colors.black)),
+          ),
+          TextButton(
+            style: TextButton.styleFrom(
+              textStyle: const TextStyle(fontSize: 20),
+            ),
+            onPressed: () {
+              showLicensePage(
+                context: context,
+                applicationName: '文京区クイズアプリ',
+                applicationVersion: '1.0.0',
+              );
+            },
+            child: const Text('ライセンス',style: TextStyle(color: Colors.black)),
           ),
         ],
       ),

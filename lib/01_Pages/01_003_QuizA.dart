@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:bunkyoku_app2/main.dart';
 import 'package:bunkyoku_app2/01_Pages/01_002_QuizQ.dart';
@@ -7,8 +6,6 @@ import 'package:bunkyoku_app2/02_Class/02_03_QuizA.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
 import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
 import 'package:bunkyoku_app2/03_Unity/03_02_SqliteDb.dart';
-
-
 
 class QuizA_000 extends StatefulWidget {
   late final String QuesitonNum;
@@ -32,18 +29,17 @@ class _QuizA_000 extends State<QuizA_000> {
   Widget _viewCorrectWrong() {
     if (selectQ == QuizA_List().list[QuesitonNum]!.Answer) {
       QuizStatusDb().updateFlg(QuizA_List().list[QuesitonNum]!.QID, 'correct');
-      return Text('正解', style: TextStyle(fontSize: 24));
+      return Text('○', style: TextStyle(fontSize: 50,color: Colors.red));
     }
     return Text('不正解', style: TextStyle(fontSize: 24));
   }
 
   Widget _buildSelectedContainer1() {
-    if (QuizQ_List().list[QuesitonNum]!.Select1 == QuizA_List().list[QuesitonNum]!.Answer) {
+    if (QuizQ_List().list[QuesitonNum]!.Select1 ==
+        QuizA_List().list[QuesitonNum]!.Answer) {
       return Column(
         children: [
-          Padding(
-              padding:
-              EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+          Padding(padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
           Container(
             height: QuizSelectButtonSizeConfig.height,
             width: QuizSelectButtonSizeConfig.width,
@@ -62,67 +58,62 @@ class _QuizA_000 extends State<QuizA_000> {
           ),
         ],
       );
-    }else{
-      if(selectQ == QuizQ_List().list[QuesitonNum]!.Select1) {
-        return
-          Column(
-            children: [
-              Padding(
-                  padding:
-                  EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Container(
-                height: QuizSelectButtonSizeConfig.height,
-                width: QuizSelectButtonSizeConfig.width,
-                decoration: BoxDecoration(
-                  color: ColorConfig.DarkGray,
-                  border: Border.all(color: ColorConfig.DarkGray),
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                child: Container(
-                  child: Text(
-                    QuizQ_List().list[QuesitonNum]!.Select1,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: ColorConfig.White, fontSize: 24),
-                  ),
+    } else {
+      if (selectQ == QuizQ_List().list[QuesitonNum]!.Select1) {
+        return Column(
+          children: [
+            Padding(
+                padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+            Container(
+              height: QuizSelectButtonSizeConfig.height,
+              width: QuizSelectButtonSizeConfig.width,
+              decoration: BoxDecoration(
+                color: ColorConfig.DarkGray,
+                border: Border.all(color: ColorConfig.DarkGray),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Container(
+                child: Text(
+                  QuizQ_List().list[QuesitonNum]!.Select1,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: ColorConfig.White, fontSize: 24),
                 ),
               ),
-            ],
-          );
-      }else{
-        return
-          Column(
-            children: [
-              Padding(
-                  padding:
-                  EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Container(
-                height: QuizSelectButtonSizeConfig.height,
-                width: QuizSelectButtonSizeConfig.width,
-                decoration: BoxDecoration(
-                  border: Border.all(color: ColorConfig.Blue),
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                child: Container(
-                  child: Text(
-                    QuizQ_List().list[QuesitonNum]!.Select1,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: ColorConfig.Black, fontSize: 24),
-                  ),
+            ),
+          ],
+        );
+      } else {
+        return Column(
+          children: [
+            Padding(
+                padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+            Container(
+              height: QuizSelectButtonSizeConfig.height,
+              width: QuizSelectButtonSizeConfig.width,
+              decoration: BoxDecoration(
+                border: Border.all(color: ColorConfig.Blue),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Container(
+                child: Text(
+                  QuizQ_List().list[QuesitonNum]!.Select1,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: ColorConfig.Black, fontSize: 24),
                 ),
               ),
-            ],
-          );
+            ),
+          ],
+        );
       }
     }
   }
 
   Widget _buildSelectedContainer2() {
-    if (QuizQ_List().list[QuesitonNum]!.Select2 == QuizA_List().list[QuesitonNum]!.Answer) {
+    if (QuizQ_List().list[QuesitonNum]!.Select2 ==
+        QuizA_List().list[QuesitonNum]!.Answer) {
       return Column(
         children: [
-          Padding(
-              padding:
-              EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+          Padding(padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
           Container(
             height: QuizSelectButtonSizeConfig.height,
             width: QuizSelectButtonSizeConfig.width,
@@ -141,67 +132,62 @@ class _QuizA_000 extends State<QuizA_000> {
           ),
         ],
       );
-    }else{
-      if(selectQ == QuizQ_List().list[QuesitonNum]!.Select2) {
-        return
-          Column(
-            children: [
-              Padding(
-                  padding:
-                  EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Container(
-                height: QuizSelectButtonSizeConfig.height,
-                width: QuizSelectButtonSizeConfig.width,
-                decoration: BoxDecoration(
-                  color: ColorConfig.DarkGray,
-                  border: Border.all(color: ColorConfig.DarkGray),
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                child: Container(
-                  child: Text(
-                    QuizQ_List().list[QuesitonNum]!.Select2,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: ColorConfig.White, fontSize: 24),
-                  ),
+    } else {
+      if (selectQ == QuizQ_List().list[QuesitonNum]!.Select2) {
+        return Column(
+          children: [
+            Padding(
+                padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+            Container(
+              height: QuizSelectButtonSizeConfig.height,
+              width: QuizSelectButtonSizeConfig.width,
+              decoration: BoxDecoration(
+                color: ColorConfig.DarkGray,
+                border: Border.all(color: ColorConfig.DarkGray),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Container(
+                child: Text(
+                  QuizQ_List().list[QuesitonNum]!.Select2,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: ColorConfig.White, fontSize: 24),
                 ),
               ),
-            ],
-          );
-      }else{
-        return
-          Column(
-            children: [
-              Padding(
-                  padding:
-                  EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Container(
-                height: QuizSelectButtonSizeConfig.height,
-                width: QuizSelectButtonSizeConfig.width,
-                decoration: BoxDecoration(
-                  border: Border.all(color: ColorConfig.Blue),
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                child: Container(
-                  child: Text(
-                    QuizQ_List().list[QuesitonNum]!.Select2,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: ColorConfig.Black, fontSize: 24),
-                  ),
+            ),
+          ],
+        );
+      } else {
+        return Column(
+          children: [
+            Padding(
+                padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+            Container(
+              height: QuizSelectButtonSizeConfig.height,
+              width: QuizSelectButtonSizeConfig.width,
+              decoration: BoxDecoration(
+                border: Border.all(color: ColorConfig.Blue),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Container(
+                child: Text(
+                  QuizQ_List().list[QuesitonNum]!.Select2,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: ColorConfig.Black, fontSize: 24),
                 ),
               ),
-            ],
-          );
+            ),
+          ],
+        );
       }
     }
   }
 
   Widget _buildSelectedContainer3() {
-    if (QuizQ_List().list[QuesitonNum]!.Select3 == QuizA_List().list[QuesitonNum]!.Answer) {
+    if (QuizQ_List().list[QuesitonNum]!.Select3 ==
+        QuizA_List().list[QuesitonNum]!.Answer) {
       return Column(
         children: [
-          Padding(
-              padding:
-              EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+          Padding(padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
           Container(
             height: QuizSelectButtonSizeConfig.height,
             width: QuizSelectButtonSizeConfig.width,
@@ -220,67 +206,62 @@ class _QuizA_000 extends State<QuizA_000> {
           ),
         ],
       );
-    }else{
-      if(selectQ == QuizQ_List().list[QuesitonNum]!.Select3) {
-        return
-          Column(
-            children: [
-              Padding(
-                  padding:
-                  EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Container(
-                height: QuizSelectButtonSizeConfig.height,
-                width: QuizSelectButtonSizeConfig.width,
-                decoration: BoxDecoration(
-                  color: ColorConfig.DarkGray,
-                  border: Border.all(color: ColorConfig.DarkGray),
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                child: Container(
-                  child: Text(
-                    QuizQ_List().list[QuesitonNum]!.Select3,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: ColorConfig.White, fontSize: 24),
-                  ),
+    } else {
+      if (selectQ == QuizQ_List().list[QuesitonNum]!.Select3) {
+        return Column(
+          children: [
+            Padding(
+                padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+            Container(
+              height: QuizSelectButtonSizeConfig.height,
+              width: QuizSelectButtonSizeConfig.width,
+              decoration: BoxDecoration(
+                color: ColorConfig.DarkGray,
+                border: Border.all(color: ColorConfig.DarkGray),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Container(
+                child: Text(
+                  QuizQ_List().list[QuesitonNum]!.Select3,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: ColorConfig.White, fontSize: 24),
                 ),
               ),
-            ],
-          );
-      }else{
-        return
-          Column(
-            children: [
-              Padding(
-                  padding:
-                  EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Container(
-                height: QuizSelectButtonSizeConfig.height,
-                width: QuizSelectButtonSizeConfig.width,
-                decoration: BoxDecoration(
-                  border: Border.all(color: ColorConfig.Blue),
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                child: Container(
-                  child: Text(
-                    QuizQ_List().list[QuesitonNum]!.Select3,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: ColorConfig.Black, fontSize: 24),
-                  ),
+            ),
+          ],
+        );
+      } else {
+        return Column(
+          children: [
+            Padding(
+                padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+            Container(
+              height: QuizSelectButtonSizeConfig.height,
+              width: QuizSelectButtonSizeConfig.width,
+              decoration: BoxDecoration(
+                border: Border.all(color: ColorConfig.Blue),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Container(
+                child: Text(
+                  QuizQ_List().list[QuesitonNum]!.Select3,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: ColorConfig.Black, fontSize: 24),
                 ),
               ),
-            ],
-          );
+            ),
+          ],
+        );
       }
     }
   }
 
   Widget _buildSelectedContainer4() {
-    if (QuizQ_List().list[QuesitonNum]!.Select4 == QuizA_List().list[QuesitonNum]!.Answer) {
+    if (QuizQ_List().list[QuesitonNum]!.Select4 ==
+        QuizA_List().list[QuesitonNum]!.Answer) {
       return Column(
         children: [
-          Padding(
-              padding:
-              EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+          Padding(padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
           Container(
             height: QuizSelectButtonSizeConfig.height,
             width: QuizSelectButtonSizeConfig.width,
@@ -299,56 +280,52 @@ class _QuizA_000 extends State<QuizA_000> {
           ),
         ],
       );
-    }else{
-      if(selectQ == QuizQ_List().list[QuesitonNum]!.Select4) {
-        return
-          Column(
-            children: [
-              Padding(
-                  padding:
-                  EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Container(
-                height: QuizSelectButtonSizeConfig.height,
-                width: QuizSelectButtonSizeConfig.width,
-                decoration: BoxDecoration(
-                  color: ColorConfig.DarkGray,
-                  border: Border.all(color: ColorConfig.DarkGray),
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                child: Container(
-                  child: Text(
-                    QuizQ_List().list[QuesitonNum]!.Select4,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: ColorConfig.White, fontSize: 24),
-                  ),
+    } else {
+      if (selectQ == QuizQ_List().list[QuesitonNum]!.Select4) {
+        return Column(
+          children: [
+            Padding(
+                padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+            Container(
+              height: QuizSelectButtonSizeConfig.height,
+              width: QuizSelectButtonSizeConfig.width,
+              decoration: BoxDecoration(
+                color: ColorConfig.DarkGray,
+                border: Border.all(color: ColorConfig.DarkGray),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Container(
+                child: Text(
+                  QuizQ_List().list[QuesitonNum]!.Select4,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: ColorConfig.White, fontSize: 24),
                 ),
               ),
-            ],
-          );
-      }else{
-        return
-          Column(
-            children: [
-              Padding(
-                  padding:
-                  EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Container(
-                height: QuizSelectButtonSizeConfig.height,
-                width: QuizSelectButtonSizeConfig.width,
-                decoration: BoxDecoration(
-                  border: Border.all(color: ColorConfig.Blue),
-                  borderRadius: BorderRadius.circular(5),
-                ),
-                child: Container(
-                  child: Text(
-                    QuizQ_List().list[QuesitonNum]!.Select4,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: ColorConfig.Black, fontSize: 24),
-                  ),
+            ),
+          ],
+        );
+      } else {
+        return Column(
+          children: [
+            Padding(
+                padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+            Container(
+              height: QuizSelectButtonSizeConfig.height,
+              width: QuizSelectButtonSizeConfig.width,
+              decoration: BoxDecoration(
+                border: Border.all(color: ColorConfig.Blue),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Container(
+                child: Text(
+                  QuizQ_List().list[QuesitonNum]!.Select4,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: ColorConfig.Black, fontSize: 24),
                 ),
               ),
-            ],
-          );
+            ),
+          ],
+        );
       }
     }
   }
@@ -469,19 +446,10 @@ class _QuizA_000 extends State<QuizA_000> {
                   return new Text('Error: ${snapshot.error!}');
                 } else if (snapshot.hasData) {
                   String? correctCount = snapshot.data;
-                  return RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                          text: " $correctCount ",
-                          style: TextStyle(fontSize: 25),
-                        ),
-                        TextSpan(
-                          text: "/100",
-                          style: TextStyle(fontSize: 18),
-                        )
-                      ],
-                    ),
+                  return Text(
+                    'No.' +QuizQ_List().list[QuesitonNum]!.QID,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: ColorConfig.White, fontSize: 24),
                   );
                 } else {
                   return Text("データが存在しません");
@@ -513,6 +481,7 @@ class _QuizA_000 extends State<QuizA_000> {
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: ColorConfig.Blue,
         ),
+        backgroundColor: ColorConfig.SkyBlue,
         body: Scrollbar(
           isAlwaysShown: false,
           child: SingleChildScrollView(
@@ -522,24 +491,6 @@ class _QuizA_000 extends State<QuizA_000> {
                   Padding(
                       padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-                  Container(
-                    height: 37,
-                    width: 80,
-                    decoration: BoxDecoration(
-                      color: ColorConfig.Blue,
-                      border: Border.all(color: ColorConfig.Blue),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Container(
-                      alignment: Alignment.center,
-                      child: Text(
-                        'No.' + QuizA_List().list[QuesitonNum]!.QID,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 24),
-                      ),
-                      //QestionList()でインスタンス化
-                    ),
-                  ),
                   Padding(
                       padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
@@ -549,24 +500,6 @@ class _QuizA_000 extends State<QuizA_000> {
                   Padding(
                       padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-                  Container(
-                    padding: const EdgeInsets.all(5.0),
-                    height: 42,
-                    width: 278,
-                    decoration: BoxDecoration(
-                      color: ColorConfig.Blue,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Container(
-                      child: Text(
-                        QuizA_List().list[QuesitonNum]!.Answer,
-                        textAlign: TextAlign.center,
-                        style:
-                            TextStyle(color: ColorConfig.White, fontSize: 24),
-                      ),
-                      //QestionList()でインスタンス化
-                    ),
-                  ),
                   Padding(
                       padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
@@ -593,29 +526,10 @@ class _QuizA_000 extends State<QuizA_000> {
                   _buildSelectedContainer4(),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-                  Container(
-                    height: 37,
-                    width: 80,
-                    decoration: BoxDecoration(
-                      color: ColorConfig.Blue,
-                      border: Border.all(color: ColorConfig.Blue),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-
-                    child: Container(
-                      alignment: Alignment.center,
-                      child: Text(
-                        '解説',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 24),
-                      ),
-                      //QestionList()でインスタンス化
-                    ),
-                  ),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
@@ -632,7 +546,7 @@ class _QuizA_000 extends State<QuizA_000> {
                     width: 240,
                     child: Text(
                       QuizA_List().list[QuesitonNum]!.Commentary,
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.left,
                       style: TextStyle(fontSize: 16),
                     ),
                   ),

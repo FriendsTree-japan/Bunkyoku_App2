@@ -146,7 +146,7 @@ class _QuizeListState extends State<QuizeList> {
         backgroundColor: ColorConfig.Blue,
         automaticallyImplyLeading: false,
       ),
-      backgroundColor: const Color(0xFFF1FDFF),
+      backgroundColor: ColorConfig.SkyBlue,
       body: Column(
         children: [
           Column(
@@ -204,7 +204,7 @@ class _QuizeListState extends State<QuizeList> {
                           mainAxisSpacing: 20,
                           crossAxisSpacing: 13.0,
                           childAspectRatio: 1,
-                          crossAxisCount: 3,
+                          crossAxisCount: 4,
                         ),
                         primary: false,
                         padding: const EdgeInsets.fromLTRB(32, 10, 32, 32),

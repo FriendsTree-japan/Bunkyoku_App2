@@ -26,7 +26,7 @@ class _Favorite extends State<Favorite> {
           backgroundColor: ColorConfig.Blue,
           automaticallyImplyLeading: false,
         ),
-        backgroundColor: const Color(0xFFFFFFFF),
+        backgroundColor: ColorConfig.SkyBlue,
         body: FutureBuilder(
             future: favoriteList,
             builder:
