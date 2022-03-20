@@ -1,3 +1,4 @@
+import 'package:bunkyoku_app2/03_Unity/03_01_SharedPreferences.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:bunkyoku_app2/01_Pages/01_003_QuizA.dart';
@@ -174,6 +175,12 @@ class _QuizQ_000 extends State<QuizQ_000> {
                     SelectQ = QuizQ_List().list[QuesitonNum]!.Select1;
                     myFavariteFlg = await QuizStatusDb().setFavoriteFlg(QuesitonNum);
                     //toString()で型変換をできる。
+                    //5回目の回答を実施した時に広告を表示数する
+                    int admCtlCnt = await SharedPrefs.admCtlMethod();
+                    if(admCtlCnt == 5){
+                      await adInterstitial.showAd();
+                      adInterstitial.createAd();
+                    }
                     bool? result = await Navigator.push(
                       context,
                       new MaterialPageRoute<bool>(
@@ -215,6 +222,12 @@ class _QuizQ_000 extends State<QuizQ_000> {
                     SelectQ = QuizQ_List().list[QuesitonNum]!.Select2;
                     myFavariteFlg = await QuizStatusDb().setFavoriteFlg(QuesitonNum);
                     //toString()で型変換をできる。
+                    //5回目の回答を実施した時に広告を表示数する
+                    int admCtlCnt = await SharedPrefs.admCtlMethod();
+                    if(admCtlCnt == 5){
+                      await adInterstitial.showAd();
+                      adInterstitial.createAd();
+                    }
                     bool? result = await Navigator.push(
                       context,
                       new MaterialPageRoute<bool>(
@@ -256,6 +269,12 @@ class _QuizQ_000 extends State<QuizQ_000> {
                     SelectQ = QuizQ_List().list[QuesitonNum]!.Select3;
                     myFavariteFlg = await QuizStatusDb().setFavoriteFlg(QuesitonNum);
                     //toString()で型変換をできる。
+                    //5回目の回答を実施した時に広告を表示数する
+                    int admCtlCnt = await SharedPrefs.admCtlMethod();
+                    if(admCtlCnt == 5){
+                      await adInterstitial.showAd();
+                      adInterstitial.createAd();
+                    }
                     bool? result = await Navigator.push(
                       context,
                       new MaterialPageRoute<bool>(
@@ -297,6 +316,12 @@ class _QuizQ_000 extends State<QuizQ_000> {
                     SelectQ = QuizQ_List().list[QuesitonNum]!.Select4;
                     myFavariteFlg = await QuizStatusDb().setFavoriteFlg(QuesitonNum);
                     //toString()で型変換をできる。
+                    //5回目の回答を実施した時に広告を表示数する
+                    int admCtlCnt = await SharedPrefs.admCtlMethod();
+                    if(admCtlCnt == 5){
+                      await adInterstitial.showAd();
+                      adInterstitial.createAd();
+                    }
                     bool? result = await Navigator.push(
                       context,
                       new MaterialPageRoute<bool>(

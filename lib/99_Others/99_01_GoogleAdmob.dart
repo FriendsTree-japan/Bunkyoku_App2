@@ -19,12 +19,14 @@ class AdInterstitial {
           _interstitialAd = ad;
           num_of_attempt_load = 0;
           ready = true;
+          print("112");
         },
         // 広告のロードが失敗した際に呼ばれます。
         onAdFailedToLoad: (LoadAdError error) {
           num_of_attempt_load++;
           _interstitialAd = null;
           if (num_of_attempt_load <= 2) {
+            print("111");
             createAd();
           }
         },
