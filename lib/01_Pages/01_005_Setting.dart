@@ -59,7 +59,7 @@ class _SettingState extends State<Setting> {
               textStyle: const TextStyle(fontSize: 20),
             ),
             onPressed: () {
-              UrlMove().UrlMoving('https://dented-handball-204.notion.site/0fe2fc1cf0ca465abdb85616658c9106');
+              UrlMove().UrlMoving('https://dented-handball-204.notion.site/04dc826e23724da68deadd89078285ef');
               // _RulesURL();
             },
             child: const Text('利用規約',style: TextStyle(color: Colors.black)),
@@ -69,7 +69,7 @@ class _SettingState extends State<Setting> {
               textStyle: const TextStyle(fontSize: 20),
             ),
             onPressed: () {
-              UrlMove().UrlMoving('https://dented-handball-204.notion.site/0fe2fc1cf0ca465abdb85616658c9106');
+              UrlMove().UrlMoving('https://dented-handball-204.notion.site/6d997f641a524b338b7326fd842cc8a0');
               // _FAQURL();
             },
             child: const Text('問い合わせ',style: TextStyle(color: Colors.black)),
