@@ -24,6 +24,7 @@ class _Favorite extends State<Favorite> {
         appBar: AppBar(
           title: Text('お気に入り'),
           backgroundColor: ColorConfig.Blue,
+          automaticallyImplyLeading: false,
         ),
         backgroundColor: const Color(0xFFFFFFFF),
         body: FutureBuilder(

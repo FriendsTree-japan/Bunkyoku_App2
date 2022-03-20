@@ -20,6 +20,7 @@ class _SettingState extends State<Setting> {
       appBar: AppBar(
         title: Text('設定'),
         backgroundColor: ColorConfig.Blue,
+        automaticallyImplyLeading: false,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,

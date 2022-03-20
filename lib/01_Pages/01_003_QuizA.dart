@@ -1,10 +1,14 @@
+
+import 'package:flutter/material.dart';
+import 'package:bunkyoku_app2/main.dart';
 import 'package:bunkyoku_app2/01_Pages/01_002_QuizQ.dart';
 import 'package:bunkyoku_app2/02_Class/02_02_QuizQ.dart';
-import 'package:flutter/material.dart';
 import 'package:bunkyoku_app2/02_Class/02_03_QuizA.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
 import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
 import 'package:bunkyoku_app2/03_Unity/03_02_SqliteDb.dart';
+
+
 
 class QuizA_000 extends StatefulWidget {
   late final String QuesitonNum;
@@ -430,21 +434,28 @@ class _QuizA_000 extends State<QuizA_000> {
             child: Column(
               children: [
                 Icon(
-                  Icons.arrow_back_outlined,
-                  size: 12,
+                  Icons.home,
+                  size: 28,
                   color: Colors.white,
                 ),
                 Text(
-                  '戻る',
+                  'ホーム',
                   style: TextStyle(
                     color: Colors.white, //文字の色を白にする
                     fontWeight: FontWeight.bold, //文字を太字する
-                    fontSize: 12.0, //文字のサイズを調整する
+                    fontSize: 8.0, //文字のサイズを調整する
                   ),
                 ),
               ],
             ),
-            onPressed: () => Navigator.pop(context, true),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => HomePage(),
+                ),
+              );
+            },
           ),
           title: FutureBuilder(
               future: correctCount,

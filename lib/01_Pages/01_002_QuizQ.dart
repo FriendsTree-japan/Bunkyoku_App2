@@ -1,10 +1,12 @@
-import 'package:bunkyoku_app2/03_Unity/03_01_SharedPreferences.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+
+import 'package:bunkyoku_app2/main.dart';
 import 'package:bunkyoku_app2/01_Pages/01_003_QuizA.dart';
 import 'package:bunkyoku_app2/02_Class/02_02_QuizQ.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
 import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
+import 'package:bunkyoku_app2/03_Unity/03_01_SharedPreferences.dart';
 import 'package:bunkyoku_app2/03_Unity/03_02_SqliteDb.dart';
 import 'package:bunkyoku_app2/99_Others/99_01_GoogleAdmob.dart';
 
@@ -51,21 +53,28 @@ class _QuizQ_000 extends State<QuizQ_000> {
             child: Column(
               children: [
                 Icon(
-                  Icons.arrow_back_outlined,
-                  size: 12,
+                  Icons.home,
+                  size: 28,
                   color: Colors.white,
                 ),
                 Text(
-                  '戻る',
+                  'ホーム',
                   style: TextStyle(
                     color: Colors.white, //文字の色を白にする
                     fontWeight: FontWeight.bold, //文字を太字する
-                    fontSize: 12.0, //文字のサイズを調整する
+                    fontSize: 8.0, //文字のサイズを調整する
                   ),
                 ),
               ],
             ),
-            onPressed: () => Navigator.pop(context,true),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => HomePage(),
+                ),
+              );
+            },
           ),
           title: FutureBuilder(
                     future: correctCount,

@@ -143,6 +143,7 @@ class _QuizeListState extends State<QuizeList> {
       appBar: AppBar(
         title: Text('文京区アプリ'),
         backgroundColor: ColorConfig.Blue,
+        automaticallyImplyLeading: false,
       ),
       body: Column(
         children: [
