@@ -4,8 +4,8 @@ class QuizListSizeConfig{
   static late double containerHeightSize;
   static late double containerWidthSize;
   void init(BuildContext context){
-    containerHeightSize = 100;
-    containerWidthSize = 100;
+    containerHeightSize = 80;
+    containerWidthSize = 80;
   }
 }
 

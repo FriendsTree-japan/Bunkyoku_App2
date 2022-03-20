@@ -27,13 +27,13 @@ class _QuizeListState extends State<QuizeList> {
             height: QuizListSizeConfig.containerWidthSize,
             decoration: BoxDecoration(
               color: ColorConfig.White,
-              border: Border.all(color: ColorConfig.Black),
+              border: Border.all(color: ColorConfig.Blue),
               borderRadius: BorderRadius.circular(10),
             ),
             child: TextButton(
               child: Text(
                 problemId,
-                style: TextStyle(color: ColorConfig.Black),
+                style: TextStyle(color: ColorConfig.Black,fontSize: 20),
               ),
               onPressed: () async{
                 //String _questionNum = '$i';
@@ -62,7 +62,7 @@ class _QuizeListState extends State<QuizeList> {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Text(
-                'new',textAlign: TextAlign.center,
+                'New',textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.white),
               ),
             ),
@@ -77,15 +77,15 @@ class _QuizeListState extends State<QuizeList> {
           height: QuizListSizeConfig.containerWidthSize,
           decoration: BoxDecoration(
             color: ColorConfig.White,
-            border: Border.all(color: ColorConfig.Blue),
+            border: Border.all(color: ColorConfig.Black),
             borderRadius: BorderRadius.circular(10),
           ),
           child: TextButton(
             child: Text(
               problemId,
-              style: TextStyle(color: ColorConfig.Black),
+              style: TextStyle(color: ColorConfig.Black, fontSize: 20),
             ),
-            onPressed: () async{
+            onPressed: () async {
               //String _questionNum = '$i';
               _questionNum = problemId;
               //toString()で型変換をできる。
@@ -110,7 +110,7 @@ class _QuizeListState extends State<QuizeList> {
           child: TextButton(
             child: Text(
               problemId,
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Colors.white,fontSize: 20),
             ),
             onPressed: () async{
               //String _questionNum = '$i';
@@ -137,6 +137,7 @@ class _QuizeListState extends State<QuizeList> {
     QuizListSizeConfig().init(context);
     SizeConfig().init(context);
     ColorConfig().init(context);
+    BasePaddingConfig().init(context);
     Future<String> correctCount = QuizStatusDb().getCorrectCount();
 
     return Scaffold(
@@ -145,10 +146,13 @@ class _QuizeListState extends State<QuizeList> {
         backgroundColor: ColorConfig.Blue,
         automaticallyImplyLeading: false,
       ),
+      backgroundColor: const Color(0xFFF1FDFF),
       body: Column(
         children: [
           Column(
             children: [
+              Padding(
+                  padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
               FutureBuilder(
                   future: correctCount,
                   builder: (BuildContext context,
@@ -166,7 +170,7 @@ class _QuizeListState extends State<QuizeList> {
                         text: TextSpan(
                           children: [
                             TextSpan(text: " $correctCount ",style: TextStyle(fontSize: 25,color: ColorConfig.Black),),
-                            TextSpan(text: "/100",style: TextStyle(fontSize: 13,color: ColorConfig.Black),)],
+                            TextSpan(text: "/${QuizStatusDb.maxQuizQidValue}",style: TextStyle(fontSize: 13,color: ColorConfig.Black),)],
                         ),
                       );
                     }else{
@@ -176,6 +180,8 @@ class _QuizeListState extends State<QuizeList> {
               Container(
                 child: Text('がんばれ〜', style: TextStyle(fontSize: 20)),
               ),
+              Padding(
+                  padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
             ],
           ),
           FutureBuilder (
