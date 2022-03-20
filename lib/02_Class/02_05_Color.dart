@@ -8,6 +8,7 @@ class ColorConfig {
   static late Color SkyBlue;
   static late Color Blue;
   static late Color Red;
+  static late Color DarkGray;
 
   void init(BuildContext context) {
     //使用する色を定義
@@ -18,6 +19,7 @@ class ColorConfig {
     SkyBlue = Color(0x3212C2CD);
     Blue = Color(0xFF12C2CD);
     Red = Color(0xFFFF4949);
+    DarkGray = Color(0xFFA3A3A3);
   }
 }
 
