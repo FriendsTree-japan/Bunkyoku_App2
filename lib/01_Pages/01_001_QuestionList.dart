@@ -135,7 +135,6 @@ class _QuizeListState extends State<QuizeList> {
   Widget build(BuildContext context) {
     Future<List<QuizStatus>> result = QuizStatusDb().getDataList();
     QuizListSizeConfig().init(context);
-    SizeConfig().init(context);
     ColorConfig().init(context);
     BasePaddingConfig().init(context);
     Future<String> correctCount = QuizStatusDb().getCorrectCount();

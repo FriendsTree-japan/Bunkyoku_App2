@@ -29,9 +29,47 @@ class _QuizA_000 extends State<QuizA_000> {
   Widget _viewCorrectWrong() {
     if (selectQ == QuizA_List().list[QuesitonNum]!.Answer) {
       QuizStatusDb().updateFlg(QuizA_List().list[QuesitonNum]!.QID, 'correct');
-      return Text('○', style: TextStyle(fontSize: 50,color: Colors.red));
+      return Stack(
+        children: [
+          Container(
+            height: 100,
+            child: Center(
+              child: Icon(
+                Icons.circle_outlined,
+                size: 75,
+                color: ColorConfig.Red,
+              ),
+            ),
+          ),
+          Container(
+            height: 100,
+            child: Center(
+                child: Text('正確',
+                    style: TextStyle(fontSize: 50, color: ColorConfig.Black))),
+          ),
+        ],
+      );
     }
-    return Text('不正解', style: TextStyle(fontSize: 24));
+    return Stack(
+      children: [
+        Container(
+          child: Center(
+            child: Icon(
+              Icons.close,
+              size: 100,
+              color: ColorConfig.Red,
+            ),
+          ),
+        ),
+        Container(
+          height: 100,
+          child: Center(
+              child: Text('不正解',
+                  style: TextStyle(fontSize: 50, color: ColorConfig.Black))),
+        ),
+      ],
+    );
+    ;
   }
 
   Widget _buildSelectedContainer1() {
@@ -41,8 +79,8 @@ class _QuizA_000 extends State<QuizA_000> {
         children: [
           Padding(padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
           Container(
-            height: QuizSelectButtonSizeConfig.height,
-            width: QuizSelectButtonSizeConfig.width,
+            height: QuizProblemSizeConfig.height,
+            width: QuizProblemSizeConfig.width,
             decoration: BoxDecoration(
               color: ColorConfig.Blue,
               border: Border.all(color: ColorConfig.Blue),
@@ -65,11 +103,11 @@ class _QuizA_000 extends State<QuizA_000> {
             Padding(
                 padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
             Container(
-              height: QuizSelectButtonSizeConfig.height,
-              width: QuizSelectButtonSizeConfig.width,
+              height: QuizProblemSizeConfig.height,
+              width: QuizProblemSizeConfig.width,
               decoration: BoxDecoration(
-                color: ColorConfig.DarkGray,
-                border: Border.all(color: ColorConfig.DarkGray),
+                color: ColorConfig.StrongGray,
+                border: Border.all(color: ColorConfig.StrongGray),
                 borderRadius: BorderRadius.circular(5),
               ),
               child: Container(
@@ -88,17 +126,18 @@ class _QuizA_000 extends State<QuizA_000> {
             Padding(
                 padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
             Container(
-              height: QuizSelectButtonSizeConfig.height,
-              width: QuizSelectButtonSizeConfig.width,
+              height: QuizProblemSizeConfig.height,
+              width: QuizProblemSizeConfig.width,
               decoration: BoxDecoration(
-                border: Border.all(color: ColorConfig.Blue),
+                border: Border.all(color: ColorConfig.StrongGray),
                 borderRadius: BorderRadius.circular(5),
+                color: ColorConfig.White,
               ),
               child: Container(
                 child: Text(
                   QuizQ_List().list[QuesitonNum]!.Select1,
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: ColorConfig.Black, fontSize: 24),
+                  style: TextStyle(color: ColorConfig.Gray, fontSize: 24),
                 ),
               ),
             ),
@@ -115,8 +154,8 @@ class _QuizA_000 extends State<QuizA_000> {
         children: [
           Padding(padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
           Container(
-            height: QuizSelectButtonSizeConfig.height,
-            width: QuizSelectButtonSizeConfig.width,
+            height: QuizProblemSizeConfig.height,
+            width: QuizProblemSizeConfig.width,
             decoration: BoxDecoration(
               color: ColorConfig.Blue,
               border: Border.all(color: ColorConfig.Blue),
@@ -139,11 +178,11 @@ class _QuizA_000 extends State<QuizA_000> {
             Padding(
                 padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
             Container(
-              height: QuizSelectButtonSizeConfig.height,
-              width: QuizSelectButtonSizeConfig.width,
+              height: QuizProblemSizeConfig.height,
+              width: QuizProblemSizeConfig.width,
               decoration: BoxDecoration(
-                color: ColorConfig.DarkGray,
-                border: Border.all(color: ColorConfig.DarkGray),
+                color: ColorConfig.StrongGray,
+                border: Border.all(color: ColorConfig.StrongGray),
                 borderRadius: BorderRadius.circular(5),
               ),
               child: Container(
@@ -162,17 +201,18 @@ class _QuizA_000 extends State<QuizA_000> {
             Padding(
                 padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
             Container(
-              height: QuizSelectButtonSizeConfig.height,
-              width: QuizSelectButtonSizeConfig.width,
+              height: QuizProblemSizeConfig.height,
+              width: QuizProblemSizeConfig.width,
               decoration: BoxDecoration(
-                border: Border.all(color: ColorConfig.Blue),
+                border: Border.all(color: ColorConfig.StrongGray),
                 borderRadius: BorderRadius.circular(5),
+                color: ColorConfig.White,
               ),
               child: Container(
                 child: Text(
                   QuizQ_List().list[QuesitonNum]!.Select2,
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: ColorConfig.Black, fontSize: 24),
+                  style: TextStyle(color: ColorConfig.Gray, fontSize: 24),
                 ),
               ),
             ),
@@ -189,8 +229,8 @@ class _QuizA_000 extends State<QuizA_000> {
         children: [
           Padding(padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
           Container(
-            height: QuizSelectButtonSizeConfig.height,
-            width: QuizSelectButtonSizeConfig.width,
+            height: QuizProblemSizeConfig.height,
+            width: QuizProblemSizeConfig.width,
             decoration: BoxDecoration(
               color: ColorConfig.Blue,
               border: Border.all(color: ColorConfig.Blue),
@@ -213,11 +253,11 @@ class _QuizA_000 extends State<QuizA_000> {
             Padding(
                 padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
             Container(
-              height: QuizSelectButtonSizeConfig.height,
-              width: QuizSelectButtonSizeConfig.width,
+              height: QuizProblemSizeConfig.height,
+              width: QuizProblemSizeConfig.width,
               decoration: BoxDecoration(
-                color: ColorConfig.DarkGray,
-                border: Border.all(color: ColorConfig.DarkGray),
+                color: ColorConfig.StrongGray,
+                border: Border.all(color: ColorConfig.StrongGray),
                 borderRadius: BorderRadius.circular(5),
               ),
               child: Container(
@@ -236,17 +276,18 @@ class _QuizA_000 extends State<QuizA_000> {
             Padding(
                 padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
             Container(
-              height: QuizSelectButtonSizeConfig.height,
-              width: QuizSelectButtonSizeConfig.width,
+              height: QuizProblemSizeConfig.height,
+              width: QuizProblemSizeConfig.width,
               decoration: BoxDecoration(
-                border: Border.all(color: ColorConfig.Blue),
+                border: Border.all(color: ColorConfig.StrongGray),
                 borderRadius: BorderRadius.circular(5),
+                color: ColorConfig.White,
               ),
               child: Container(
                 child: Text(
                   QuizQ_List().list[QuesitonNum]!.Select3,
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: ColorConfig.Black, fontSize: 24),
+                  style: TextStyle(color: ColorConfig.Gray, fontSize: 24),
                 ),
               ),
             ),
@@ -263,8 +304,8 @@ class _QuizA_000 extends State<QuizA_000> {
         children: [
           Padding(padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
           Container(
-            height: QuizSelectButtonSizeConfig.height,
-            width: QuizSelectButtonSizeConfig.width,
+            height: QuizProblemSizeConfig.height,
+            width: QuizProblemSizeConfig.width,
             decoration: BoxDecoration(
               color: ColorConfig.Blue,
               border: Border.all(color: ColorConfig.Blue),
@@ -287,11 +328,11 @@ class _QuizA_000 extends State<QuizA_000> {
             Padding(
                 padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
             Container(
-              height: QuizSelectButtonSizeConfig.height,
-              width: QuizSelectButtonSizeConfig.width,
+              height: QuizProblemSizeConfig.height,
+              width: QuizProblemSizeConfig.width,
               decoration: BoxDecoration(
-                color: ColorConfig.DarkGray,
-                border: Border.all(color: ColorConfig.DarkGray),
+                color: ColorConfig.StrongGray,
+                border: Border.all(color: ColorConfig.StrongGray),
                 borderRadius: BorderRadius.circular(5),
               ),
               child: Container(
@@ -310,17 +351,18 @@ class _QuizA_000 extends State<QuizA_000> {
             Padding(
                 padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
             Container(
-              height: QuizSelectButtonSizeConfig.height,
-              width: QuizSelectButtonSizeConfig.width,
+              height: QuizProblemSizeConfig.height,
+              width: QuizProblemSizeConfig.width,
               decoration: BoxDecoration(
-                border: Border.all(color: ColorConfig.Blue),
+                border: Border.all(color: ColorConfig.StrongGray),
                 borderRadius: BorderRadius.circular(5),
+                color: ColorConfig.White,
               ),
               child: Container(
                 child: Text(
                   QuizQ_List().list[QuesitonNum]!.Select4,
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: ColorConfig.Black, fontSize: 24),
+                  style: TextStyle(color: ColorConfig.Gray, fontSize: 24),
                 ),
               ),
             ),
@@ -337,14 +379,14 @@ class _QuizA_000 extends State<QuizA_000> {
       return Container(
         height: 50,
         width: 240,
-        decoration: BoxDecoration(boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 20,
-            offset: Offset(0, 6),
-          )
-        ]),
+        // decoration: BoxDecoration(boxShadow: [
+        //   BoxShadow(
+        //     color: Colors.black.withOpacity(0.2),
+        //     spreadRadius: 2,
+        //     blurRadius: 20,
+        //     offset: Offset(0, 6),
+        //   )
+        // ]),
         child: OutlinedButton(
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -362,11 +404,11 @@ class _QuizA_000 extends State<QuizA_000> {
                   ),
                 ]),
             style: ElevatedButton.styleFrom(
-              primary: Colors.white,
+              primary: ColorConfig.White,
               side: BorderSide(color: ColorConfig.Blue),
-              onPrimary: Colors.white,
+              onPrimary: ColorConfig.White,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(5),
               ),
 
               // radius: BorderRadius.circular(40),
@@ -398,10 +440,10 @@ class _QuizA_000 extends State<QuizA_000> {
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
     ColorConfig().init(context);
     BasePaddingConfig().init(context);
-    QuizSelectButtonSizeConfig().init(context);
+    QuizImageSizeConfig().init(context);
+    QuizProblemSizeConfig().init(context);
     Future<String> correctCount = QuizStatusDb().getCorrectCount();
 
     return MaterialApp(
@@ -413,12 +455,12 @@ class _QuizA_000 extends State<QuizA_000> {
                 Icon(
                   Icons.home,
                   size: 28,
-                  color: Colors.white,
+                  color: ColorConfig.White,
                 ),
                 Text(
                   'ホーム',
                   style: TextStyle(
-                    color: Colors.white, //文字の色を白にする
+                    color: ColorConfig.White, //文字の色を白にする
                     fontWeight: FontWeight.bold, //文字を太字する
                     fontSize: 8.0, //文字のサイズを調整する
                   ),
@@ -447,7 +489,7 @@ class _QuizA_000 extends State<QuizA_000> {
                 } else if (snapshot.hasData) {
                   String? correctCount = snapshot.data;
                   return Text(
-                    'No.' +QuizQ_List().list[QuesitonNum]!.QID,
+                    'No.' + QuizQ_List().list[QuesitonNum]!.QID,
                     textAlign: TextAlign.center,
                     style: TextStyle(color: ColorConfig.White, fontSize: 24),
                   );
@@ -491,59 +533,73 @@ class _QuizA_000 extends State<QuizA_000> {
                   Padding(
                       padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Container(
                     child: _viewCorrectWrong(),
                   ),
                   Padding(
                       padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Container(
+                      width: QuizImageSizeConfig.width + 20,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: ColorConfig.WeakGray,
+                      ),
+                      child: Column(
+                        children: [
+                          Padding(
+                              padding: EdgeInsets.only(
+                                  top: BasePaddingConfig.basePadding)),
+                          Padding(
+                              padding: EdgeInsets.only(
+                                  top: BasePaddingConfig.basePadding)),
+                          Container(
+                            alignment: Alignment.center,
+                            height: QuizImageSizeConfig.height,
+                            width: QuizImageSizeConfig.width,
+                            child: Image.asset(
+                                QuizQ_List().list[QuesitonNum]!.Picture),
+                          ),
+                          Padding(
+                              padding: EdgeInsets.only(
+                                  top: BasePaddingConfig.basePadding)),
+                          Container(
+                            width: QuizProblemSizeConfig.width,
+                            child: Text(
+                              QuizQ_List().list[QuesitonNum]!.problem,
+                              style: TextStyle(fontSize: 16),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          _buildSelectedContainer1(),
+                          _buildSelectedContainer2(),
+                          _buildSelectedContainer3(),
+                          _buildSelectedContainer4(),
+                          Padding(
+                              padding: EdgeInsets.only(
+                                  top: BasePaddingConfig.basePadding)),
+                          Padding(
+                              padding: EdgeInsets.only(
+                                  top: BasePaddingConfig.basePadding)),
+                        ],
+                      )),
+                  Padding(
+                      padding:
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Container(
                     alignment: Alignment.center,
-                    height: 169.0,
-                    width: 256.0,
-                    child: Image.asset(QuizQ_List().list[QuesitonNum]!.Picture),
-                  ),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-                  Container(
-                    width: 240,
-                    child: Text(
-                      QuizQ_List().list[QuesitonNum]!.problem,
-                      style: TextStyle(fontSize: 16),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  _buildSelectedContainer1(),
-                  _buildSelectedContainer2(),
-                  _buildSelectedContainer3(),
-                  _buildSelectedContainer4(),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-                  Container(
-                    alignment: Alignment.center,
-                    height: 169.0,
-                    width: 256.0,
+                    height: QuizImageSizeConfig.height,
+                    width: QuizImageSizeConfig.width,
                     child: Image.asset(QuizA_List().list[QuesitonNum]!.Picture),
                   ),
                   Padding(
                       padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Container(
-                    width: 240,
+                    width: QuizProblemSizeConfig.width,
                     child: Text(
                       QuizA_List().list[QuesitonNum]!.Commentary,
                       textAlign: TextAlign.left,

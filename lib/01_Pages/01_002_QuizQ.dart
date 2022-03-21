@@ -41,8 +41,8 @@ class _QuizQ_000 extends State<QuizQ_000> {
   @override
   Widget build(BuildContext context) {
     BasePaddingConfig().init(context);
-    QuizSelectButtonSizeConfig().init(context);
-    SizeConfig().init(context);
+    QuizProblemSizeConfig().init(context);
+    QuizImageSizeConfig().init(context);
     ColorConfig().init(context);
     Future<String> correctCount = QuizStatusDb().getCorrectCount();
 
@@ -106,42 +106,20 @@ class _QuizQ_000 extends State<QuizQ_000> {
             children: [
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              // Container(
-              //   height: 37,
-              //   width: 80,
-              //   decoration: BoxDecoration(
-              //     border: Border.all(color: ColorConfig.Blue),
-              //     borderRadius: BorderRadius.circular(10),
-              //   ),
-              //   child: Container(
-              //     alignment: Alignment.center,
-              //     child: Text(
-              //       'No.' + QuizQ_List().list[QuesitonNum]!.QID,
-              //       textAlign: TextAlign.center,
-              //       style: TextStyle(fontSize: 24),
-              //     ),
-              //     //QestionList()でインスタンス化
-              //   ),
-              // ),
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
               Container(
                 alignment: Alignment.center,
-                height: 169.0,
-                width: 256.0,
-                // decoration: BoxDecoration(
-                //   border: Border.all(
-                //     color: Colors.green,
-                //   ),
-                // ),
+                height: QuizImageSizeConfig.height,
+                width:QuizImageSizeConfig.width,
                 child: Image.asset(QuizQ_List().list[QuesitonNum]!.Picture),
               ),
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
               Container(
-                width:240,
+                width:QuizProblemSizeConfig.width,
                 child: Text(
                   QuizQ_List().list[QuesitonNum]!.problem,
                   style: TextStyle(fontSize: 16),
@@ -151,8 +129,8 @@ class _QuizQ_000 extends State<QuizQ_000> {
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
               Container(
-                height: QuizSelectButtonSizeConfig.height,
-                width: QuizSelectButtonSizeConfig.width,
+                height: QuizProblemSizeConfig.height,
+                width: QuizProblemSizeConfig.width,
                 child: OutlinedButton(
                   child: Text(
                     QuizQ_List().list[QuesitonNum]!.Select1,
@@ -190,8 +168,8 @@ class _QuizQ_000 extends State<QuizQ_000> {
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
               Container(
-                height: QuizSelectButtonSizeConfig.height,
-                width: QuizSelectButtonSizeConfig.width,
+                height: QuizProblemSizeConfig.height,
+                width: QuizProblemSizeConfig.width,
                 child: OutlinedButton(
                   child: Text(
                     QuizQ_List().list[QuesitonNum]!.Select2,
@@ -229,8 +207,8 @@ class _QuizQ_000 extends State<QuizQ_000> {
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
               Container(
-                height: QuizSelectButtonSizeConfig.height,
-                width: QuizSelectButtonSizeConfig.width,
+                height: QuizProblemSizeConfig.height,
+                width: QuizProblemSizeConfig.width,
                 child: OutlinedButton(
                   child: Text(
                     QuizQ_List().list[QuesitonNum]!.Select3,
@@ -268,8 +246,8 @@ class _QuizQ_000 extends State<QuizQ_000> {
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
               Container(
-                height: QuizSelectButtonSizeConfig.height,
-                width: QuizSelectButtonSizeConfig.width,
+                height: QuizProblemSizeConfig.height,
+                width: QuizProblemSizeConfig.width,
                 child: OutlinedButton(
                   child: Text(
                     QuizQ_List().list[QuesitonNum]!.Select4,
