@@ -9,6 +9,8 @@ class QuizA_List {
       Picture: 'images/A076.jpeg',
       Commentary: '鼠ではないと上がり降りができないって、相当急な坂道ですよね。ちなみに鼠坂の壁には、ネズミの絵が書いてあるそうです。',
       Tips: '',
+      URL: '',
+      CreateDate: '',
     ),
     '2':
     QuizA(
@@ -22,5 +24,7 @@ class QuizA_List {
           '\n''■なで牛\n'
           '湯島天神には「なで牛」の像がある。傷や病気の箇所をさすると回復する、あるいは頭をさすると知恵を授かり賢くなると伝えられている。\n',
       Tips: '',
+      URL: '',
+      CreateDate: '',
     ),};
 }
