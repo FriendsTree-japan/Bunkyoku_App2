@@ -401,8 +401,9 @@ class _QuizA_000 extends State<QuizA_000> {
               // print(_intNextQuestionNum.runtimeType);
               _nextQuestionNum = _intNextQuestionNum.toString();
 
-              QuizStatusDb()
+              await QuizStatusDb()
                   .updateFlg(QuizA_List().list[QuesitonNum]!.QID, 'unanwer');
+
               bool? result = await Navigator.push(
                 context,
                 new MaterialPageRoute<bool>(
