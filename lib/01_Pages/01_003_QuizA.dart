@@ -44,31 +44,34 @@ class _QuizA_000 extends State<QuizA_000> {
           Container(
             height: 100,
             child: Center(
-                child: Text('正確',
+                child: Text('正解',
                     style: TextStyle(fontSize: 50, color: ColorConfig.Black))),
           ),
         ],
       );
-    }
-    return Stack(
-      children: [
-        Container(
-          child: Center(
-            child: Icon(
-              Icons.close,
-              size: 100,
-              color: ColorConfig.PinkRed,
+    } else if (selectQ == "") {
+      return Container(
+      );
+    } else
+      return Stack(
+        children: [
+          Container(
+            child: Center(
+              child: Icon(
+                Icons.close,
+                size: 100,
+                color: ColorConfig.PinkRed,
+              ),
             ),
           ),
-        ),
-        Container(
-          height: 100,
-          child: Center(
-              child: Text('不正解',
-                  style: TextStyle(fontSize: 50, color: ColorConfig.Black))),
-        ),
-      ],
-    );
+          Container(
+            height: 100,
+            child: Center(
+                child: Text('不正解',
+                    style: TextStyle(fontSize: 50, color: ColorConfig.Black))),
+          ),
+        ],
+      );
     ;
   }
 
@@ -592,22 +595,22 @@ class _QuizA_000 extends State<QuizA_000> {
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Container(
                     alignment: Alignment.center,
                     height: QuizImageSizeConfig.height,

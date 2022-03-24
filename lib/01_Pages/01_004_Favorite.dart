@@ -7,6 +7,8 @@ import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
 import '../02_Class/02_06_QuizStatus.dart';
 import 'package:bunkyoku_app2/03_Unity/03_02_SqliteDb.dart';
 
+import '01_003_QuizA.dart';
+
 class Favorite extends StatefulWidget {
   @override
   _Favorite createState() => new _Favorite();
@@ -57,40 +59,60 @@ class _Favorite extends State<Favorite> {
                                     title:
                                     // ③オブジェクトの属性(タイトル属性)を参照する
                                     Row(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       mainAxisAlignment: MainAxisAlignment.start,
                                       children: [
-                                        Container(
-                                          child: Text(
-                                            '${quizStatusList[index].problemId}',
-                                            style: TextStyle(
-                                                color: ColorConfig.Black, fontSize: 18),
-                                          ),
-                                        ),
-                                        Padding(padding: const EdgeInsets.only(
-                                            right: 20.0)),
                                         Column(
-                                          crossAxisAlignment:CrossAxisAlignment.start,
                                           children: [
                                             Container(
-                                              alignment: Alignment.centerLeft,
+                                              alignment: Alignment.topCenter,
+                                              child: Text(
+                                                '${quizStatusList[index].problemId}',
+                                                style: TextStyle(
+                                                    color: ColorConfig.Black, fontSize: 25),
+                                              ),
+                                            ),
+                                            Container(
+                                              alignment: Alignment.topCenter,
+                                              child: Icon(
+                                                Icons.bookmark_outlined,
+                                                color:Colors.yellow,
+                                                size: 30,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Padding(padding: const EdgeInsets.only(
+                                            right: 25.0)),
+                                        Flexible(child:Column(
+                                          crossAxisAlignment:CrossAxisAlignment.start,
+                                          mainAxisAlignment: MainAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                                child:Image.asset(QuizA_List().list[quizStatusList[index].problemId]!.Picture),
+                                            ),
+                                            Container(
                                               child: Text(
                                                 '問題文:${QuizQ_List().list[quizStatusList[index].problemId]!.problem}',
                                                 style: TextStyle(
                                                     color: ColorConfig.Black,
-                                                    fontSize: 12),
-                                              ),
+                                                    fontSize: 14),
+                                                ),
                                             ),
+                                            Padding(
+                                                padding:
+                                                EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                                             Container(
                                               alignment: Alignment.centerLeft,
                                               child: Text(
                                                 'こたえ:${QuizA_List().list[quizStatusList[index].problemId]!.Answer}',
                                                 style: TextStyle(
                                                     color: ColorConfig.Black,
-                                                    fontSize: 12),
+                                                    fontSize: 14),
                                               ),
                                             ),
                                           ],
-                                        ),
+                                        ),),
                                       ],
                                     ),
                                     onTap: () async{
@@ -98,7 +120,7 @@ class _Favorite extends State<Favorite> {
                                       bool? result = await Navigator.push(
                                           context,
                                         new MaterialPageRoute<bool>(
-                                          builder: (BuildContext context) => QuizQ_000(quizStatusList[index].problemId),
+                                          builder: (BuildContext context) => QuizA_000(quizStatusList[index].problemId,'',quizStatusList[index].favoriteFlg),
                                       ),);
                                       if (result!) {
                                         setState(() {
