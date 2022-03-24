@@ -135,7 +135,6 @@ class _QuizeListState extends State<QuizeList> {
   Widget build(BuildContext context) {
     Future<List<QuizStatus>> result = QuizStatusDb().getDataList();
     QuizListSizeConfig().init(context);
-    SizeConfig().init(context);
     ColorConfig().init(context);
     BasePaddingConfig().init(context);
     Future<String> correctCount = QuizStatusDb().getCorrectCount();
@@ -146,7 +145,7 @@ class _QuizeListState extends State<QuizeList> {
         backgroundColor: ColorConfig.Blue,
         automaticallyImplyLeading: false,
       ),
-      backgroundColor: const Color(0xFFF1FDFF),
+      backgroundColor: ColorConfig.SkyBlue,
       body: Column(
         children: [
           Column(
@@ -204,7 +203,7 @@ class _QuizeListState extends State<QuizeList> {
                           mainAxisSpacing: 20,
                           crossAxisSpacing: 13.0,
                           childAspectRatio: 1,
-                          crossAxisCount: 3,
+                          crossAxisCount: 4,
                         ),
                         primary: false,
                         padding: const EdgeInsets.fromLTRB(32, 10, 32, 32),

@@ -16,17 +16,16 @@ class _Favorite extends State<Favorite> {
   @override
   Widget build(BuildContext context) {
     Future<List<QuizStatus>> favoriteList = QuizStatusDb().getFavoriteDataList();
-    SizeConfig().init(context);
     ColorConfig().init(context);
     BasePaddingConfig().init(context);
-    QuizSelectButtonSizeConfig().init(context);
+    QuizProblemSizeConfig().init(context);
     return Scaffold(
         appBar: AppBar(
           title: Text('お気に入り'),
           backgroundColor: ColorConfig.Blue,
           automaticallyImplyLeading: false,
         ),
-        backgroundColor: const Color(0xFFFFFFFF),
+        backgroundColor: ColorConfig.SkyBlue,
         body: FutureBuilder(
             future: favoriteList,
             builder:
