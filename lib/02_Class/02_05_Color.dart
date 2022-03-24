@@ -8,6 +8,7 @@ class ColorConfig {
   static late Color SkyBlue;
   static late Color Blue;
   static late Color Red;
+  static late Color PinkRed;
   static late Color WeakGray;
   static late Color StrongGray;
 
@@ -20,6 +21,7 @@ class ColorConfig {
     SkyBlue = Color(0xFFF1FDFF);
     Blue = Color(0xFF12C2CD);
     Red = Color(0xFFFF4949);
+    PinkRed = Color(0x88FF4949);
     WeakGray = Color(0xFFE8E8E8);
     StrongGray = Color(0xFFA3A3A3);
   }

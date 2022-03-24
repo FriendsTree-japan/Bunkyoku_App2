@@ -37,7 +37,7 @@ class _QuizA_000 extends State<QuizA_000> {
               child: Icon(
                 Icons.circle_outlined,
                 size: 75,
-                color: ColorConfig.Red,
+                color: ColorConfig.PinkRed,
               ),
             ),
           ),
@@ -57,7 +57,7 @@ class _QuizA_000 extends State<QuizA_000> {
             child: Icon(
               Icons.close,
               size: 100,
-              color: ColorConfig.Red,
+              color: ColorConfig.PinkRed,
             ),
           ),
         ),
@@ -589,6 +589,24 @@ class _QuizA_000 extends State<QuizA_000> {
                   Padding(
                       padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Container(
                     alignment: Alignment.center,
                     height: QuizImageSizeConfig.height,
