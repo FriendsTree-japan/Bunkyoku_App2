@@ -637,6 +637,24 @@ class _QuizA_000 extends State<QuizA_000> {
                   Padding(
                       padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Container(
+                    child: Text(
+                      QuizA_List().list[QuesitonNum]!.URL,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Container(
+                    child: Text(
+                      QuizA_List().list[QuesitonNum]!.GoogleMap,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Container(
+                    child: Text(
+                      QuizA_List().list[QuesitonNum]!.CreateDate,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
                   _buildNextPageContainer(QuesitonNum, '1')
                 ],
               ),
