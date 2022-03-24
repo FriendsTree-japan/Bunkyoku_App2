@@ -10,7 +10,7 @@ import '01_Pages/01_005_Setting.dart';
 
 void main()async{
   WidgetsFlutterBinding.ensureInitialized();
-  MobileAds.instance.initialize();
+  await MobileAds.instance.initialize();
   await SharedPrefs.setInstance();
   await checkFirstLogin();
   runApp(MyApp());
