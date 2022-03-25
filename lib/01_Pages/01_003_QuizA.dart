@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:any_link_preview/any_link_preview.dart';
+
 import 'package:bunkyoku_app2/main.dart';
 import 'package:bunkyoku_app2/01_Pages/01_002_QuizQ.dart';
 import 'package:bunkyoku_app2/02_Class/02_02_QuizQ.dart';
@@ -442,6 +444,23 @@ class _QuizA_000 extends State<QuizA_000> {
     }
   }
 
+  Widget _buildPreviewUrl(String url){
+    String _url = url;
+    return Container(
+      width: QuizProblemSizeConfig.width,
+      child:AnyLinkPreview(
+        displayDirection: uiDirection.uiDirectionHorizontal,
+        link: _url,
+        cache: Duration(hours: 1),
+        backgroundColor: Colors.grey[300],
+        errorWidget: Container(
+          color: Colors.grey[300],
+          child: Text('Oops!'),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     ColorConfig().init(context);
@@ -637,25 +656,32 @@ class _QuizA_000 extends State<QuizA_000> {
                   Padding(
                       padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-                  Container(
-                    child: Text(
-                      QuizA_List().list[QuesitonNum]!.URL,
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
+                  _buildPreviewUrl(QuizA_List().list[QuesitonNum]!.URL),
                   Container(
                     child: Text(
                       QuizA_List().list[QuesitonNum]!.GoogleMap,
                       textAlign: TextAlign.center,
                     ),
                   ),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Container(
                     child: Text(
                       QuizA_List().list[QuesitonNum]!.CreateDate,
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  _buildNextPageContainer(QuesitonNum, '1')
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  _buildNextPageContainer(QuesitonNum, '1'),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                 ],
               ),
             ),
