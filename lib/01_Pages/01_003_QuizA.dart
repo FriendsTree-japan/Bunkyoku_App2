@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+=======
+import 'package:any_link_preview/any_link_preview.dart';
+
+>>>>>>> e1a2dd4a9b7c954e2eba1e5d62ad3cc17bd56413
 import 'package:bunkyoku_app2/main.dart';
 import 'package:bunkyoku_app2/01_Pages/01_002_QuizQ.dart';
 import 'package:bunkyoku_app2/02_Class/02_02_QuizQ.dart';
@@ -45,31 +50,34 @@ class _QuizA_000 extends State<QuizA_000> {
           Container(
             height: 100,
             child: Center(
-                child: Text('正確',
+                child: Text('正解',
                     style: TextStyle(fontSize: 50, color: ColorConfig.Black))),
           ),
         ],
       );
-    }
-    return Stack(
-      children: [
-        Container(
-          child: Center(
-            child: Icon(
-              Icons.close,
-              size: 100,
-              color: ColorConfig.PinkRed,
+    } else if (selectQ == "") {
+      return Container(
+      );
+    } else
+      return Stack(
+        children: [
+          Container(
+            child: Center(
+              child: Icon(
+                Icons.close,
+                size: 100,
+                color: ColorConfig.PinkRed,
+              ),
             ),
           ),
-        ),
-        Container(
-          height: 100,
-          child: Center(
-              child: Text('不正解',
-                  style: TextStyle(fontSize: 50, color: ColorConfig.Black))),
-        ),
-      ],
-    );
+          Container(
+            height: 100,
+            child: Center(
+                child: Text('不正解',
+                    style: TextStyle(fontSize: 50, color: ColorConfig.Black))),
+          ),
+        ],
+      );
     ;
   }
 
@@ -421,8 +429,9 @@ class _QuizA_000 extends State<QuizA_000> {
               // print(_intNextQuestionNum.runtimeType);
               _nextQuestionNum = _intNextQuestionNum.toString();
 
-              QuizStatusDb()
+              await QuizStatusDb()
                   .updateFlg(QuizA_List().list[QuesitonNum]!.QID, 'unanwer');
+
               bool? result = await Navigator.push(
                 context,
                 new MaterialPageRoute<bool>(
@@ -437,6 +446,23 @@ class _QuizA_000 extends State<QuizA_000> {
       //問題番号が１００の時は、「次へ」を表示しない。
       return Container(child: Text(''));
     }
+  }
+
+  Widget _buildPreviewUrl(String url){
+    String _url = url;
+    return Container(
+      width: QuizProblemSizeConfig.width,
+      child:AnyLinkPreview(
+        displayDirection: uiDirection.uiDirectionHorizontal,
+        link: _url,
+        cache: Duration(hours: 1),
+        backgroundColor: Colors.grey[300],
+        errorWidget: Container(
+          color: Colors.grey[300],
+          child: Text('Oops!'),
+        ),
+      ),
+    );
   }
 
   @override
@@ -592,22 +618,22 @@ class _QuizA_000 extends State<QuizA_000> {
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Container(
                     alignment: Alignment.center,
                     height: QuizImageSizeConfig.height,
@@ -634,25 +660,32 @@ class _QuizA_000 extends State<QuizA_000> {
                   Padding(
                       padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-                  Container(
-                    child: Text(
-                      QuizA_List().list[QuesitonNum]!.URL,
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
+                  _buildPreviewUrl(QuizA_List().list[QuesitonNum]!.URL),
                   Container(
                     child: Text(
                       QuizA_List().list[QuesitonNum]!.GoogleMap,
                       textAlign: TextAlign.center,
                     ),
                   ),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Container(
                     child: Text(
                       QuizA_List().list[QuesitonNum]!.CreateDate,
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  _buildNextPageContainer(QuesitonNum, '1')
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  _buildNextPageContainer(QuesitonNum, '1'),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                 ],
               ),
             ),
