@@ -15,6 +15,7 @@ class QuizA_000 extends StatefulWidget {
   late final String selectQ;
   late String myFavariteFlg;
 
+
   QuizA_000(this.QuesitonNum, this.selectQ, this.myFavariteFlg);
 
   @override
@@ -32,8 +33,6 @@ class _QuizA_000 extends State<QuizA_000> {
   Widget _viewCorrectWrong() {
     if (selectQ == QuizA_List().list[QuesitonNum]!.Answer) {
       QuizStatusDb().updateFlg(QuizA_List().list[QuesitonNum]!.QID, 'correct');
-      final player = AudioCache();
-      player.play('OK.mp3');
 
       return Column(
         children: [
@@ -58,8 +57,6 @@ class _QuizA_000 extends State<QuizA_000> {
       return Container(
       );
     } else {
-      final player = AudioCache();
-      player.play('NG.mp3');
       return Column(
         children: [
           Container(
@@ -385,7 +382,7 @@ class _QuizA_000 extends State<QuizA_000> {
 
   Widget _buildNextPageContainer(String problemId, String myFavariteFlg) {
     String myFavariteFlg = '0';
-    //★状態を見たいので一旦「２」にしているがリリース時には「１００」に変更すること！
+    //★状態を見たいので一旦「２」にしているがリリース時には「maxQuizQidValue」に変更すること！
     if (problemId != "2") {
       return Container(
         height: 50,
@@ -445,7 +442,7 @@ class _QuizA_000 extends State<QuizA_000> {
             }),
       );
     } else {
-      //問題番号が１００の時は、「次へ」を表示しない。
+      //問題番号がmaxQuizQidValueの時は、「次へ」を表示しない。
       return Container(child: Text(''));
     }
   }
@@ -559,15 +556,6 @@ class _QuizA_000 extends State<QuizA_000> {
             child: Center(
               child: Column(
                 children: [
-                  Container(
-                    child: FlatButton(
-                      onPressed: () async{
-                        final player = AudioCache();
-                        player.play('OK.mp3');
-                      },
-                      child: Text('ここを押すと音なるはず！'),
-                    ),
-                  ),
                   Padding(
                       padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
