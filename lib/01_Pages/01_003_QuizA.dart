@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:any_link_preview/any_link_preview.dart';
 import 'package:audioplayers/audioplayers.dart';
@@ -31,6 +32,9 @@ class _QuizA_000 extends State<QuizA_000> {
   Widget _viewCorrectWrong() {
     if (selectQ == QuizA_List().list[QuesitonNum]!.Answer) {
       QuizStatusDb().updateFlg(QuizA_List().list[QuesitonNum]!.QID, 'correct');
+      final player = AudioCache();
+      player.play('OK.mp3');
+
       return Column(
         children: [
           Container(
@@ -53,7 +57,9 @@ class _QuizA_000 extends State<QuizA_000> {
     } else if (selectQ == "") {
       return Container(
       );
-    } else
+    } else {
+      final player = AudioCache();
+      player.play('NG.mp3');
       return Column(
         children: [
           Container(
@@ -73,7 +79,8 @@ class _QuizA_000 extends State<QuizA_000> {
           ),
         ],
       );
-    ;
+      ;
+    }
   }
 
   Widget _buildSelectedContainer1() {
@@ -554,7 +561,7 @@ class _QuizA_000 extends State<QuizA_000> {
                 children: [
                   Container(
                     child: FlatButton(
-                      onPressed: () {
+                      onPressed: () async{
                         final player = AudioCache();
                         player.play('OK.mp3');
                       },
