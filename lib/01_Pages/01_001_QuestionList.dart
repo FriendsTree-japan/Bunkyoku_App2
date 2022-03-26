@@ -27,7 +27,7 @@ class _QuizeListState extends State<QuizeList> {
             height: QuizListSizeConfig.containerWidthSize,
             decoration: BoxDecoration(
               color: ColorConfig.White,
-              border: Border.all(color: ColorConfig.Blue),
+              border: Border.all(color: ColorConfig.Green),
               borderRadius: BorderRadius.circular(10),
             ),
             child: TextButton(
@@ -104,7 +104,7 @@ class _QuizeListState extends State<QuizeList> {
           width: QuizListSizeConfig.containerHeightSize,
           height: QuizListSizeConfig.containerWidthSize,
           decoration: BoxDecoration(
-            color: ColorConfig.Blue,
+            color: ColorConfig.Green,
             borderRadius: BorderRadius.circular(10),
           ),
           child: TextButton(
@@ -142,10 +142,10 @@ class _QuizeListState extends State<QuizeList> {
     return Scaffold(
       appBar: AppBar(
         title: Text('文京区アプリ'),
-        backgroundColor: ColorConfig.Blue,
+        backgroundColor: ColorConfig.Green,
         automaticallyImplyLeading: false,
       ),
-      backgroundColor: ColorConfig.SkyBlue,
+      backgroundColor: ColorConfig.WeakGreen,
       body: Column(
         children: [
           Column(

@@ -11,6 +11,8 @@ class ColorConfig {
   static late Color PinkRed;
   static late Color WeakGray;
   static late Color StrongGray;
+  static late Color Green;
+  static late Color WeakGreen;
 
   void init(BuildContext context) {
     //使用する色を定義
@@ -24,6 +26,8 @@ class ColorConfig {
     PinkRed = Color(0x88FF4949);
     WeakGray = Color(0xFFE8E8E8);
     StrongGray = Color(0xFFA3A3A3);
+    Green = Color(0xFF15705E);
+    WeakGreen = Color(0x3115705E);
   }
 }
 
