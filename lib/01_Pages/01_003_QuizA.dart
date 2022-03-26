@@ -31,23 +31,22 @@ class _QuizA_000 extends State<QuizA_000> {
   Widget _viewCorrectWrong() {
     if (selectQ == QuizA_List().list[QuesitonNum]!.Answer) {
       QuizStatusDb().updateFlg(QuizA_List().list[QuesitonNum]!.QID, 'correct');
-      return Stack(
+      return Column(
         children: [
           Container(
-            height: 100,
+            height: 80,
             child: Center(
               child: Icon(
                 Icons.circle_outlined,
-                size: 75,
+                size: 90,
                 color: ColorConfig.PinkRed,
               ),
             ),
           ),
           Container(
-            height: 100,
             child: Center(
                 child: Text('正解',
-                    style: TextStyle(fontSize: 50, color: ColorConfig.Black))),
+                    style: TextStyle(fontSize: 20, color: ColorConfig.Black))),
           ),
         ],
       );
@@ -55,22 +54,22 @@ class _QuizA_000 extends State<QuizA_000> {
       return Container(
       );
     } else
-      return Stack(
+      return Column(
         children: [
           Container(
+            height: 75,
             child: Center(
               child: Icon(
                 Icons.close,
-                size: 100,
+                size: 90,
                 color: ColorConfig.PinkRed,
               ),
             ),
           ),
           Container(
-            height: 100,
             child: Center(
                 child: Text('不正解',
-                    style: TextStyle(fontSize: 50, color: ColorConfig.Black))),
+                    style: TextStyle(fontSize: 20, color: ColorConfig.Black))),
           ),
         ],
       );
@@ -617,16 +616,7 @@ class _QuizA_000 extends State<QuizA_000> {
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
@@ -682,6 +672,22 @@ class _QuizA_000 extends State<QuizA_000> {
                   Padding(
                       padding:
                       EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+
                 ],
               ),
             ),
