@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-=======
 import 'package:any_link_preview/any_link_preview.dart';
-
->>>>>>> e1a2dd4a9b7c954e2eba1e5d62ad3cc17bd56413
 import 'package:bunkyoku_app2/main.dart';
 import 'package:bunkyoku_app2/01_Pages/01_002_QuizQ.dart';
 import 'package:bunkyoku_app2/02_Class/02_02_QuizQ.dart';
