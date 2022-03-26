@@ -44,8 +44,6 @@ flutter_native_splash:
   image: "images/icons/FriendsTree_icon.png"
   color: "#FFFFFF"
 
-
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
