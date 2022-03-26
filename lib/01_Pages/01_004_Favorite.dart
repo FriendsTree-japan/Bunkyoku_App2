@@ -74,10 +74,26 @@ class _Favorite extends State<Favorite> {
                                             ),
                                             Container(
                                               alignment: Alignment.topCenter,
-                                              child: Icon(
-                                                Icons.bookmark_outlined,
-                                                color:Colors.yellow,
-                                                size: 30,
+                                              child: IconButton(
+                                                icon: Icon(
+                                                  Icons.bookmark_outlined,
+                                                  color: quizStatusList[index].favoriteFlg == '0' ? Colors.white : Colors.yellow,
+                                                ),
+                                                onPressed: () async {
+                                                  if (quizStatusList[index].favoriteFlg == '0') {
+                                                    QuizStatusDb().updateFavoriteFlg(
+                                                        QuizA_List().list[quizStatusList[index].problemId]!.QID, '1');
+                                                  } else {
+                                                    QuizStatusDb().updateFavoriteFlg(
+                                                        QuizA_List().list[quizStatusList[index].problemId]!.QID, '0');
+                                                  }
+                                                  quizStatusList[index].favoriteFlg =
+                                                  await QuizStatusDb().setFavoriteFlg(quizStatusList[index].problemId);
+                                                  //①QuizStatusクラスのproblemIdに、QuizQ_List().list[QuesitonNum]!.QID,を入れる
+                                                  //※このときすでにデータがあれば更新処理は実施しないように制御する。
+                                                  //②QuizStatusクラスのfavoriteFlgが0であれば1、1であれば0を代入する
+                                                  setState(() {});
+                                                },
                                               ),
                                             ),
                                           ],
