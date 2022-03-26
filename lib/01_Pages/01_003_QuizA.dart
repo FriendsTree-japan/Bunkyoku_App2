@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:any_link_preview/any_link_preview.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:bunkyoku_app2/main.dart';
 import 'package:bunkyoku_app2/01_Pages/01_002_QuizQ.dart';
 import 'package:bunkyoku_app2/02_Class/02_02_QuizQ.dart';
@@ -551,6 +552,15 @@ class _QuizA_000 extends State<QuizA_000> {
             child: Center(
               child: Column(
                 children: [
+                  Container(
+                    child: FlatButton(
+                      onPressed: () {
+                        final player = AudioCache();
+                        player.play('OK.mp3');
+                      },
+                      child: Text('ここを押すと音なるはず！'),
+                    ),
+                  ),
                   Padding(
                       padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),

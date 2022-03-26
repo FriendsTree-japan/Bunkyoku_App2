@@ -39,6 +39,7 @@ dependencies:
   url_launcher: ^6.0.20
   google_mobile_ads: ^1.1.0
   any_link_preview: ^2.0.6
+  audioplayers: ^0.20.1
 
 flutter_native_splash:
   image: "images/icons/FriendsTree_icon.png"
@@ -68,6 +69,7 @@ flutter:
   uses-material-design: true
   assets:
     - images/
+    - sounds/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
