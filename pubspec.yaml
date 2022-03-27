@@ -40,6 +40,7 @@ dependencies:
   google_mobile_ads: ^1.1.0
   any_link_preview: ^2.0.6
   audioplayers: ^0.20.1
+  marquee: ^2.2.1
 
 flutter_native_splash:
   image: "images/icons/FriendsTree_icon.png"

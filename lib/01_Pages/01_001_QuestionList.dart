@@ -1,9 +1,12 @@
+import 'package:flutter/material.dart';
+import 'package:marquee/marquee.dart';
 import 'package:bunkyoku_app2/02_Class/02_06_QuizStatus.dart';
 import 'package:bunkyoku_app2/03_Unity/03_02_SqliteDb.dart';
-import 'package:flutter/material.dart';
 import 'package:bunkyoku_app2/01_Pages/01_002_QuizQ.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
 import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
+import 'package:bunkyoku_app2/02_Class/02_07_Rank.dart';
+import 'package:bunkyoku_app2/02_Class/02_08_Event.dart';
 
 class QuizeList extends StatefulWidget {
   @override
@@ -128,8 +131,32 @@ class _QuizeListState extends State<QuizeList> {
       }
     }
   }
+  Widget _buildMarquee() {
+    return Marquee(
+      text: 'Hello Flutter! You are very fast!',
+      velocity: 100, //速さ
+      blankSpace: 20, //末尾の余白
+    );
+  }
 
-
+  Widget _buildRank() {
+    Future<String> correctCount = QuizStatusDb().getCorrectCount();
+    // int count = QuizStatusDb.getCorrectCount(correctCount);
+    if (correctCount == 100){
+      return Text(Rank().Rank5, style: TextStyle(fontSize: 20));
+    }
+    else if(correctCount == 75){
+      return Text(Rank().Rank4, style: TextStyle(fontSize: 20));
+    }
+    else if(correctCount == 50){
+      return Text(Rank().Rank3, style: TextStyle(fontSize: 20));
+    }
+    else if(correctCount == 25){
+      return Text(Rank().Rank2, style: TextStyle(fontSize: 20));
+    }else{
+      return Text(Rank().Rank1, style: TextStyle(fontSize: 20));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -152,6 +179,7 @@ class _QuizeListState extends State<QuizeList> {
             children: [
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+              _buildRank(),
               FutureBuilder(
                   future: correctCount,
                   builder: (BuildContext context,
@@ -176,9 +204,6 @@ class _QuizeListState extends State<QuizeList> {
                       return Text("データが存在しません");
                     }
                   }),
-              Container(
-                child: Text('がんばれ〜', style: TextStyle(fontSize: 20)),
-              ),
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
             ],
@@ -226,3 +251,4 @@ class _QuizeListState extends State<QuizeList> {
     );
   }
 }
+

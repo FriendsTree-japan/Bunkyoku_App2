@@ -217,6 +217,7 @@ class QuizStatusDb {
     print(quizCorrecSCnt.runtimeType);
     return Future.value(quizCorrecSCnt);
   }
+
   //現在の問題数の取得
   Future<void> getMaxQuizQid() async {
     String dbPath = await getDatabasesPath();
