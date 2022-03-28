@@ -79,13 +79,6 @@ class _SettingState extends State<Setting> {
             },
             child: const Text('ライセンス',style: TextStyle(color: Colors.black)),
           ),
-          // Container(
-          //   child: Column(
-          //     children: [
-          //       _buildMarquee(),
-          //     ],
-          //   ),
-          // ),
         ],
       ),
     );

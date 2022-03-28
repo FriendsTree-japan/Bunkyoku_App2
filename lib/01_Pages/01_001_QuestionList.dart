@@ -139,19 +139,17 @@ class _QuizeListState extends State<QuizeList> {
     );
   }
 
-  Widget _buildRank() {
-    Future<String> correctCount = QuizStatusDb().getCorrectCount();
-    // int count = QuizStatusDb.getCorrectCount(correctCount);
-    if (correctCount == 100){
+  Widget _buildRank(int CorrectCount) {
+    if (CorrectCount == 100){
       return Text(Rank().Rank5, style: TextStyle(fontSize: 20));
     }
-    else if(correctCount == 75){
+    else if(CorrectCount >= 75){
       return Text(Rank().Rank4, style: TextStyle(fontSize: 20));
     }
-    else if(correctCount == 50){
+    else if(CorrectCount >= 50){
       return Text(Rank().Rank3, style: TextStyle(fontSize: 20));
     }
-    else if(correctCount == 25){
+    else if(CorrectCount >= 25){
       return Text(Rank().Rank2, style: TextStyle(fontSize: 20));
     }else{
       return Text(Rank().Rank1, style: TextStyle(fontSize: 20));
@@ -164,6 +162,7 @@ class _QuizeListState extends State<QuizeList> {
     QuizListSizeConfig().init(context);
     ColorConfig().init(context);
     BasePaddingConfig().init(context);
+    SizeConfig().init(context);
     Future<String> correctCount = QuizStatusDb().getCorrectCount();
 
     return Scaffold(
@@ -202,12 +201,33 @@ class _QuizeListState extends State<QuizeList> {
                     }else{
                       return Text("データが存在しません");
                     }
-                  }),
-              _buildRank(),
+                  }
+                  ),
+              FutureBuilder(
+                  future: correctCount,
+                  builder: (BuildContext context,
+                      AsyncSnapshot<String> snapshot){
+                    if (snapshot.connectionState != ConnectionState.done){
+                      return new Align(
+                          child: Center(
+                            child: new CircularProgressIndicator(),
+                          ));
+                    }else if (snapshot.hasError) {
+                      return new Text('Error: ${snapshot.error!}');
+                    }else if (snapshot.hasData){
+                      String? correctCount = snapshot.data;
+                      int CorrectCount = int.parse(correctCount!);
+                      return _buildRank(CorrectCount);
+                    }else{
+                      return Text("データが存在しません");
+                    }
+                  }
+              ),
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
             ],
           ),
+
           FutureBuilder (
               future: result,
               builder: (BuildContext context,
@@ -223,29 +243,72 @@ class _QuizeListState extends State<QuizeList> {
                   final List<QuizStatus> quizList =
                       snapshot.data ?? <QuizStatus>[];
                   return Expanded(
-                    child: GridView.builder(
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          mainAxisSpacing: 20,
-                          crossAxisSpacing: 13.0,
-                          childAspectRatio: 1,
-                          crossAxisCount: 4,
-                        ),
-                        primary: false,
-                        padding: const EdgeInsets.fromLTRB(32, 10, 32, 32),
-                        //カラム数
-                        shrinkWrap: true,
-                        itemCount: quizList.length,
-                        itemBuilder: (BuildContext context, int index){
-                          return _buildQuizListContainer (
-                              quizList[index].problemId,
-                              quizList[index].correctFlg,
-                              quizList[index].unansweredFlg);
-                        }),
+                    child: Stack(children: [
+                      GridView.builder(
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            mainAxisSpacing: 20,
+                            crossAxisSpacing: 13.0,
+                            childAspectRatio: 1,
+                            crossAxisCount: 4,
+                          ),
+                          primary: false,
+                          padding: const EdgeInsets.fromLTRB(32, 10, 32, 32),
+                          //カラム数
+                          shrinkWrap: true,
+                          itemCount: quizList.length,
+                          itemBuilder: (BuildContext context, int index){
+                            return _buildQuizListContainer (
+                                quizList[index].problemId,
+                                quizList[index].correctFlg,
+                                quizList[index].unansweredFlg);
+                          }),
+                      Column(
+                        children: [
+                          Padding(padding: EdgeInsets.only(bottom: SizeConfig.screenHeight * 0.62),),//Scafordのどの位置か
+                          Align(
+                            alignment: const Alignment(-20, -1),
+                            child: Container(
+                              height: 40,
+                              color: ColorConfig.WeakGray,
+                              child: Expanded(
+                                child: Marquee(
+                                  text: 'Event.Event1()',
+                                  velocity: 100,
+                                  blankSpace: 40.0,
+                                ),
+                              ),
+                            ), // なにかしらのWidget
+                          ),
+                        ],
+                      ),
+                    ],),
                   );
                 } else {
                   return Text("データが存在しません");
                 }
               }),
+          // Column(
+          //   children: [
+          //     Padding(padding: EdgeInsets.all(10),),
+          //     Align(
+          //       alignment: Alignment.bottomCenter,
+          //       child: Container(
+          //         height: 30,
+          //         color: ColorConfig.WeakGray,
+          //         child: Expanded(
+          //           child: Marquee(
+          //             text: 'Event.Event1()',
+          //             velocity: 100,
+          //             blankSpace: 40.0,
+          //           ),
+          //         ),
+          //       ), // なにかしらのWidget
+          //     ),
+          //   ],
+          // ),
+
+
+
         ],
       ),
     );
