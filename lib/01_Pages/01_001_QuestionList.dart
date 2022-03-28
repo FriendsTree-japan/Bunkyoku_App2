@@ -179,7 +179,6 @@ class _QuizeListState extends State<QuizeList> {
             children: [
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              _buildRank(),
               FutureBuilder(
                   future: correctCount,
                   builder: (BuildContext context,
@@ -204,6 +203,7 @@ class _QuizeListState extends State<QuizeList> {
                       return Text("データが存在しません");
                     }
                   }),
+              _buildRank(),
               Padding(
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
             ],

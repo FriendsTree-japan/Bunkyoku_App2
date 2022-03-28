@@ -13,6 +13,14 @@ class Setting extends StatefulWidget {
 
 class _SettingState extends State<Setting> {
 
+  Widget _buildMarquee() {
+    return Marquee(
+      text: 'Hello Flutter! You are very fast!',
+      velocity: 100, //速さ
+      blankSpace: 20, //末尾の余白
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     ColorConfig().init(context);
@@ -71,6 +79,13 @@ class _SettingState extends State<Setting> {
             },
             child: const Text('ライセンス',style: TextStyle(color: Colors.black)),
           ),
+          // Container(
+          //   child: Column(
+          //     children: [
+          //       _buildMarquee(),
+          //     ],
+          //   ),
+          // ),
         ],
       ),
     );
