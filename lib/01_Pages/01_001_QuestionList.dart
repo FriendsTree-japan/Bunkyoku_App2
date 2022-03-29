@@ -131,13 +131,13 @@ class _QuizeListState extends State<QuizeList> {
       }
     }
   }
-  Widget _buildMarquee() {
-    return Marquee(
-      text: 'Hello Flutter! You are very fast!',
-      velocity: 100, //速さ
-      blankSpace: 20, //末尾の余白
-    );
-  }
+  // Widget _buildMarquee() {
+  //   return Marquee(
+  //     text: 'Hello Flutter! You are very fast!',
+  //     velocity: 50, //速さ
+  //     blankSpace: 20, //末尾の余白
+  //   );
+  // }
 
   Widget _buildRank(int CorrectCount) {
     if (CorrectCount == 100){
@@ -227,7 +227,6 @@ class _QuizeListState extends State<QuizeList> {
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
             ],
           ),
-
           FutureBuilder (
               future: result,
               builder: (BuildContext context,
@@ -243,7 +242,9 @@ class _QuizeListState extends State<QuizeList> {
                   final List<QuizStatus> quizList =
                       snapshot.data ?? <QuizStatus>[];
                   return Expanded(
-                    child: Stack(children: [
+                    child: Stack(
+                      fit: StackFit.expand,
+                      children: [
                       GridView.builder(
                           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                             mainAxisSpacing: 20,
@@ -262,11 +263,8 @@ class _QuizeListState extends State<QuizeList> {
                                 quizList[index].correctFlg,
                                 quizList[index].unansweredFlg);
                           }),
-                      Column(
-                        children: [
-                          Padding(padding: EdgeInsets.only(bottom: SizeConfig.screenHeight * 0.62),),//Scafordのどの位置か
                           Align(
-                            alignment: const Alignment(-20, -1),
+                            alignment: Alignment.bottomCenter,
                             child: Container(
                               height: 40,
                               color: ColorConfig.WeakGray,
@@ -279,8 +277,6 @@ class _QuizeListState extends State<QuizeList> {
                               ),
                             ), // なにかしらのWidget
                           ),
-                        ],
-                      ),
                     ],),
                   );
                 } else {
