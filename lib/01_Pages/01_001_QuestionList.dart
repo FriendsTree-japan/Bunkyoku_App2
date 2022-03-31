@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
+import 'package:intl/intl.dart';
 import 'package:bunkyoku_app2/02_Class/02_06_QuizStatus.dart';
 import 'package:bunkyoku_app2/03_Unity/03_02_SqliteDb.dart';
 import 'package:bunkyoku_app2/01_Pages/01_002_QuizQ.dart';
@@ -15,6 +16,8 @@ class QuizeList extends StatefulWidget {
 
 class _QuizeListState extends State<QuizeList> {
   String _questionNum = '';
+  DateTime yyyymmdd = DateTime.now();
+  var now = DateFormat("mm").format(new DateTime.now());
 
   Widget _buildQuizListContainer(problemId, correctFlg, unanswerFlg) {
     late String _problemId = problemId;
@@ -156,6 +159,44 @@ class _QuizeListState extends State<QuizeList> {
     }
   }
 
+  Widget _buildCalender() {
+    if (now == 01 ){
+      return Text(Event().Event1, style: TextStyle(fontSize: 20));
+    }
+    else if(now == 02){
+      return Text(Event().Event2, style: TextStyle(fontSize: 20));
+    }
+    else if(now == 03){
+      return Text(Event().Event3, style: TextStyle(fontSize: 20));
+    }
+    else if(now == 04){
+      return Text(Event().Event4, style: TextStyle(fontSize: 20));
+    }
+    else if(now == 05){
+      return Text(Event().Event5, style: TextStyle(fontSize: 20));
+    }
+    else if(now == 06){
+      return Text(Event().Event6, style: TextStyle(fontSize: 20));
+    }
+    else if(now == 07){
+      return Text(Event().Event7, style: TextStyle(fontSize: 20));
+    }
+    else if(now == 08){
+      return Text(Event().Event8, style: TextStyle(fontSize: 20));
+    }
+    else if(now == 09){
+      return Text(Event().Event9, style: TextStyle(fontSize: 20));
+    }
+    else if(now == 10){
+      return Text(Event().Event10, style: TextStyle(fontSize: 20));
+    }
+    else if(now == 11){
+      return Text(Event().Event11, style: TextStyle(fontSize: 20));
+    }else{
+      return Text(Event().Event12, style: TextStyle(fontSize: 20));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     Future<List<QuizStatus>> result = QuizStatusDb().getDataList();
@@ -227,6 +268,9 @@ class _QuizeListState extends State<QuizeList> {
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
             ],
           ),
+          Container(
+            child: _buildCalender(),
+          ),
           FutureBuilder (
               future: result,
               builder: (BuildContext context,
@@ -270,7 +314,7 @@ class _QuizeListState extends State<QuizeList> {
                               color: ColorConfig.WeakGray,
                               child: Expanded(
                                 child: Marquee(
-                                  text: 'Event.Event1()',
+                                  text: 'test',
                                   velocity: 100,
                                   blankSpace: 40.0,
                                 ),
