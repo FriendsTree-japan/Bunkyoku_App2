@@ -16,8 +16,7 @@ class QuizeList extends StatefulWidget {
 
 class _QuizeListState extends State<QuizeList> {
   String _questionNum = '';
-  DateTime yyyymmdd = DateTime.now();
-  var now = DateFormat("mm").format(new DateTime.now());
+  //String today = outputFormat.format(now);
 
   Widget _buildQuizListContainer(problemId, correctFlg, unanswerFlg) {
     late String _problemId = problemId;
@@ -159,41 +158,45 @@ class _QuizeListState extends State<QuizeList> {
     }
   }
 
-  Widget _buildCalender() {
-    if (now == 01 ){
-      return Text(Event().Event1, style: TextStyle(fontSize: 20));
+  String _buildCalender() {
+    DateTime now = DateTime.now();
+    DateFormat outputFormat = DateFormat('MM');
+    String month = outputFormat.format(now);
+    print(month);
+    if (month == '01' ){
+      return Event().Event1;
     }
-    else if(now == 02){
-      return Text(Event().Event2, style: TextStyle(fontSize: 20));
+    else if(month == '02'){
+      return Event().Event3;
     }
-    else if(now == 03){
-      return Text(Event().Event3, style: TextStyle(fontSize: 20));
+    else if(month == '03'){
+      return Event().Event3;
     }
-    else if(now == 04){
-      return Text(Event().Event4, style: TextStyle(fontSize: 20));
+    else if(month == '04'){
+      return Event().Event4;
     }
-    else if(now == 05){
-      return Text(Event().Event5, style: TextStyle(fontSize: 20));
+    else if(month == '05'){
+      return Event().Event5;
     }
-    else if(now == 06){
-      return Text(Event().Event6, style: TextStyle(fontSize: 20));
+    else if(month == '06'){
+      return Event().Event6;
     }
-    else if(now == 07){
-      return Text(Event().Event7, style: TextStyle(fontSize: 20));
+    else if(month == '07'){
+      return Event().Event7;
     }
-    else if(now == 08){
-      return Text(Event().Event8, style: TextStyle(fontSize: 20));
+    else if(month == '08'){
+      return Event().Event8;
     }
-    else if(now == 09){
-      return Text(Event().Event9, style: TextStyle(fontSize: 20));
+    else if(month == '09'){
+      return Event().Event9;
     }
-    else if(now == 10){
-      return Text(Event().Event10, style: TextStyle(fontSize: 20));
+    else if(month == '10'){
+      return Event().Event10;
     }
-    else if(now == 11){
-      return Text(Event().Event11, style: TextStyle(fontSize: 20));
+    else if(month == '11'){
+      return Event().Event11;
     }else{
-      return Text(Event().Event12, style: TextStyle(fontSize: 20));
+      return Event().Event12;
     }
   }
 
@@ -268,9 +271,6 @@ class _QuizeListState extends State<QuizeList> {
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
             ],
           ),
-          Container(
-            child: _buildCalender(),
-          ),
           FutureBuilder (
               future: result,
               builder: (BuildContext context,
@@ -314,7 +314,7 @@ class _QuizeListState extends State<QuizeList> {
                               color: ColorConfig.WeakGray,
                               child: Expanded(
                                 child: Marquee(
-                                  text: 'test',
+                                  text: _buildCalender(),
                                   velocity: 100,
                                   blankSpace: 40.0,
                                 ),
@@ -327,28 +327,6 @@ class _QuizeListState extends State<QuizeList> {
                   return Text("データが存在しません");
                 }
               }),
-          // Column(
-          //   children: [
-          //     Padding(padding: EdgeInsets.all(10),),
-          //     Align(
-          //       alignment: Alignment.bottomCenter,
-          //       child: Container(
-          //         height: 30,
-          //         color: ColorConfig.WeakGray,
-          //         child: Expanded(
-          //           child: Marquee(
-          //             text: 'Event.Event1()',
-          //             velocity: 100,
-          //             blankSpace: 40.0,
-          //           ),
-          //         ),
-          //       ), // なにかしらのWidget
-          //     ),
-          //   ],
-          // ),
-
-
-
         ],
       ),
     );
