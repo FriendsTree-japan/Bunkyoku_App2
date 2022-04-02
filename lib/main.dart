@@ -105,7 +105,7 @@ class _HomePageState extends State<HomePage>
         },
         items: myBottomNavBarItems(),
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: ColorConfig.Green,
+        selectedItemColor: ColorConfig.SelectGreen,
         unselectedItemColor: ColorConfig.Black,
       ),
     );

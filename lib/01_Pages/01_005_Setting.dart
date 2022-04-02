@@ -13,24 +13,16 @@ class Setting extends StatefulWidget {
 
 class _SettingState extends State<Setting> {
 
-  Widget _buildMarquee() {
-    return Marquee(
-      text: 'Hello Flutter! You are very fast!',
-      velocity: 100, //速さ
-      blankSpace: 20, //末尾の余白
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     ColorConfig().init(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('設定'),
-        backgroundColor: ColorConfig.Blue,
+        backgroundColor: ColorConfig.Green,
         automaticallyImplyLeading: false,
       ),
-      backgroundColor: ColorConfig.SkyBlue,
+      //backgroundColor: ColorConfig.SkyBlue,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,

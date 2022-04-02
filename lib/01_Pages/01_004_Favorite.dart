@@ -24,10 +24,10 @@ class _Favorite extends State<Favorite> {
     return Scaffold(
         appBar: AppBar(
           title: Text('お気に入り'),
-          backgroundColor: ColorConfig.Blue,
+          backgroundColor: ColorConfig.Green,
           automaticallyImplyLeading: false,
         ),
-        backgroundColor: ColorConfig.SkyBlue,
+        //backgroundColor: ColorConfig.SkyBlue,
         body: FutureBuilder(
             future: favoriteList,
             builder:

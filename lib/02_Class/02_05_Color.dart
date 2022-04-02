@@ -15,6 +15,7 @@ class ColorConfig {
   static late Color Green;
   static late Color WeakGreen;
   static late Color WakamonoGreen;
+  static late Color SelectGreen;
 
   void init(BuildContext context) {
     //使用する色を定義
@@ -32,5 +33,6 @@ class ColorConfig {
     Green = Color(0xFF15705E);
     WeakGreen = Color(0xFFDFEEDD);
     WakamonoGreen = Color(0xFF1D9E85);
+    SelectGreen = Color(0xFF21C7A6);
   }
 }
