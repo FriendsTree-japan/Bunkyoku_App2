@@ -109,7 +109,7 @@ class _QuizeListState extends State<QuizeList> {
           width: QuizListSizeConfig.containerHeightSize,
           height: QuizListSizeConfig.containerWidthSize,
           decoration: BoxDecoration(
-            color: ColorConfig.Green,
+            color: ColorConfig.WakamonoGreen,
             borderRadius: BorderRadius.circular(10),
           ),
           child: TextButton(
@@ -311,11 +311,11 @@ class _QuizeListState extends State<QuizeList> {
                             alignment: Alignment.bottomCenter,
                             child: Container(
                               height: 40,
-                              color: ColorConfig.WeakGray,
+                              color: ColorConfig.WeakBlack,
                               child: Expanded(
                                 child: Marquee(
-                                  text: _buildCalender(),
-                                  velocity: 100,
+                                  text: _buildCalender(), style: TextStyle(color: ColorConfig.White),
+                                  velocity: 50,
                                   blankSpace: 40.0,
                                 ),
                               ),

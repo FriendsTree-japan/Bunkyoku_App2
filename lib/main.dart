@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       home: HomePage(),
     );
@@ -105,7 +105,7 @@ class _HomePageState extends State<HomePage>
         },
         items: myBottomNavBarItems(),
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: ColorConfig.Blue,
+        selectedItemColor: ColorConfig.Green,
         unselectedItemColor: ColorConfig.Black,
       ),
     );
