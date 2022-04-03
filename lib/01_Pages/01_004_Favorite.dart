@@ -7,17 +7,20 @@ import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
 import '../02_Class/02_06_QuizStatus.dart';
 import 'package:bunkyoku_app2/03_Unity/03_02_SqliteDb.dart';
 
+import '../main.dart';
 import '01_003_QuizA.dart';
 
 class Favorite extends StatefulWidget {
   @override
+
   _Favorite createState() => new _Favorite();
 }
 
 class _Favorite extends State<Favorite> {
+  // static Future<List<QuizStatus>> favoriteList = QuizStatusDb().getFavoriteDataList();
+
   @override
   Widget build(BuildContext context) {
-    Future<List<QuizStatus>> favoriteList = QuizStatusDb().getFavoriteDataList();
     ColorConfig().init(context);
     BasePaddingConfig().init(context);
     QuizProblemSizeConfig().init(context);
@@ -29,7 +32,7 @@ class _Favorite extends State<Favorite> {
         ),
         backgroundColor: ColorConfig.SkyBlue,
         body: FutureBuilder(
-            future: favoriteList,
+            future: HomePageState.favoriteList,
             builder:
                 (BuildContext context, AsyncSnapshot<List<QuizStatus>> snapshot) {
               if (snapshot.connectionState != ConnectionState.done) {
@@ -56,6 +59,7 @@ class _Favorite extends State<Favorite> {
                               child: Column(
                                 children: <Widget>[
                                   ListTile(
+                                    tileColor: quizStatusList[index].favoriteFlg == '0' ? ColorConfig.Gray : Colors.white,
                                     title:
                                     // ③オブジェクトの属性(タイトル属性)を参照する
                                     Row(
@@ -77,18 +81,20 @@ class _Favorite extends State<Favorite> {
                                               child: IconButton(
                                                 icon: Icon(
                                                   Icons.bookmark_outlined,
-                                                  color: quizStatusList[index].favoriteFlg == '0' ? Colors.white : Colors.yellow,
+                                                  color: quizStatusList[index].favoriteFlg == '0' ? ColorConfig.StrongGray : Colors.yellow,
                                                 ),
                                                 onPressed: () async {
                                                   if (quizStatusList[index].favoriteFlg == '0') {
-                                                    QuizStatusDb().updateFavoriteFlg(
-                                                        QuizA_List().list[quizStatusList[index].problemId]!.QID, '1');
+                                                    // QuizStatusDb().updateFavoriteFlg(
+                                                    //     QuizA_List().list[quizStatusList[index].problemId]!.QID, '1');
+                                                    quizStatusList[index].favoriteFlg = '1';
                                                   } else {
-                                                    QuizStatusDb().updateFavoriteFlg(
-                                                        QuizA_List().list[quizStatusList[index].problemId]!.QID, '0');
+                                                    // QuizStatusDb().updateFavoriteFlg(
+                                                    //     QuizA_List().list[quizStatusList[index].problemId]!.QID, '0');
+                                                    quizStatusList[index].favoriteFlg = '0';
                                                   }
-                                                  quizStatusList[index].favoriteFlg =
-                                                  await QuizStatusDb().setFavoriteFlg(quizStatusList[index].problemId);
+                                                  // quizStatusList[index].favoriteFlg =
+                                                  // await QuizStatusDb().setFavoriteFlg(quizStatusList[index].problemId);
                                                   //①QuizStatusクラスのproblemIdに、QuizQ_List().list[QuesitonNum]!.QID,を入れる
                                                   //※このときすでにデータがあれば更新処理は実施しないように制御する。
                                                   //②QuizStatusクラスのfavoriteFlgが0であれば1、1であれば0を代入する

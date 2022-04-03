@@ -232,4 +232,36 @@ class QuizStatusDb {
         'SELECT max(problemId) as maxQuizQidValue FROM quizStatus');
     userMaxQuizQidValue = getMaxQuizQid[0]['maxQuizQidValue'];
   }
+
+  Future<void> updateFavoriteListData(List<QuizStatus> favoriteListData) async {
+    debugPrint("Updata start222");
+    String dbPath = await getDatabasesPath();
+    String path = join(dbPath, "quizStatus.db");
+    final database = await openDatabase(
+      path,
+      version: 1,
+    );
+    final Database db = await database;
+    // print(favoriteListData[0].problemId);
+    // print(favoriteListData[1].problemId);
+    // print(favoriteListData.length);
+
+    for (int i = 0; i < favoriteListData.length; i++) {
+      var values = <String, dynamic>{
+        "problemId": favoriteListData[i].problemId,
+        "unansweredFlg": favoriteListData[i].unansweredFlg,
+        "correctFlg": favoriteListData[i].correctFlg,
+        "favoriteFlg": favoriteListData[i].favoriteFlg
+      };
+      await db.update(
+        'quizStatus',
+        values,
+        conflictAlgorithm: ConflictAlgorithm.abort,
+        where: "problemId = ?",
+        whereArgs: [favoriteListData[i].problemId],
+      );
+    }
+  }
+
+
 }
