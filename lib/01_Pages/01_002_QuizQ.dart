@@ -115,8 +115,8 @@ class _QuizQ_000 extends State<QuizQ_000> {
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
               Container(
                 alignment: Alignment.center,
-                height: QuizImageSizeConfig.height,
-                width: QuizImageSizeConfig.width,
+                height: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0' ? QuizImageSizeConfig.yokoImageHeight : QuizImageSizeConfig.tateImageHeight,
+                width: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0' ? QuizImageSizeConfig.yokoImageWidth : QuizImageSizeConfig.tateImageWidth,
                 child: Image.asset(QuizQ_List().list[QuesitonNum]!.Picture),
               ),
               Padding(

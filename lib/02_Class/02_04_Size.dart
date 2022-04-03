@@ -17,11 +17,15 @@ class BasePaddingConfig{
 }
 
 class QuizImageSizeConfig{
-  static late double height;
-  static late double width;
+  static late double yokoImageHeight;
+  static late double yokoImageWidth;
+  static late double tateImageHeight;
+  static late double tateImageWidth;
   void init(BuildContext context){
-    height = 190.0;
-    width = 320.0;
+    yokoImageHeight = 190.0;
+    yokoImageWidth = 320.0;
+    tateImageHeight = 300.0;
+    tateImageWidth = 280.0;
   }
 }
 

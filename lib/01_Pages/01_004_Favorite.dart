@@ -110,9 +110,12 @@ class _Favorite extends State<Favorite> {
                                           mainAxisAlignment: MainAxisAlignment.start,
                                           children: [
                                             Container(
+                                              // height: QuizA_List().list[quizStatusList[index].problemId]!.PicturePtn == '0' ? QuizImageSizeConfig.yokoImageHeight : QuizImageSizeConfig.tateImageHeight,
+                                              // width: QuizA_List().list[quizStatusList[index].problemId]!.PicturePtn == '0' ? QuizImageSizeConfig.yokoImageWidth : QuizImageSizeConfig.tateImageWidth,
                                                 child:Image.asset(QuizA_List().list[quizStatusList[index].problemId]!.Picture),
                                             ),
                                             Container(
+                                              // width: QuizA_List().list[quizStatusList[index].problemId]!.PicturePtn == '0' ? QuizImageSizeConfig.yokoImageWidth : QuizImageSizeConfig.tateImageWidth,
                                               child: Text(
                                                 '問題文:${QuizQ_List().list[quizStatusList[index].problemId]!.problem}',
                                                 style: TextStyle(
@@ -124,6 +127,7 @@ class _Favorite extends State<Favorite> {
                                                 padding:
                                                 EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                                             Container(
+                                              // width: QuizA_List().list[quizStatusList[index].problemId]!.PicturePtn == '0' ? QuizImageSizeConfig.yokoImageWidth : QuizImageSizeConfig.tateImageWidth,
                                               alignment: Alignment.centerLeft,
                                               child: Text(
                                                 'こたえ:${QuizA_List().list[quizStatusList[index].problemId]!.Answer}',
