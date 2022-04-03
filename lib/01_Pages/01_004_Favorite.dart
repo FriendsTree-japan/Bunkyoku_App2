@@ -59,7 +59,6 @@ class _Favorite extends State<Favorite> {
                               child: Column(
                                 children: <Widget>[
                                   ListTile(
-                                    tileColor: quizStatusList[index].favoriteFlg == '0' ? ColorConfig.Gray : Colors.white,
                                     title:
                                     // ③オブジェクトの属性(タイトル属性)を参照する
                                     Row(
