@@ -547,9 +547,9 @@ class _QuizA_000 extends State<QuizA_000> {
             ),
           ],
           iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: ColorConfig.Blue,
+          backgroundColor: ColorConfig.Green,
         ),
-        backgroundColor: ColorConfig.SkyBlue,
+        backgroundColor: ColorConfig.White,
         body: Scrollbar(
           isAlwaysShown: false,
           child: SingleChildScrollView(

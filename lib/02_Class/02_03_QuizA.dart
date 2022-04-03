@@ -9,7 +9,7 @@ class QuizA_List {
       Picture: 'images/A076.jpeg',
       Commentary: '鼠ではないと上がり降りができないって、相当急な坂道ですよね。ちなみに鼠坂の壁には、ネズミの絵が書いてあるそうです。',
       Tips: '',
-      URL: 'https://www.google.com/maps/d/u/0/viewer?hl=ja&ie=UTF8&brcurrent=3%2C0x60188c0c0b13f54d%3A0xb630953beee48188%2C0&msa=0&ll=35.70365899999998%2C139.74849699999996&spn=0.024394%2C0.030899&z=14&source=embed&mid=1MIFumq5V3aI8UjHapym0goxxRJw',//test用
+      URL: 'https://b-kanko.jp',//test用
       GoogleMap: '',
       CreateDate: '掲載内容は2022年3月24時点の情報です',
     ),

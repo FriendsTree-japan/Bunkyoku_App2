@@ -101,9 +101,9 @@ class _QuizQ_000 extends State<QuizQ_000> {
                 }
               }),
           iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: ColorConfig.Blue,
+          backgroundColor: ColorConfig.Green,
         ),
-        backgroundColor: ColorConfig.SkyBlue,
+        backgroundColor: ColorConfig.White,
         body: Center(
           child: Column(
             children: [
