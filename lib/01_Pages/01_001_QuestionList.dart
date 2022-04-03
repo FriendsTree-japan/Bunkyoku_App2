@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
+import 'package:intl/intl.dart';
 import 'package:bunkyoku_app2/02_Class/02_06_QuizStatus.dart';
 import 'package:bunkyoku_app2/03_Unity/03_02_SqliteDb.dart';
 import 'package:bunkyoku_app2/01_Pages/01_002_QuizQ.dart';
@@ -15,6 +16,7 @@ class QuizeList extends StatefulWidget {
 
 class _QuizeListState extends State<QuizeList> {
   String _questionNum = '';
+  //String today = outputFormat.format(now);
 
   Widget _buildQuizListContainer(problemId, correctFlg, unanswerFlg) {
     late String _problemId = problemId;
@@ -58,15 +60,11 @@ class _QuizeListState extends State<QuizeList> {
           Align(
             alignment: Alignment.topRight,
             child: Container(
-              height: 15,
-              width: 40,
+              height: 10,
+              width: 10,
               decoration: BoxDecoration(
                 color: ColorConfig.Red,
                 borderRadius: BorderRadius.circular(10),
-              ),
-              child: Text(
-                'New',textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white),
               ),
             ),
           ),
@@ -107,7 +105,7 @@ class _QuizeListState extends State<QuizeList> {
           width: QuizListSizeConfig.containerHeightSize,
           height: QuizListSizeConfig.containerWidthSize,
           decoration: BoxDecoration(
-            color: ColorConfig.Green,
+            color: ColorConfig.WakamonoGreen,
             borderRadius: BorderRadius.circular(10),
           ),
           child: TextButton(
@@ -153,6 +151,48 @@ class _QuizeListState extends State<QuizeList> {
       return Text(Rank().Rank2, style: TextStyle(fontSize: 20));
     }else{
       return Text(Rank().Rank1, style: TextStyle(fontSize: 20));
+    }
+  }
+
+  String _buildCalender() {
+    DateTime now = DateTime.now();
+    DateFormat outputFormat = DateFormat('MM');
+    String month = outputFormat.format(now);
+    print(month);
+    if (month == '01' ){
+      return Event().Event1;
+    }
+    else if(month == '02'){
+      return Event().Event3;
+    }
+    else if(month == '03'){
+      return Event().Event3;
+    }
+    else if(month == '04'){
+      return Event().Event4;
+    }
+    else if(month == '05'){
+      return Event().Event5;
+    }
+    else if(month == '06'){
+      return Event().Event6;
+    }
+    else if(month == '07'){
+      return Event().Event7;
+    }
+    else if(month == '08'){
+      return Event().Event8;
+    }
+    else if(month == '09'){
+      return Event().Event9;
+    }
+    else if(month == '10'){
+      return Event().Event10;
+    }
+    else if(month == '11'){
+      return Event().Event11;
+    }else{
+      return Event().Event12;
     }
   }
 
@@ -267,11 +307,11 @@ class _QuizeListState extends State<QuizeList> {
                             alignment: Alignment.bottomCenter,
                             child: Container(
                               height: 40,
-                              color: ColorConfig.WeakGray,
+                              color: ColorConfig.WeakBlack,
                               child: Expanded(
                                 child: Marquee(
-                                  text: 'Event.Event1()',
-                                  velocity: 100,
+                                  text: _buildCalender(), style: TextStyle(color: ColorConfig.White),
+                                  velocity: 50,
                                   blankSpace: 40.0,
                                 ),
                               ),
@@ -283,28 +323,6 @@ class _QuizeListState extends State<QuizeList> {
                   return Text("データが存在しません");
                 }
               }),
-          // Column(
-          //   children: [
-          //     Padding(padding: EdgeInsets.all(10),),
-          //     Align(
-          //       alignment: Alignment.bottomCenter,
-          //       child: Container(
-          //         height: 30,
-          //         color: ColorConfig.WeakGray,
-          //         child: Expanded(
-          //           child: Marquee(
-          //             text: 'Event.Event1()',
-          //             velocity: 100,
-          //             blankSpace: 40.0,
-          //           ),
-          //         ),
-          //       ), // なにかしらのWidget
-          //     ),
-          //   ],
-          // ),
-
-
-
         ],
       ),
     );

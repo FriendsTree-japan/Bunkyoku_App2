@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       home: HomePage(),
     );
@@ -61,9 +61,9 @@ class HomePageState extends State<HomePage>
 
   List<BottomNavigationBarItem> myBottomNavBarItems() {
     return [
-      BottomNavigationBarItem(icon: Icon(Icons.home_outlined),label: "ホーム"),
-      BottomNavigationBarItem(icon: Icon(Icons.bookmark_outline_outlined ),label: "お気に入り"),
-      BottomNavigationBarItem(icon: Icon(Icons.settings_outlined),label: "設定"),
+      BottomNavigationBarItem(icon: _currentIndex == 0 ? Icon(Icons.home): Icon(Icons.home_outlined),label: "ホーム"),
+      BottomNavigationBarItem(icon: _currentIndex == 1 ? Icon(Icons.bookmark ):Icon(Icons.bookmark_outline_outlined),label: "お気に入り"),
+      BottomNavigationBarItem(icon: _currentIndex == 2 ? Icon(Icons.settings):Icon(Icons.settings_outlined),label: "設定"),
     ];
   }
 
@@ -119,7 +119,7 @@ class HomePageState extends State<HomePage>
         },
         items: myBottomNavBarItems(),
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: ColorConfig.Blue,
+        selectedItemColor: ColorConfig.Black,
         unselectedItemColor: ColorConfig.Black,
       ),
     );

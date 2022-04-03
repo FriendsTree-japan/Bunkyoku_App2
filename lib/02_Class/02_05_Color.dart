@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 class ColorConfig {
   static late Color Black;
+  static late Color WeakBlack;
   static late Color Gray;
   static late Color White;
   static late Color Yellow;
@@ -13,10 +14,13 @@ class ColorConfig {
   static late Color StrongGray;
   static late Color Green;
   static late Color WeakGreen;
+  static late Color WakamonoGreen;
+  static late Color SelectGreen;
 
   void init(BuildContext context) {
     //使用する色を定義
     Black = Color(0xFF212121);
+    WeakBlack = Color(0x80212121);
     Gray = Color(0xFFC1C1C1);
     White = Color(0xFFFFFFFF);
     Yellow = Color(0xFFFFF38D);
@@ -27,11 +31,8 @@ class ColorConfig {
     WeakGray = Color(0xFFE8E8E8);
     StrongGray = Color(0xFFA3A3A3);
     Green = Color(0xFF15705E);
-    WeakGreen = Color(0x3115705E);
+    WeakGreen = Color(0xFFDFEEDD);
+    WakamonoGreen = Color(0xFF1D9E85);
+    SelectGreen = Color(0xFF21C7A6);
   }
 }
-
-Map<String,List<String>> map = {
-  'FirstName':['りんご','ひめ'],
-  'SecondName': ['りんご','ひめ']
-};
