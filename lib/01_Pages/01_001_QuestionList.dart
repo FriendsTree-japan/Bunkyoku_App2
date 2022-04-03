@@ -60,15 +60,11 @@ class _QuizeListState extends State<QuizeList> {
           Align(
             alignment: Alignment.topRight,
             child: Container(
-              height: 15,
-              width: 40,
+              height: 10,
+              width: 10,
               decoration: BoxDecoration(
                 color: ColorConfig.Red,
                 borderRadius: BorderRadius.circular(10),
-              ),
-              child: Text(
-                'New',textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white),
               ),
             ),
           ),
