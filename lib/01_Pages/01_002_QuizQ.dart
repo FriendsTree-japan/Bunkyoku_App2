@@ -11,6 +11,7 @@ import 'package:bunkyoku_app2/03_Unity/03_02_SqliteDb.dart';
 import 'package:bunkyoku_app2/99_Others/99_01_GoogleAdmob.dart';
 
 import '../02_Class/02_03_QuizA.dart';
+import '01_005_Setting.dart';
 
 class QuizQ_000 extends StatefulWidget {
   late final String QuesitonNum;
@@ -115,8 +116,12 @@ class _QuizQ_000 extends State<QuizQ_000> {
                   padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
               Container(
                 alignment: Alignment.center,
-                height: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0' ? QuizImageSizeConfig.yokoImageHeight : QuizImageSizeConfig.tateImageHeight,
-                width: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0' ? QuizImageSizeConfig.yokoImageWidth : QuizImageSizeConfig.tateImageWidth,
+                height: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0'
+                    ? QuizImageSizeConfig.yokoImageHeight
+                    : QuizImageSizeConfig.tateImageHeight,
+                width: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0'
+                    ? QuizImageSizeConfig.yokoImageWidth
+                    : QuizImageSizeConfig.tateImageWidth,
                 child: Image.asset(QuizQ_List().list[QuesitonNum]!.Picture),
               ),
               Padding(
@@ -150,12 +155,14 @@ class _QuizQ_000 extends State<QuizQ_000> {
                     myFavariteFlg =
                         await QuizStatusDb().setFavoriteFlg(QuesitonNum);
 
-                    if (SelectQ == QuizA_List().list[QuesitonNum]!.Answer) {
-                      final player = AudioCache();
-                      player.play('OK.mp3');
-                    }else{
-                      final player = AudioCache();
-                      player.play('NG.mp3');
+                    if (Setting.soundFlg!) {
+                      if (SelectQ == QuizA_List().list[QuesitonNum]!.Answer) {
+                        final player = AudioCache();
+                        player.play('OK.mp3');
+                      } else {
+                        final player = AudioCache();
+                        player.play('NG.mp3');
+                      }
                     }
                     //toString()で型変換をできる。
                     //5回目の回答を実施した時に広告を表示数する
@@ -197,12 +204,14 @@ class _QuizQ_000 extends State<QuizQ_000> {
                     SelectQ = QuizQ_List().list[QuesitonNum]!.Select2;
                     myFavariteFlg =
                         await QuizStatusDb().setFavoriteFlg(QuesitonNum);
-                    if (SelectQ == QuizA_List().list[QuesitonNum]!.Answer) {
-                      final player = AudioCache();
-                      player.play('OK.mp3');
-                    }else{
-                      final player = AudioCache();
-                      player.play('NG.mp3');
+                    if (Setting.soundFlg!) {
+                      if (SelectQ == QuizA_List().list[QuesitonNum]!.Answer) {
+                        final player = AudioCache();
+                        player.play('OK.mp3');
+                      } else {
+                        final player = AudioCache();
+                        player.play('NG.mp3');
+                      }
                     }
                     //toString()で型変換をできる。
                     //5回目の回答を実施した時に広告を表示数する
@@ -244,12 +253,14 @@ class _QuizQ_000 extends State<QuizQ_000> {
                     SelectQ = QuizQ_List().list[QuesitonNum]!.Select3;
                     myFavariteFlg =
                         await QuizStatusDb().setFavoriteFlg(QuesitonNum);
-                    if (SelectQ == QuizA_List().list[QuesitonNum]!.Answer) {
-                      final player = AudioCache();
-                      player.play('OK.mp3');
-                    }else{
-                      final player = AudioCache();
-                      player.play('NG.mp3');
+                    if (Setting.soundFlg!) {
+                      if (SelectQ == QuizA_List().list[QuesitonNum]!.Answer) {
+                        final player = AudioCache();
+                        player.play('OK.mp3');
+                      } else {
+                        final player = AudioCache();
+                        player.play('NG.mp3');
+                      }
                     }
                     //toString()で型変換をできる。
                     //5回目の回答を実施した時に広告を表示数する
@@ -291,12 +302,14 @@ class _QuizQ_000 extends State<QuizQ_000> {
                     SelectQ = QuizQ_List().list[QuesitonNum]!.Select4;
                     myFavariteFlg =
                         await QuizStatusDb().setFavoriteFlg(QuesitonNum);
-                    if (SelectQ == QuizA_List().list[QuesitonNum]!.Answer) {
-                      final player = AudioCache();
-                      player.play('OK.mp3');
-                    }else{
-                      final player = AudioCache();
-                      player.play('NG.mp3');
+                    if (Setting.soundFlg!) {
+                      if (SelectQ == QuizA_List().list[QuesitonNum]!.Answer) {
+                        final player = AudioCache();
+                        player.play('OK.mp3');
+                      } else {
+                        final player = AudioCache();
+                        player.play('NG.mp3');
+                      }
                     }
                     //toString()で型変換をできる。
                     //5回目の回答を実施した時に広告を表示数する

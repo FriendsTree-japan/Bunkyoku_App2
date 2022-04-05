@@ -32,4 +32,12 @@ class SharedPrefs{
     print(touAdmCtlFlg);
     return touAdmCtlFlg;
   }
+
+  static bool? getSoundSetting() {
+    bool? soundFlg = prefsInstance!.getBool('soundFlg') ?? true;
+    return soundFlg;
+  }
+  static Future<void> setSoundFlg(bool getSoundSettingFlgOnOff) async{
+    await prefsInstance!.setBool('soundFlg', getSoundSettingFlgOnOff);
+  }
 }

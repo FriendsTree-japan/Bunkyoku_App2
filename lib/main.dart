@@ -16,6 +16,7 @@ void main()async{
   await MobileAds.instance.initialize();
   await SharedPrefs.setInstance();
   await checkFirstLogin();
+  Setting.soundFlg = await SharedPrefs.getSoundSetting();
   runApp(MyApp());
 }
 Future<void>checkFirstLogin() async{

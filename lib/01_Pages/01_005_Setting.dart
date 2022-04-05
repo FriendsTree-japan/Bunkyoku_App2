@@ -5,8 +5,13 @@ import 'package:flutter/services.dart';
 import 'package:bunkyoku_app2/02_Class/02_04_Size.dart';
 import 'package:bunkyoku_app2/02_Class/02_05_Color.dart';
 import 'package:bunkyoku_app2/03_Unity/03_03_UrlMove.dart';
+import 'package:flutter/cupertino.dart';
+
+import '../03_Unity/03_01_SharedPreferences.dart';
 
 class Setting extends StatefulWidget {
+  static bool? soundFlg;
+
   @override
   _SettingState createState() => _SettingState();
 }
@@ -27,49 +32,56 @@ class _SettingState extends State<Setting> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          TextButton(
-            style: TextButton.styleFrom(
-              textStyle: const TextStyle(fontSize: 20),
-            ),
-            onPressed: () {
-              UrlMove().UrlMoving('https://dented-handball-204.notion.site/04dc826e23724da68deadd89078285ef');
+          ListTile(
+            title: Text('利用規約',
+                style: TextStyle(fontSize: 20, color: Colors.black)),
+            onTap: () {
+              UrlMove().UrlMoving(
+                  'https://dented-handball-204.notion.site/04dc826e23724da68deadd89078285ef');
               // _RulesURL();
             },
-            child: const Text('利用規約',style: TextStyle(color: Colors.black)),
           ),
-          TextButton(
-            style: TextButton.styleFrom(
-              textStyle: const TextStyle(fontSize: 20),
-            ),
-            onPressed: () {
-              UrlMove().UrlMoving('https://dented-handball-204.notion.site/6d997f641a524b338b7326fd842cc8a0');
+          ListTile(
+            title: Text('問い合わせ',
+                style: TextStyle(fontSize: 20, color: Colors.black)),
+            onTap: () {
+              UrlMove().UrlMoving(
+                  'https://dented-handball-204.notion.site/6d997f641a524b338b7326fd842cc8a0');
               // _FAQURL();
             },
-            child: const Text('問い合わせ',style: TextStyle(color: Colors.black)),
           ),
-          TextButton(
-            style: TextButton.styleFrom(
-              textStyle: const TextStyle(fontSize: 20),
-            ),
-            onPressed: () {
-              UrlMove().UrlMoving('https://twitter.com/StreeFriend?t=dyuXC4141UOl_52xV8X2dw&s=06');
+          ListTile(
+            title: Text('Follow us!!',
+                style: TextStyle(fontSize: 20, color: Colors.black)),
+            onTap: () {
+              UrlMove().UrlMoving(
+                  'https://twitter.com/StreeFriend?t=dyuXC4141UOl_52xV8X2dw&s=06');
               //'https://dented-handball-204.notion.site/0fe2fc1cf0ca465abdb85616658c9106'
               // _FriendsTreeURL();
             },
-            child: const Text('Follow us!!',style: TextStyle(color: Colors.black)),
           ),
-          TextButton(
-            style: TextButton.styleFrom(
-              textStyle: const TextStyle(fontSize: 20),
-            ),
-            onPressed: () {
+          ListTile(
+            title: Text('ライセンス', style: TextStyle(fontSize: 20, color: Colors.black)),
+            onTap: () {
               showLicensePage(
                 context: context,
                 applicationName: '文京区クイズアプリ',
                 applicationVersion: '1.0.0',
               );
             },
-            child: const Text('ライセンス',style: TextStyle(color: Colors.black)),
+          ),
+          ListTile(
+            title: Text("音量設定",
+                style: TextStyle(fontSize: 20, color: Colors.black)),
+            trailing: CupertinoSwitch(
+              value: Setting.soundFlg!,
+              onChanged: (bool? value) {
+                setState(() {
+                  Setting.soundFlg = value ?? true;
+                  SharedPrefs.setSoundFlg(Setting.soundFlg!);
+                });
+              },
+            ),
           ),
         ],
       ),
