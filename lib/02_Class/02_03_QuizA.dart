@@ -6,7 +6,7 @@ class QuizA_List {
         QID: '1',
         Answer: '鼠',
         // Picture: 'images/A076.jpeg',
-        Picture: 'images/AAA.jpg',
+        Picture: 'images/tate.jpg',
         Commentary: '鼠ではないと上がり降りができないって、相当急な坂道ですよね。ちなみに鼠坂の壁には、ネズミの絵が書いてあるそうです。',
         Tips: '',
         URL: 'https://b-kanko.jp',
@@ -17,7 +17,7 @@ class QuizA_List {
     '2': QuizA(
         QID: '2',
         Answer: '牛',
-        Picture: 'images/A080.jpeg',
+        Picture: 'images/yoko.jpg',
         Commentary: '■なぜ馬の絵が描かれているか\n'
             '古来、神様は神馬に乗って地上に降りてくるとされていた。元々は生きた馬を奉納する風習であったが、平安時代頃から木で作った馬や土で作った馬を奉納するようになった。その後、現代のような馬の絵を描いた「絵馬」を奉納するようになった。\n'
             '\n'

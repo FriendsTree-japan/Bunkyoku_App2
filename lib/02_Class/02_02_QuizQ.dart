@@ -5,7 +5,7 @@ class QuizQ_List {
     '1': QuizQ(
         QID: '1',
         // Picture: 'images/Q076.jpeg',
-        Picture: 'images/AAA.jpg',
+        Picture: 'images/tate.jpg',
         problem:
             '文京区にはとある小動物しか通れないほど急な坂であることにちなんで名付けられた坂があります。\nその小動物とは何でしょうか？',
         Select1: '鼠',
@@ -15,7 +15,7 @@ class QuizQ_List {
         PicturePtn: '1'),
     '2': QuizQ(
         QID: '2',
-        Picture: 'images/Q080.jpeg',
+        Picture: 'images/yoko.jpg',
         problem:
             '神社に祈願するときに奉納する「絵馬」。この絵馬のほとんどは馬の絵が描かれているが、湯島天神だけは他の動物が描かれている。その動物とは何でしょうか?',
         Select1: '牛',
@@ -35,29 +35,3 @@ class QuizQ_List {
         PicturePtn: '0  '),
   };
 }
-
-//勉強用
-// import '02_02_Questuin.dart';
-//
-// class QuestionList {
-//   List<Question> list = [
-//     Question(
-//       QID: '1',
-//       Picture: 'images/FriendsTree.jpg',
-//       problem: '下記4つのうちどれでしょうか\nあああ',
-//       Select1: 'ねこ',
-//       Select2: 'いぬ',
-//       Select3: 'たこ',
-//       Select4: 'いか',
-//     ),
-//     Question(
-//       QID: '2',
-//       Picture: 'images/FriendsTree.jpg',
-//       problem: '下記4つのうちどれでしょうか',
-//       Select1: 'たぬき',
-//       Select2: 'ねこ',
-//       Select3: 'きつね',
-//       Select4: 'こぶた',
-//     ),
-//   ];
-// }
