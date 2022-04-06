@@ -71,7 +71,7 @@ class _SettingState extends State<Setting> {
             },
           ),
           ListTile(
-            title: Text("音量設定",
+            title: Text("音量設定（OFF/ON）",
                 style: TextStyle(fontSize: 20, color: Colors.black)),
             trailing: CupertinoSwitch(
               value: Setting.soundFlg!,

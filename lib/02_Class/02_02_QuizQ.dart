@@ -5,7 +5,7 @@ class QuizQ_List {
     '1': QuizQ(
         QID: '1',
         // Picture: 'images/Q076.jpeg',
-        Picture: 'images/LINE_ALBUM_220403.jpg',
+        Picture: 'images/AAA.jpg',
         problem:
             '文京区にはとある小動物しか通れないほど急な坂であることにちなんで名付けられた坂があります。\nその小動物とは何でしょうか？',
         Select1: '鼠',
@@ -23,6 +23,16 @@ class QuizQ_List {
         Select3: '鳥',
         Select4: '白ヘビ',
         PicturePtn: '0'),
+    '3': QuizQ(
+        QID: '3',
+        Picture: 'images/Q003.jpg',
+        problem:
+        '江戸時代から続く飴細工の伝統を守り続けているお店が千駄木駅のほど近くにあります。その店舗名は次のうちどれでしょうか？',
+        Select1: 'あめ細工 吉原',
+        Select2: 'アメ細工 吉原',
+        Select3: '飴細工 吉原',
+        Select4: '雨細工 吉原',
+        PicturePtn: '0  '),
   };
 }
 
