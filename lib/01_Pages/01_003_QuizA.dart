@@ -524,35 +524,40 @@ class _QuizA_000 extends State<QuizA_000> {
                 }
               }),
           actions: [
-
             Column(
               children: [
-                IconButton(
-                  icon: Icon(
-                    Icons.bookmark_outlined,
-                    color: myFavariteFlg == '0' ? Colors.white : Colors.yellow,
+                Container(
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.bookmark_outlined,
+                      color: myFavariteFlg == '0' ? Colors.white : Colors.yellow,
+                      size: 35.0
+                    ),
+                    onPressed: () async {
+                      if (myFavariteFlg == '0') {
+                        QuizStatusDb().updateFavoriteFlg(
+                            QuizA_List().list[QuesitonNum]!.QID, '1');
+                      } else {
+                        QuizStatusDb().updateFavoriteFlg(
+                            QuizA_List().list[QuesitonNum]!.QID, '0');
+                      }
+                      myFavariteFlg =
+                      await QuizStatusDb().setFavoriteFlg(QuesitonNum);
+                      //①QuizStatusクラスのproblemIdに、QuizQ_List().list[QuesitonNum]!.QID,を入れる
+                      //※このときすでにデータがあれば更新処理は実施しないように制御する。
+                      //②QuizStatusクラスのfavoriteFlgが0であれば1、1であれば0を代入する
+                      setState(() {});
+                    },
                   ),
-                  onPressed: () async {
-                    if (myFavariteFlg == '0') {
-                      QuizStatusDb().updateFavoriteFlg(
-                          QuizA_List().list[QuesitonNum]!.QID, '1');
-                    } else {
-                      QuizStatusDb().updateFavoriteFlg(
-                          QuizA_List().list[QuesitonNum]!.QID, '0');
-                    }
-                    myFavariteFlg =
-                    await QuizStatusDb().setFavoriteFlg(QuesitonNum);
-                    //①QuizStatusクラスのproblemIdに、QuizQ_List().list[QuesitonNum]!.QID,を入れる
-                    //※このときすでにデータがあれば更新処理は実施しないように制御する。
-                    //②QuizStatusクラスのfavoriteFlgが0であれば1、1であれば0を代入する
-                    setState(() {});
-                  },
                 ),
-                Text('お気入り',
-                  style: TextStyle(
-                      color: ColorConfig.White, //文字の色を白にする
-                      fontWeight: FontWeight.bold, //文字を太字する
-                      fontSize: 2,)),
+              Align(
+                alignment: Alignment.center,
+                child: Text('お気入り',
+                      style: TextStyle(
+                          color: ColorConfig.White, //文字の色を白にする
+                          fontWeight: FontWeight.bold, //文字を太字する
+                          fontSize: 5,)),
+              ),
               ],
             ),
           ],
