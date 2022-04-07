@@ -4,23 +4,23 @@ class QuizQ_List {
   Map<String, QuizQ> list = {
     '1': QuizQ(
         QID: '1',
-        Picture: 'images/tate.jpg',
+        Picture: 'images/Yoiti.jpeg',
         problem: '園内に1km以上の桜並木があることで有名な、神田川沿いに東西に広がる長細い公園は、つぎのうちどれ？',
         Select1: '江戸川公園',
         Select2: '礫川公園',
         Select3: '肥後細川庭園',
         Select4: '文京宮下公園',
-        PicturePtn: '1'),
+        PicturePtn: '0'),
     '2': QuizQ(
         QID: '2',
-        Picture: 'images/question/tate2.jpg',
+        Picture: 'images/Rikito.jpg',
         problem:
             '茗荷谷駅近くの林泉寺境内には、ある「めずらしいこと」をされている地蔵が祀られています。その「めずらしいこと」とは次のうちどれ？',
         Select1: '水をかけられている',
         Select2: '縛られてる',
         Select3: '針を刺されている',
         Select4: '黒く塗られている',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '3': QuizQ(
         QID: '3',
         Picture: 'images/question/tate2.jpg',

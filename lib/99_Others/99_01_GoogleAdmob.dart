@@ -64,7 +64,7 @@ class AdInterstitial {
   // 広告IDをプラットフォームに合わせて取得
   static String get interstitialAdUnitId {
     if (Platform.isAndroid) {
-      return 'ca-app-pub-3699671239521781/9321918685';
+      return 'ca-app-pub-3940256099942544/1033173712';
     } else if (Platform.isIOS) {
       return 'ca-app-pub-3940256099942544/4411468910';
     } else {
