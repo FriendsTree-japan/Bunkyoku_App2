@@ -23,6 +23,7 @@ class _SettingState extends State<Setting> {
     ColorConfig().init(context);
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text('設定'),
         backgroundColor: ColorConfig.Green,
         automaticallyImplyLeading: false,

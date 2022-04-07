@@ -26,6 +26,7 @@ class _Favorite extends State<Favorite> {
     QuizProblemSizeConfig().init(context);
     return Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           title: Text('お気に入り'),
           backgroundColor: ColorConfig.Green,
           automaticallyImplyLeading: false,

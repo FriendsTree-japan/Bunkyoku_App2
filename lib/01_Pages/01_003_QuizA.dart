@@ -475,6 +475,7 @@ class _QuizA_000 extends State<QuizA_000> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           leading: TextButton(
             child: Column(
               children: [

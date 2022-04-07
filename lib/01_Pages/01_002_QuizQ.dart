@@ -53,6 +53,7 @@ class _QuizQ_000 extends State<QuizQ_000> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           leading: TextButton(
             child: Column(
               children: [
@@ -105,235 +106,253 @@ class _QuizQ_000 extends State<QuizQ_000> {
           backgroundColor: ColorConfig.Green,
         ),
         backgroundColor: ColorConfig.White,
-        body: Center(
-          child: Column(
-            children: [
-              Padding(
-                  padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Padding(
-                  padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Padding(
-                  padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Container(
-                alignment: Alignment.center,
-                height: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0'
-                    ? QuizImageSizeConfig.yokoImageHeight
-                    : QuizImageSizeConfig.tateImageHeight,
-                width: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0'
-                    ? QuizImageSizeConfig.yokoImageWidth
-                    : QuizImageSizeConfig.tateImageWidth,
-                child: Image.asset(QuizQ_List().list[QuesitonNum]!.Picture),
-              ),
-              Padding(
-                  padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Container(
-                width: QuizProblemSizeConfig.width,
-                child: Text(
-                  QuizQ_List().list[QuesitonNum]!.problem,
-                  style: TextStyle(fontSize: 16),
-                  textAlign: TextAlign.left,
-                ),
-              ),
-              Padding(
-                  padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Container(
-                height: QuizProblemSizeConfig.height,
-                width: QuizProblemSizeConfig.width,
-                child: OutlinedButton(
-                  child: Text(
-                    QuizQ_List().list[QuesitonNum]!.Select1,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: ColorConfig.Blue, fontSize: 24),
+        body: Scrollbar(
+          isAlwaysShown: false,
+          child: SingleChildScrollView(
+            child: Center(
+              child: Column(
+                children: [
+                  Padding(
+                      padding:
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Container(
+                    alignment: Alignment.center,
+                    height: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0'
+                        ? QuizImageSizeConfig.yokoImageHeight
+                        : QuizImageSizeConfig.tateImageHeight,
+                    width: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0'
+                        ? QuizImageSizeConfig.yokoImageWidth
+                        : QuizImageSizeConfig.tateImageWidth,
+                    child: Image.asset(QuizQ_List().list[QuesitonNum]!.Picture),
                   ),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    side: BorderSide(color: ColorConfig.Blue),
-                    onPrimary: Colors.white,
+                  Padding(
+                      padding:
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Container(
+                    width: QuizProblemSizeConfig.width,
+                    child: Text(
+                      QuizQ_List().list[QuesitonNum]!.problem,
+                      style: TextStyle(fontSize: 16),
+                      textAlign: TextAlign.left,
+                    ),
                   ),
-                  onPressed: () async {
-                    SelectQ = QuizQ_List().list[QuesitonNum]!.Select1;
-                    myFavariteFlg =
-                        await QuizStatusDb().setFavoriteFlg(QuesitonNum);
+                  Padding(
+                      padding:
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Container(
+                    height: QuizProblemSizeConfig.height,
+                    width: QuizProblemSizeConfig.width,
+                    child: OutlinedButton(
+                      child: Text(
+                        QuizQ_List().list[QuesitonNum]!.Select1,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: ColorConfig.Blue, fontSize: 24),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                        side: BorderSide(color: ColorConfig.Blue),
+                        onPrimary: Colors.white,
+                      ),
+                      onPressed: () async {
+                        SelectQ = QuizQ_List().list[QuesitonNum]!.Select1;
+                        myFavariteFlg =
+                            await QuizStatusDb().setFavoriteFlg(QuesitonNum);
 
-                    if (Setting.soundFlg!) {
-                      if (SelectQ == QuizA_List().list[QuesitonNum]!.Answer) {
-                        final player = AudioCache();
-                        player.play('OK.mp3');
-                      } else {
-                        final player = AudioCache();
-                        player.play('NG.mp3');
-                      }
-                    }
-                    //toString()で型変換をできる。
-                    //5回目の回答を実施した時に広告を表示数する
-                    int admCtlCnt = await SharedPrefs.admCtlMethod();
-                    if (admCtlCnt == 5) {
-                      await adInterstitial.showAd();
-                      adInterstitial.createAd();
-                    }
-                    bool? result = await Navigator.push(
-                      context,
-                      new MaterialPageRoute<bool>(
-                        builder: (BuildContext context) =>
-                            QuizA_000(QuesitonNum, SelectQ, myFavariteFlg),
+                        if (Setting.soundFlg!) {
+                          if (SelectQ ==
+                              QuizA_List().list[QuesitonNum]!.Answer) {
+                            final player = AudioCache();
+                            player.play('OK.mp3');
+                          } else {
+                            final player = AudioCache();
+                            player.play('NG.mp3');
+                          }
+                        }
+                        //toString()で型変換をできる。
+                        //5回目の回答を実施した時に広告を表示数する
+                        int admCtlCnt = await SharedPrefs.admCtlMethod();
+                        if (admCtlCnt == 5) {
+                          await adInterstitial.showAd();
+                          adInterstitial.createAd();
+                        }
+                        bool? result = await Navigator.push(
+                          context,
+                          new MaterialPageRoute<bool>(
+                            builder: (BuildContext context) =>
+                                QuizA_000(QuesitonNum, SelectQ, myFavariteFlg),
+                          ),
+                        );
+                        if (result!) {
+                          setState(() {});
+                        }
+                      },
+                    ),
+                  ),
+                  Padding(
+                      padding:
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Container(
+                    height: QuizProblemSizeConfig.height,
+                    width: QuizProblemSizeConfig.width,
+                    child: OutlinedButton(
+                      child: Text(
+                        QuizQ_List().list[QuesitonNum]!.Select2,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: ColorConfig.Blue, fontSize: 24),
                       ),
-                    );
-                    if (result!) {
-                      setState(() {});
-                    }
-                  },
-                ),
-              ),
-              Padding(
-                  padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Container(
-                height: QuizProblemSizeConfig.height,
-                width: QuizProblemSizeConfig.width,
-                child: OutlinedButton(
-                  child: Text(
-                    QuizQ_List().list[QuesitonNum]!.Select2,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: ColorConfig.Blue, fontSize: 24),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    side: BorderSide(color: ColorConfig.Blue),
-                    onPrimary: Colors.white,
-                  ),
-                  onPressed: () async {
-                    SelectQ = QuizQ_List().list[QuesitonNum]!.Select2;
-                    myFavariteFlg =
-                        await QuizStatusDb().setFavoriteFlg(QuesitonNum);
-                    if (Setting.soundFlg!) {
-                      if (SelectQ == QuizA_List().list[QuesitonNum]!.Answer) {
-                        final player = AudioCache();
-                        player.play('OK.mp3');
-                      } else {
-                        final player = AudioCache();
-                        player.play('NG.mp3');
-                      }
-                    }
-                    //toString()で型変換をできる。
-                    //5回目の回答を実施した時に広告を表示数する
-                    int admCtlCnt = await SharedPrefs.admCtlMethod();
-                    if (admCtlCnt == 5) {
-                      await adInterstitial.showAd();
-                      adInterstitial.createAd();
-                    }
-                    bool? result = await Navigator.push(
-                      context,
-                      new MaterialPageRoute<bool>(
-                        builder: (BuildContext context) =>
-                            QuizA_000(QuesitonNum, SelectQ, myFavariteFlg),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                        side: BorderSide(color: ColorConfig.Blue),
+                        onPrimary: Colors.white,
                       ),
-                    );
-                    if (result!) {
-                      setState(() {});
-                    }
-                  },
-                ),
-              ),
-              Padding(
-                  padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Container(
-                height: QuizProblemSizeConfig.height,
-                width: QuizProblemSizeConfig.width,
-                child: OutlinedButton(
-                  child: Text(
-                    QuizQ_List().list[QuesitonNum]!.Select3,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: ColorConfig.Blue, fontSize: 24),
+                      onPressed: () async {
+                        SelectQ = QuizQ_List().list[QuesitonNum]!.Select2;
+                        myFavariteFlg =
+                            await QuizStatusDb().setFavoriteFlg(QuesitonNum);
+                        if (Setting.soundFlg!) {
+                          if (SelectQ ==
+                              QuizA_List().list[QuesitonNum]!.Answer) {
+                            final player = AudioCache();
+                            player.play('OK.mp3');
+                          } else {
+                            final player = AudioCache();
+                            player.play('NG.mp3');
+                          }
+                        }
+                        //toString()で型変換をできる。
+                        //5回目の回答を実施した時に広告を表示数する
+                        int admCtlCnt = await SharedPrefs.admCtlMethod();
+                        if (admCtlCnt == 5) {
+                          await adInterstitial.showAd();
+                          adInterstitial.createAd();
+                        }
+                        bool? result = await Navigator.push(
+                          context,
+                          new MaterialPageRoute<bool>(
+                            builder: (BuildContext context) =>
+                                QuizA_000(QuesitonNum, SelectQ, myFavariteFlg),
+                          ),
+                        );
+                        if (result!) {
+                          setState(() {});
+                        }
+                      },
+                    ),
                   ),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    side: BorderSide(color: ColorConfig.Blue),
-                    onPrimary: Colors.white,
-                  ),
-                  onPressed: () async {
-                    SelectQ = QuizQ_List().list[QuesitonNum]!.Select3;
-                    myFavariteFlg =
-                        await QuizStatusDb().setFavoriteFlg(QuesitonNum);
-                    if (Setting.soundFlg!) {
-                      if (SelectQ == QuizA_List().list[QuesitonNum]!.Answer) {
-                        final player = AudioCache();
-                        player.play('OK.mp3');
-                      } else {
-                        final player = AudioCache();
-                        player.play('NG.mp3');
-                      }
-                    }
-                    //toString()で型変換をできる。
-                    //5回目の回答を実施した時に広告を表示数する
-                    int admCtlCnt = await SharedPrefs.admCtlMethod();
-                    if (admCtlCnt == 5) {
-                      await adInterstitial.showAd();
-                      adInterstitial.createAd();
-                    }
-                    bool? result = await Navigator.push(
-                      context,
-                      new MaterialPageRoute<bool>(
-                        builder: (BuildContext context) =>
-                            QuizA_000(QuesitonNum, SelectQ, myFavariteFlg),
+                  Padding(
+                      padding:
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Container(
+                    height: QuizProblemSizeConfig.height,
+                    width: QuizProblemSizeConfig.width,
+                    child: OutlinedButton(
+                      child: Text(
+                        QuizQ_List().list[QuesitonNum]!.Select3,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: ColorConfig.Blue, fontSize: 24),
                       ),
-                    );
-                    if (result!) {
-                      setState(() {});
-                    }
-                  },
-                ),
-              ),
-              Padding(
-                  padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-              Container(
-                height: QuizProblemSizeConfig.height,
-                width: QuizProblemSizeConfig.width,
-                child: OutlinedButton(
-                  child: Text(
-                    QuizQ_List().list[QuesitonNum]!.Select4,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: ColorConfig.Blue, fontSize: 24),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    side: BorderSide(color: ColorConfig.Blue),
-                    onPrimary: Colors.white,
-                  ),
-                  onPressed: () async {
-                    SelectQ = QuizQ_List().list[QuesitonNum]!.Select4;
-                    myFavariteFlg =
-                        await QuizStatusDb().setFavoriteFlg(QuesitonNum);
-                    if (Setting.soundFlg!) {
-                      if (SelectQ == QuizA_List().list[QuesitonNum]!.Answer) {
-                        final player = AudioCache();
-                        player.play('OK.mp3');
-                      } else {
-                        final player = AudioCache();
-                        player.play('NG.mp3');
-                      }
-                    }
-                    //toString()で型変換をできる。
-                    //5回目の回答を実施した時に広告を表示数する
-                    int admCtlCnt = await SharedPrefs.admCtlMethod();
-                    if (admCtlCnt == 5) {
-                      await adInterstitial.showAd();
-                      adInterstitial.createAd();
-                    }
-                    bool? result = await Navigator.push(
-                      context,
-                      new MaterialPageRoute<bool>(
-                        builder: (BuildContext context) =>
-                            QuizA_000(QuesitonNum, SelectQ, myFavariteFlg),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                        side: BorderSide(color: ColorConfig.Blue),
+                        onPrimary: Colors.white,
                       ),
-                    );
-                    if (result!) {
-                      setState(() {});
-                    }
-                  },
-                ),
+                      onPressed: () async {
+                        SelectQ = QuizQ_List().list[QuesitonNum]!.Select3;
+                        myFavariteFlg =
+                            await QuizStatusDb().setFavoriteFlg(QuesitonNum);
+                        if (Setting.soundFlg!) {
+                          if (SelectQ ==
+                              QuizA_List().list[QuesitonNum]!.Answer) {
+                            final player = AudioCache();
+                            player.play('OK.mp3');
+                          } else {
+                            final player = AudioCache();
+                            player.play('NG.mp3');
+                          }
+                        }
+                        //toString()で型変換をできる。
+                        //5回目の回答を実施した時に広告を表示数する
+                        int admCtlCnt = await SharedPrefs.admCtlMethod();
+                        if (admCtlCnt == 5) {
+                          await adInterstitial.showAd();
+                          adInterstitial.createAd();
+                        }
+                        bool? result = await Navigator.push(
+                          context,
+                          new MaterialPageRoute<bool>(
+                            builder: (BuildContext context) =>
+                                QuizA_000(QuesitonNum, SelectQ, myFavariteFlg),
+                          ),
+                        );
+                        if (result!) {
+                          setState(() {});
+                        }
+                      },
+                    ),
+                  ),
+                  Padding(
+                      padding:
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Container(
+                    height: QuizProblemSizeConfig.height,
+                    width: QuizProblemSizeConfig.width,
+                    child: OutlinedButton(
+                      child: Text(
+                        QuizQ_List().list[QuesitonNum]!.Select4,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: ColorConfig.Blue, fontSize: 24),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.white,
+                        side: BorderSide(color: ColorConfig.Blue),
+                        onPrimary: Colors.white,
+                      ),
+                      onPressed: () async {
+                        SelectQ = QuizQ_List().list[QuesitonNum]!.Select4;
+                        myFavariteFlg =
+                            await QuizStatusDb().setFavoriteFlg(QuesitonNum);
+                        if (Setting.soundFlg!) {
+                          if (SelectQ ==
+                              QuizA_List().list[QuesitonNum]!.Answer) {
+                            final player = AudioCache();
+                            player.play('OK.mp3');
+                          } else {
+                            final player = AudioCache();
+                            player.play('NG.mp3');
+                          }
+                        }
+                        //toString()で型変換をできる。
+                        //5回目の回答を実施した時に広告を表示数する
+                        int admCtlCnt = await SharedPrefs.admCtlMethod();
+                        if (admCtlCnt == 5) {
+                          await adInterstitial.showAd();
+                          adInterstitial.createAd();
+                        }
+                        bool? result = await Navigator.push(
+                          context,
+                          new MaterialPageRoute<bool>(
+                            builder: (BuildContext context) =>
+                                QuizA_000(QuesitonNum, SelectQ, myFavariteFlg),
+                          ),
+                        );
+                        if (result!) {
+                          setState(() {});
+                        }
+                      },
+                    ),
+                  ),
+                  Padding(
+                      padding:
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                ],
               ),
-              Padding(
-                  padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-            ],
+            ),
           ),
         ),
       ),

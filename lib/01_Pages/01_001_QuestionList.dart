@@ -207,6 +207,7 @@ class _QuizeListState extends State<QuizeList> {
 
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text('文京区アプリ'),
         backgroundColor: ColorConfig.Green,
         automaticallyImplyLeading: false,
