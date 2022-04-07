@@ -383,7 +383,7 @@ class _QuizA_000 extends State<QuizA_000> {
   Widget _buildNextPageContainer(String problemId, String myFavariteFlg) {
     String myFavariteFlg = '0';
     //★状態を見たいので一旦「２」にしているがリリース時には「maxQuizQidValue」に変更すること！
-    if (problemId != "2") {
+    if (problemId != QuizStatusDb.maxQuizQidValue) {
       return Container(
         height: 50,
         width: 240,
@@ -494,6 +494,8 @@ class _QuizA_000 extends State<QuizA_000> {
               ],
             ),
             onPressed: () {
+              QuizStatusDb()
+                  .updateFlg(QuizA_List().list[QuesitonNum]!.QID, 'unanwer');
               Navigator.push(
                 context,
                 MaterialPageRoute(
