@@ -531,7 +531,6 @@ class _QuizA_000 extends State<QuizA_000> {
                     icon: Icon(
                       Icons.bookmark_outlined,
                       color: myFavariteFlg == '0' ? Colors.white : Colors.yellow,
-                      size: 35.0
                     ),
                     onPressed: () async {
                       if (myFavariteFlg == '0') {
@@ -550,14 +549,14 @@ class _QuizA_000 extends State<QuizA_000> {
                     },
                   ),
                 ),
-              Align(
-                alignment: Alignment.center,
-                child: Text('お気入り',
-                      style: TextStyle(
-                          color: ColorConfig.White, //文字の色を白にする
-                          fontWeight: FontWeight.bold, //文字を太字する
-                          fontSize: 5,)),
-              ),
+              // Align(
+              //   alignment: Alignment.center,
+              //   child: Text('お気入り',
+              //         style: TextStyle(
+              //             color: ColorConfig.White, //文字の色を白にする
+              //             fontWeight: FontWeight.bold, //文字を太字する
+              //             fontSize: 5,)),
+              // ),
               ],
             ),
           ],
