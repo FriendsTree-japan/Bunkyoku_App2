@@ -307,6 +307,15 @@ class QuizA_List {
         URL: 'https://www.tokyo-dome.co.jp/aamo/about/',
         GoogleMap: 'https://www.google.com/maps/place/%E6%9D%B1%E4%BA%AC%E3%83%89%E3%83%BC%E3%83%A0%E3%82%B7%E3%83%86%E3%82%A3/@35.7044136,139.7511789,17z/data=!3m1!4b1!4m5!3m4!1s0x60188c38bbfa1709:0x44298a802542c472!8m2!3d35.7044093!4d139.7533676?hl=ja',
         CreateDate: '掲載内容は2022年3月24時点の情報です',
+        PicturePtn: '0'),
+    '35': QuizA(QID: '35',
+        Answer: 'あめ細工 吉原',
+        Picture: 'images/A003.jpg',
+        Commentary: '「あめ細工 吉原」は、現在 数少ない飴細工のお店です。なぜ色々な表記方法がある中で「あめ」にしているかと言うと、暖簾や幟を見た子供が読みやすいようにだそうです。とても素敵なエピソードですね。飴細工は「見て楽しい」「食べて美味しい」お菓子です。ぜひ直接お店に足を運んでみてください。オンラインでも購入できるので、気になる方は下記リンクから商品をチェックしていただければと思います。',
+        Tips: '■1口メモ\n飴細工を体験できるワークショップがあるそうです。江戸から続く日本文化...ぜひ一度体験したいものです！',
+        URL: 'https://ame-yoshihara.com/catalog/onlinedemo_/',
+        GoogleMap: 'https://goo.gl/maps/kv9qVBBEdpbr2UBA9',
+        CreateDate: '掲載内容は2022年3月24時点の情報です',
         PicturePtn: '0')
   };
 }

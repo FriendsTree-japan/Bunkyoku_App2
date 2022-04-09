@@ -316,6 +316,15 @@ class QuizQ_List {
         Select3: 'amoral',
         Select4: 'and modern',
         PicturePtn: '0'),
+    '35': QuizQ(
+        QID: '35',
+        Picture: 'images/Q003.jpg',
+        problem: '江戸時代から続く飴細工の伝統を守り続けているお店が千駄木駅のほど近くにあります。その店舗名は次のうちどれでしょうか？',
+        Select1: 'あめ細工 吉原',
+        Select2: 'アメ細工 吉原',
+        Select3: '飴細工 吉原',
+        Select4: '雨細工 吉原',
+        PicturePtn: '0'),
   };
 }
 // class QuizQ_List {

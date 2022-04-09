@@ -650,6 +650,9 @@ class _QuizA_000 extends State<QuizA_000> {
                   Padding(
                       padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Container(
                     width: QuizProblemSizeConfig.width,
                     child: Text(
@@ -658,22 +661,40 @@ class _QuizA_000 extends State<QuizA_000> {
                       style: TextStyle(fontSize: 16),
                     ),
                   ),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Container(
+                    width: QuizProblemSizeConfig.width,
                     child: Text(
                       QuizA_List().list[QuesitonNum]!.Tips,
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.left,
+                      style: TextStyle(fontSize: 16),
                     ),
                   ),
                   Padding(
                       padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   _buildPreviewUrl(QuizA_List().list[QuesitonNum]!.URL),
-                  Container(
-                    child: Text(
-                      QuizA_List().list[QuesitonNum]!.GoogleMap,
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  _buildPreviewUrl(QuizA_List().list[QuesitonNum]!.GoogleMap),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
                       EdgeInsets.only(top: BasePaddingConfig.basePadding)),
