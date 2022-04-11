@@ -6,7 +6,7 @@ class QuizA_List {
         Answer: '江戸川公園',
         Picture: 'images/answer/tate2.jpg',
         Commentary: '江戸川公園はお花見の穴場スポットと言われており、なんと桜並木が川沿いに約1Km以上に並んでいます。お花見ももちろん良いですが、公園には日陰も多く、また休憩用のベンチも所々にあって、季節問わず散歩するのにもおすすめです！ちなみに神田川は昭和時期に「江戸川」と呼ばれていたことがあり、その時の名残で「江戸川公園」という名前になっているそうです。',
-        Tips: '肥後細川庭園',
+        Tips: '',
         URL: 'https://b-kanko.jp/spot/272',
         GoogleMap: 'https://www.google.com/maps/place/%E6%96%87%E4%BA%AC%E5%8C%BA%E7%AB%8B%E6%B1%9F%E6%88%B8%E5%B7%9D%E5%85%AC%E5%9C%92/@35.7104655,139.7260408,17z/data=!3m1!4b1!4m5!3m4!1s0x60188d016d0fc223:0x533a1f2e829bfd0d!8m2!3d35.7104612!4d139.7282295?hl=ja',
         CreateDate: '掲載内容は2022年3月24時点の情報です',
