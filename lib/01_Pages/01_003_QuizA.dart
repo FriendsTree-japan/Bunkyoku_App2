@@ -457,8 +457,6 @@ class _QuizA_000 extends State<QuizA_000> {
         cache: Duration(hours: 1),
         backgroundColor: Colors.grey[300],
         errorWidget: Container(
-          color: Colors.grey[300],
-          child: Text('Oops!'),
         ),
       ),
     );
@@ -611,7 +609,7 @@ class _QuizA_000 extends State<QuizA_000> {
                             child: Text(
                               QuizQ_List().list[QuesitonNum]!.problem,
                               style: TextStyle(fontSize: 16),
-                              textAlign: TextAlign.center,
+                              textAlign: TextAlign.left,
                             ),
                           ),
                           _buildSelectedContainer1(),
@@ -655,6 +653,9 @@ class _QuizA_000 extends State<QuizA_000> {
                       style: TextStyle(fontSize: 16),
                     ),
                   ),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: QuizA_List().list[QuesitonNum]!.Tips == '' ? 0 : BasePaddingConfig.basePadding)),
                   Container(
                     width: QuizProblemSizeConfig.width,
                     child: Text(
@@ -663,10 +664,9 @@ class _QuizA_000 extends State<QuizA_000> {
                       style: TextStyle(fontSize: 16),
                     ),
                   ),
-
                   Padding(
                       padding:
-                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: QuizA_List().list[QuesitonNum]!.Tips == '' ? 0 :BasePaddingConfig.basePadding)),
                   _buildPreviewUrl(QuizA_List().list[QuesitonNum]!.URL),
                   Padding(
                       padding:

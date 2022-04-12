@@ -7,7 +7,7 @@ class QuizA_List {
         Answer: '江戸川公園',
         Picture: 'images/answer/tate2.jpg',
         Commentary:
-            '江戸川公園はお花見の穴場スポットと言われており、なんと桜並木が川沿いに約1Km以上に並んでいます。お花見ももちろん良いですが、公園には日陰も多く、また休憩用のベンチも所々にあって、季節問わず散歩するのにもおすすめです！ちなみに神田川は昭和時期に「江戸川」と呼ばれていたことがあり、その時の名残で「江戸川公園」という名前になっているそうです。',
+            '江戸川公園はお花見の穴場スポットと言われており、なんと桜並木が川沿いに約1Km以上に並んでいます。\nお花見ももちろん良いですが、公園には日陰も多く、また休憩用のベンチも所々にあって、季節問わず散歩するのにもおすすめです！ちなみに神田川は昭和時期に「江戸川」と呼ばれていたことがあり、その時の名残で「江戸川公園」という名前になっているそうです。',
         Tips: '',
         URL: 'https://b-kanko.jp/spot/272',
         GoogleMap: 'https://goo.gl/maps/LDoHN6RDZE6Ys7ZV8',
@@ -18,10 +18,9 @@ class QuizA_List {
         Answer: '縛られてる',
         Picture: 'images/answer/tate2.jpg',
         Commentary:
-            '境内には「しばられ地蔵」という、縄にしばられている地蔵が祀られています。江戸時代で、犯人逮捕のために地蔵を縛った結果、実際に逮捕できたため、それ以降願掛けとして縛り地蔵という習慣が広まったそう。ただし、願いが叶ったら縄を解く必要があるので、忘れないように！',
-        Tips: '■一口メモ縄を地蔵尊にかける際、どうしても地蔵に抱きつくような体勢になってしまうのが面白い。',
-        URL:
-            'https://www.city.bunkyo.lg.jp/bunka/kanko/spot/jisha/rinsenji.html',
+            '境内には「しばられ地蔵」という、縄に縛られたお地蔵様がいらっしゃいます。江戸時代に、犯人逮捕のためにお地蔵様を縛った結果、実際に逮捕できたため、それ以降願掛けとして縛り地蔵という習慣が広まったそう。ただし、願いが叶ったら縄を解く必要があるので、忘れないように！',
+        Tips: '■一口メモ\n縄をお地蔵様にかける際、どうしても抱きつくような体勢になってしまうのが面白い。',
+        URL: 'https://rinsenji.or.jp',
         GoogleMap: 'https://goo.gl/maps/ac9EJ2BFiWU5doXS9',
         CreateDate: '掲載内容は2022年3月24時点の情報です',
         PicturePtn: '0'),
@@ -30,7 +29,7 @@ class QuizA_List {
         Answer: 'きく',
         Picture: 'images/answer/tate2.jpg',
         Commentary:
-            '・さくら祭り（3月下旬〜4月上旬 播磨坂さくら並木）・つつじ祭り（4月〜5月上旬 根津神社）・あじさい祭り（6月 白山神社）・きく祭り（11月 湯島天満宮）・うめ祭り（2月〜3月上旬 湯島天満宮',
+            '・さくら祭り(3月下旬〜4月上旬 播磨坂）\n・つつじ祭り（4月〜5月上旬 根津神社）\n・あじさい祭り（6月 白山神社）\n・きく祭り（11月 湯島天満宮）\n・うめ祭り（2月〜3月上旬 湯島天満宮）',
         Tips: '',
         URL: 'https://b-kanko.jp/festival',
         GoogleMap: '',
@@ -53,9 +52,9 @@ class QuizA_List {
         Answer: '大学最中',
         Picture: 'images/answer/tate2.jpg',
         Commentary:
-            '大学最中の由来は、近くに東京大学があったからだそう。ちなみに三原堂は茗荷谷店もありますが、大学最中が購入できるのは本郷店のみだそうです。大学最中以外にも、お饅頭やどら焼き、塩せんべいなど美味しいお菓子が沢山あるので、ぜひ足を運んでみてください。',
+            '大学最中の由来は、近くの東京大学にちなんでその名前をつけたそうです。\nちなみに三原堂は茗荷谷店もありますが、\n常時、大学最中が置いてあるのは、本郷店のみだそうです。（お客様からの予約があった場合は、茗荷谷店でも受け取ることが可能）\n大学最中以外にも、どら焼きや塩せんべいなど美味しいお菓子がたくさんあるので、ぜひ足を運んでみてはいかがでしょうか。',
         Tips: '',
-        URL: 'https://www.hongo-miharado.co.jp/order/',
+        URL: 'https://www.hongo-miharado.co.jp/',
         GoogleMap: 'https://goo.gl/maps/4MUZjRDfbGFrgQ2CA',
         CreateDate: '掲載内容は2022年3月24時点の情報です',
         PicturePtn: '0'),
@@ -64,7 +63,7 @@ class QuizA_List {
         Answer: '葛坂',
         Picture: 'images/answer/tate2.jpg',
         Commentary:
-            'キリシタン屋敷が近くにあったことから呼ばれているようですが、「切支丹坂」と言われていた坂は周辺にいくつかあるそうです…真の切支丹坂はどこなんでしょうか…',
+            'キリシタン屋敷が近くにあったことから呼ばれているようですが、「切支丹坂」と言われていた坂は周辺にいくつかあるそうです…\n真の切支丹坂はどこなんでしょうか…',
         Tips: '',
         URL: '',
         GoogleMap: 'https://goo.gl/maps/6BsN72Ap11iEd5yf6',
@@ -72,13 +71,13 @@ class QuizA_List {
         PicturePtn: '0'),
     '7': QuizA(
         QID: '7',
-        Answer: '冬',
+        Answer: '白山公園',
         Picture: 'images/answer/tate2.jpg',
         Commentary:
-            '春は「つつじまつり」、夏は「根津神社例大祭」、秋は「下町まつり」の計3回ほどお祭りがあります。お祭りだらけで最高ですね！この中で特におすすめなのが「つつじまつり」です。2,000坪もの「つつじ苑」が広がっていてとても綺麗です。',
+            '明治24年に開園したそうです。白山公園の特徴は、梅雨の頃にとても綺麗に咲くあじさい。その時期には、隣接した白山神社で、あじさい祭りが開催されるそうなので、ぜひ足を運んでみてください。',
         Tips: '',
         URL: '',
-        GoogleMap: '',
+        GoogleMap: 'https://goo.gl/maps/dh5DFcVuaZby2nci7',
         CreateDate: '掲載内容は2022年3月24時点の情報です',
         PicturePtn: '0'),
     '8': QuizA(
@@ -88,7 +87,7 @@ class QuizA_List {
         Commentary:
             '白山神社に奉られている神様の菊理媛神（ククリヒメノミコト）は、その昔イザナギとイザナミの喧嘩を仲裁したという逸話があります。その経緯から復縁にはご利益があるとされています。',
         Tips: '',
-        URL: '',
+        URL: 'https://b-kanko.jp/spot/256',
         GoogleMap: 'https://goo.gl/maps/9CDp4N1WEorkLYGr7',
         CreateDate: '掲載内容は2022年3月24時点の情報です',
         PicturePtn: '0'),
@@ -99,7 +98,8 @@ class QuizA_List {
         Commentary:
             '「文京区シビックセンター」の25階は、地上から105メートルの高さにあるそうです。しかもなんと無料。東京ドームシティの近くにあるので、興味がある方はぜひ立ち寄って見てください。',
         Tips: '',
-        URL: 'https://www.city.bunkyo.lg.jp/shisetsu/civiccenter/tenbo.html',
+        // URL: 'https://www.city.bunkyo.lg.jp/shisetsu/civiccenter/tenbo.html',
+        URL: '',
         GoogleMap: 'https://goo.gl/maps/MYVQfgxEARqWHsj56',
         CreateDate: '掲載内容は2022年3月24時点の情報です',
         PicturePtn: '0'),
@@ -108,10 +108,12 @@ class QuizA_List {
         Answer: '800台',
         Picture: 'images/answer/tate2.jpg',
         Commentary:
-            'なんと800台も...しかもなんと全ての自転車に電動アシスト付き機能がついているそうです。文京区は坂が多いので、電動アシスト付き自転車は本当に助かります。時間毎/日毎で貸し出し可能なようなので、詳しくはぜひ下記をチェックしてください。',
-        Tips: '■一口メモ区外でも同じシステムを運営しているので、文京区外のポートにも返却できるそう。都内の移動がもっと便利になりますね！',
-        URL:
-            'https://www.city.bunkyo.lg.jp/tetsuzuki/bus/cycle/syearingu.html#ryokin',
+            'なんと800台(2022年2月25日時点)も...\nしかもなんと全ての自転車に電動アシスト付き機能がついているそうです。文京区は坂が多いので、電動アシスト付き自転車は本当に助かります。時間毎/日毎で貸し出し可能なようなので、詳しくはぜひ下記をチェックしてください。',
+        Tips:
+            '■一口メモ\n区外でも同じシステムで運営しているため、文京区外のポートにも返却できるそうです。都内の移動がもっと便利になりますね！',
+        // URL:
+        //     'https://www.city.bunkyo.lg.jp/tetsuzuki/bus/cycle/syearingu.html#ryokin',
+        URL: '',
         GoogleMap: '',
         CreateDate: '掲載内容は2022年3月24時点の情報です',
         PicturePtn: '0'),
@@ -121,8 +123,9 @@ class QuizA_List {
         Picture: 'images/answer/tate2.jpg',
         Commentary:
             'その昔 喘息のため辛い物を控えるよう言われていたおばあちゃんが、自分の好物であるとうがらしをどうしても我慢することができず食べてしまい、そのまま亡くなりました。その後、その死を哀れんだ人々が、おばあちゃんが好きであったとうがらしをお供えしていったのが、とうがらし地蔵の起源とされているそうです。現在では喘息や風邪にご利益があるとされています。',
-        Tips: '■一口メモ向丘の正行寺にも「とうがらし地蔵」がいらっしゃいますが、名前の由来は違うそう。',
+        Tips: '■一口メモ\n向丘の正行寺にも「とうがらし地蔵」がいらっしゃいますが、名前の由来は違うそうです。',
         URL: '',
+        // URL: 'https://www.city.bunkyo.lg.jp/bunka/kanko/spot/jisha/fukujuin.html',
         GoogleMap: 'https://goo.gl/maps/CXkftUxjPjxReSCLA',
         CreateDate: '掲載内容は2022年3月24時点の情報です',
         PicturePtn: '0'),
@@ -141,10 +144,10 @@ class QuizA_List {
         Answer: '滝',
         Picture: 'images/answer/tate2.jpg',
         Commentary:
-            '園内には落差10mほどの「須藤の滝」と呼ばれる滝があります。またその滝から流れ込む池の中央には、弁財天が祀られている祠があるのも特徴的です。緑が多く、クサガメなども生息しており、千駄木の小さなオアシスとなっています。',
+            '園内には落差10mほどの「須藤の滝」と呼ばれる滝があります。\nまた、その滝から流れ込む池の中央には、弁財天が祀られている祠があるのも特徴的です。緑が多く、クサガメなども生息しており、千駄木の小さなオアシスとなっているそうです。',
         Tips: '',
         URL:
-            'https://www.city.bunkyo.lg.jp/bosai/midori/kuritukouen/kouen/sudou.html',
+            'https://b-kanko.jp/spot/380',
         GoogleMap: 'https://goo.gl/maps/dyAsi83rLbJrAPf9A',
         CreateDate: '掲載内容は2022年3月24時点の情報です',
         PicturePtn: '0'),
@@ -153,8 +156,8 @@ class QuizA_List {
         Answer: '罪人',
         Picture: 'images/answer/tate2.jpg',
         Commentary:
-            '江戸時代に罪を犯し、江戸を追放されることとなった人は、この辺りで親族とお別れしたようです…。胸がぎゅっとなる名残ですね。',
-        Tips: '■一口メモ現在では見返り坂と見送り坂のちょうど間には、「別れの橋跡」という標識が立っています。',
+            '江戸時代に罪を犯し、江戸を追放されることとなった人は、この辺りで親族とお別れしたようです…\n胸がぎゅっとなる名残ですね。',
+        Tips: '■一口メモ\n現在では見返り坂と見送り坂のちょうど間には、「別れの橋跡」という標識が立っています。',
         URL: '',
         GoogleMap: 'https://goo.gl/maps/C62y46e7frvb6TGq5',
         CreateDate: '掲載内容は2022年3月24時点の情報です',
@@ -164,7 +167,7 @@ class QuizA_List {
         Answer: 'カラオケ',
         Picture: 'images/answer/tate2.jpg',
         Commentary:
-            '1周の約15分間、歌い放題！カラオケの人気曲から季節の定番曲、洋楽まで幅広いジャンルから選べるそうです。外を眺めながらのカラオケってなかなかできる機会が少ないので新鮮ですね！観覧車の利用料金は850円。他のアトラクションも1日乗り放題の場合は4,200円。観覧車で歌える楽曲はこちらから確認できます！',
+            '1周の約15分間、歌い放題！カラオケの人気曲から季節の定番曲、洋楽まで幅広いジャンルから選べるそうです。外を眺めながらのカラオケってなかなかできる機会が少ないので新鮮ですね！\n観覧車の利用料金は850円。他のアトラクションも1日乗り放題の場合は4,200円。観覧車で歌える楽曲はこちらから確認できます！',
         Tips: '',
         URL: 'https://at-raku.com/attractions/laqua/big-o/',
         GoogleMap: 'https://goo.gl/maps/xyXPhQMLRCN5jCpo9',
@@ -175,7 +178,7 @@ class QuizA_List {
         Answer: '600年',
         Picture: 'images/answer/tate2.jpg',
         Commentary:
-            'なんと樹齢600年とは...ちなみにこの木を眺めながら美味しいご飯が食べられるレストラン（クリマ ディ トスカーナ店）があります。食べログでも評価が高いお店なので、気になる方はぜひ足を運んでみてください。',
+            'なんと樹齢600年とは...\nちなみにこの木を眺めながら美味しいご飯が食べられるレストランがあります。食べログでも評価が高いお店なので、気になる方はぜひ足を運んでみてください。',
         Tips: '',
         URL: 'https://b-kanko.jp/spot/226',
         GoogleMap: 'https://goo.gl/maps/uSAD7ojJhktAEC8aA',
@@ -188,7 +191,7 @@ class QuizA_List {
         Commentary:
             '移りゆく季節の中で変化する美しい庭園が魅力的な六義園。春秋には夜間ライトアップイベントがあり、照らされた木々たちと水辺の反射を一緒に撮影すると、素敵な写真を撮れるそうです！',
         Tips: '',
-        URL: 'https://www.tokyo-park.or.jp/park/format/index031.html',
+        URL: 'https://b-kanko.jp/spot/262',
         GoogleMap: 'https://goo.gl/maps/QiwPukwsQ6DnJFpj6',
         CreateDate: '掲載内容は2022年3月24時点の情報です',
         PicturePtn: '0'),
@@ -197,7 +200,7 @@ class QuizA_List {
         Answer: '宝生能楽堂',
         Picture: 'images/answer/tate2.jpg',
         Commentary:
-            '宝生で「ほうしょう」と読みます。能の主役を演じる「シテ方」の5大流派のうちの1つが宝生流で、重厚な芸風と言われているそうです。学生だと3,000円以内で鑑賞できる日もあるので、気軽に行ってみてはいかがでしょうか？',
+            '宝生で「ほうしょう」と読みます。能の主役を演じる「シテ方」の5大流派のうちの1つが宝生流で、重厚な芸風と言われているそうです。学生だと3,000円以内で鑑賞できる日もあるので、気軽に行ってみてはいかがでしょうか',
         Tips: '',
         URL: 'http://www.hosho.or.jp',
         GoogleMap: 'https://goo.gl/maps/AmWq6FCt9VE6B5qh8',
@@ -208,7 +211,7 @@ class QuizA_List {
         Answer: '0駅',
         Picture: 'images/answer/tate2.jpg',
         Commentary:
-            '実は文京区内には一つもJRの駅がありません。駒込駅や水道橋駅など近い駅はあるものの、どれも区外になっています。駅はたくさんあるように思えますが、どれも地下鉄ですね。',
+            '実は文京区内には一つもJRの駅がありません。駒込駅や水道橋駅など近い駅はあるものの、どれも区外になっています。\n駅はたくさんあるように思えますが、どれも地下鉄です。',
         Tips: '',
         URL: '',
         GoogleMap: '',
@@ -221,7 +224,7 @@ class QuizA_List {
         Commentary:
             '文京区の消防署は、小石川消防署と本郷消防署の2つのみです。他にもあるような気がしますが、どれも小石川か本郷どちらかの出張所となります。（選択肢の大塚消防署ですが、小石川消防署の出張所として存在します。）',
         Tips:
-            '■一口メモどちらの消防署にも消防少年団の本拠地があります。アプリ制作メンバーの1人も小学生時代に消防少年団に所属した経験があり、普段は使えない消化器実施訓練や、はしご車に乗る体験が楽しかったそうです。',
+            '■一口メモ\nどちらの消防署にも消防少年団の本拠地があります。アプリ制作メンバーの1人も小学生時代に消防少年団に所属した経験があり、普段は使えない消化器実施訓練や、はしご車に乗る体験が楽しかったそうです。',
         URL: '',
         GoogleMap: '',
         CreateDate: '掲載内容は2022年3月24時点の情報です',
