@@ -645,6 +645,9 @@ class _QuizA_000 extends State<QuizA_000> {
                     width: QuizA_List().list[QuesitonNum]!.PicturePtn == '0' ? QuizImageSizeConfig.yokoImageWidth : QuizImageSizeConfig.tateImageWidth,
                     child: Image.asset(QuizA_List().list[QuesitonNum]!.Picture),
                   ),
+                  Padding(
+                      padding:
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Container(
                     width: QuizProblemSizeConfig.width,
                     child: Text(
