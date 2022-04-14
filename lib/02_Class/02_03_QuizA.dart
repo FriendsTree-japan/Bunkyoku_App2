@@ -533,7 +533,7 @@ class QuizA_List {
         Picture: 'images/answer/tate2.jpg',
         Commentary:
             '鼠ではないと上がり降りができないって、相当急な坂道ですよね。ちなみに鼠坂の壁には、ネズミの絵が書いてあるそうです。',
-                Tips:'■1口メモ\n朝日が昇る/夕日が沈む時間は、鼠坂の写真を撮るのに最高のタイミングです！',
+                Tips:'■一口メモ\n朝日が昇る/夕日が沈む時間は、鼠坂の写真を撮るのに最高のタイミングです！',
         URL: 'https://b-kanko.jp/spot/386',
         GoogleMap: 'https://goo.gl/maps/v9bCxc4vrZLMGcjH8',
         CreateDate: '掲載内容は2022年3月24日時点の情報です',
