@@ -383,7 +383,7 @@ class _QuizA_000 extends State<QuizA_000> {
   Widget _buildNextPageContainer(String problemId, String myFavariteFlg) {
     String myFavariteFlg = '0';
     //★状態を見たいので一旦「２」にしているがリリース時には「maxQuizQidValue」に変更すること！
-    if (problemId != QuizStatusDb.maxQuizQidValue) {
+    if (problemId != QuizStatusDb.maxQuizQidValue.toString()) {
       return Container(
         height: 50,
         width: 240,
