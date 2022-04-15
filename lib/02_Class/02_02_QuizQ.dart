@@ -59,7 +59,7 @@ class QuizQ_List {
         Select2: '鉄砲坂',
         Select3: '切支丹坂',
         Select4: '稲荷坂',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '7': QuizQ(
         QID: '7',
         Picture: 'images/question/tate2.jpg',
