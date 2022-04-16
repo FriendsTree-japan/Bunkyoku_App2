@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:any_link_preview/any_link_preview.dart';
 import 'package:audioplayers/audioplayers.dart';
@@ -14,7 +13,6 @@ class QuizA_000 extends StatefulWidget {
   late final String QuesitonNum;
   late final String selectQ;
   late String myFavariteFlg;
-
 
   QuizA_000(this.QuesitonNum, this.selectQ, this.myFavariteFlg);
 
@@ -54,8 +52,7 @@ class _QuizA_000 extends State<QuizA_000> {
         ],
       );
     } else if (selectQ == "") {
-      return Container(
-      );
+      return Container();
     } else {
       return Column(
         children: [
@@ -447,17 +444,16 @@ class _QuizA_000 extends State<QuizA_000> {
     }
   }
 
-  Widget _buildPreviewUrl(String url){
+  Widget _buildPreviewUrl(String url) {
     String _url = url;
     return Container(
       width: QuizProblemSizeConfig.width,
-      child:AnyLinkPreview(
+      child: AnyLinkPreview(
         displayDirection: uiDirection.uiDirectionHorizontal,
         link: _url,
         cache: Duration(hours: 1),
         backgroundColor: Colors.grey[300],
-        errorWidget: Container(
-        ),
+        errorWidget: Container(),
       ),
     );
   }
@@ -531,7 +527,8 @@ class _QuizA_000 extends State<QuizA_000> {
                   child: IconButton(
                     icon: Icon(
                       Icons.bookmark_outlined,
-                      color: myFavariteFlg == '0' ? Colors.white : Colors.yellow,
+                      color:
+                          myFavariteFlg == '0' ? Colors.white : Colors.yellow,
                     ),
                     onPressed: () async {
                       if (myFavariteFlg == '0') {
@@ -542,7 +539,7 @@ class _QuizA_000 extends State<QuizA_000> {
                             QuizA_List().list[QuesitonNum]!.QID, '0');
                       }
                       myFavariteFlg =
-                      await QuizStatusDb().setFavoriteFlg(QuesitonNum);
+                          await QuizStatusDb().setFavoriteFlg(QuesitonNum);
                       //①QuizStatusクラスのproblemIdに、QuizQ_List().list[QuesitonNum]!.QID,を入れる
                       //※このときすでにデータがあれば更新処理は実施しないように制御する。
                       //②QuizStatusクラスのfavoriteFlgが0であれば1、1であれば0を代入する
@@ -550,14 +547,14 @@ class _QuizA_000 extends State<QuizA_000> {
                     },
                   ),
                 ),
-              // Align(
-              //   alignment: Alignment.center,
-              //   child: Text('お気入り',
-              //         style: TextStyle(
-              //             color: ColorConfig.White, //文字の色を白にする
-              //             fontWeight: FontWeight.bold, //文字を太字する
-              //             fontSize: 5,)),
-              // ),
+                // Align(
+                //   alignment: Alignment.center,
+                //   child: Text('お気入り',
+                //         style: TextStyle(
+                //             color: ColorConfig.White, //文字の色を白にする
+                //             fontWeight: FontWeight.bold, //文字を太字する
+                //             fontSize: 5,)),
+                // ),
               ],
             ),
           ],
@@ -581,7 +578,9 @@ class _QuizA_000 extends State<QuizA_000> {
                       padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Container(
-                      width: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0' ? QuizImageSizeConfig.yokoImageWidth + 20 : QuizImageSizeConfig.tateImageWidth + 20,
+                      width: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0'
+                          ? QuizImageSizeConfig.yokoImageWidth + 20
+                          : QuizImageSizeConfig.tateImageWidth + 20,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                         color: ColorConfig.WeakGray,
@@ -596,10 +595,19 @@ class _QuizA_000 extends State<QuizA_000> {
                                   top: BasePaddingConfig.basePadding)),
                           Container(
                             alignment: Alignment.center,
-                            height: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0' ? QuizImageSizeConfig.yokoImageHeight : QuizImageSizeConfig.tateImageHeight,
-                            width: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0' ? QuizImageSizeConfig.yokoImageWidth : QuizImageSizeConfig.tateImageWidth,
-                            child: Image.asset(
-                                QuizQ_List().list[QuesitonNum]!.Picture),
+                            height:
+                                QuizQ_List().list[QuesitonNum]!.PicturePtn ==
+                                        '0'
+                                    ? QuizImageSizeConfig.yokoImageHeight
+                                    : QuizImageSizeConfig.tateImageHeight,
+                            width: QuizQ_List().list[QuesitonNum]!.PicturePtn ==
+                                    '0'
+                                ? QuizImageSizeConfig.yokoImageWidth
+                                : QuizImageSizeConfig.tateImageWidth,
+                            child: QuizQ_List().list[QuesitonNum]!.Picture == ''
+                                ? Container()
+                                : Image.asset(
+                                    QuizQ_List().list[QuesitonNum]!.Picture),
                           ),
                           Padding(
                               padding: EdgeInsets.only(
@@ -635,19 +643,23 @@ class _QuizA_000 extends State<QuizA_000> {
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Container(
                     alignment: Alignment.center,
-                    height: QuizA_List().list[QuesitonNum]!.PicturePtn == '0' ? QuizImageSizeConfig.yokoImageHeight : QuizImageSizeConfig.tateImageHeight,
-                    width: QuizA_List().list[QuesitonNum]!.PicturePtn == '0' ? QuizImageSizeConfig.yokoImageWidth : QuizImageSizeConfig.tateImageWidth,
+                    height: QuizA_List().list[QuesitonNum]!.PicturePtn == '0'
+                        ? QuizImageSizeConfig.yokoImageHeight
+                        : QuizImageSizeConfig.tateImageHeight,
+                    width: QuizA_List().list[QuesitonNum]!.PicturePtn == '0'
+                        ? QuizImageSizeConfig.yokoImageWidth
+                        : QuizImageSizeConfig.tateImageWidth,
                     child: Image.asset(QuizA_List().list[QuesitonNum]!.Picture),
                   ),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Container(
                     width: QuizProblemSizeConfig.width,
                     child: Text(
@@ -657,8 +669,10 @@ class _QuizA_000 extends State<QuizA_000> {
                     ),
                   ),
                   Padding(
-                      padding:
-                      EdgeInsets.only(top: QuizA_List().list[QuesitonNum]!.Tips == '' ? 0 : BasePaddingConfig.basePadding)),
+                      padding: EdgeInsets.only(
+                          top: QuizA_List().list[QuesitonNum]!.Tips == ''
+                              ? 0
+                              : BasePaddingConfig.basePadding)),
                   Container(
                     width: QuizProblemSizeConfig.width,
                     child: Text(
@@ -668,32 +682,34 @@ class _QuizA_000 extends State<QuizA_000> {
                     ),
                   ),
                   Padding(
-                      padding:
-                          EdgeInsets.only(top: QuizA_List().list[QuesitonNum]!.Tips == '' ? 0 :BasePaddingConfig.basePadding)),
+                      padding: EdgeInsets.only(
+                          top: QuizA_List().list[QuesitonNum]!.Tips == ''
+                              ? 0
+                              : BasePaddingConfig.basePadding)),
                   _buildPreviewUrl(QuizA_List().list[QuesitonNum]!.URL),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   _buildPreviewUrl(QuizA_List().list[QuesitonNum]!.GoogleMap),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   _buildNextPageContainer(QuesitonNum, '1'),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Container(
                     child: Text(
                       QuizA_List().list[QuesitonNum]!.CreateDate,
@@ -702,26 +718,25 @@ class _QuizA_000 extends State<QuizA_000> {
                   ),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-
+                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                 ],
               ),
             ),
