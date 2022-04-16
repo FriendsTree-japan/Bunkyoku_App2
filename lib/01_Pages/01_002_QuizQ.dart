@@ -129,7 +129,7 @@ class _QuizQ_000 extends State<QuizQ_000> {
                     width: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0'
                         ? QuizImageSizeConfig.yokoImageWidth
                         : QuizImageSizeConfig.tateImageWidth,
-                    child: Image.asset(QuizQ_List().list[QuesitonNum]!.Picture),
+                    child: QuizQ_List().list[QuesitonNum]!.Picture == '' ? Container():Image.asset(QuizQ_List().list[QuesitonNum]!.Picture),
                   ),
                   Padding(
                       padding:
