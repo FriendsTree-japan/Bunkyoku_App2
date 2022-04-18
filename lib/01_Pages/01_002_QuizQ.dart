@@ -87,8 +87,8 @@ class _QuizQ_000 extends State<QuizQ_000> {
                 if (snapshot.connectionState != ConnectionState.done) {
                   return new Align(
                       child: Center(
-                    child: new CircularProgressIndicator(),
-                  ));
+                        child: new CircularProgressIndicator(),
+                      ));
                 } else if (snapshot.hasError) {
                   return new Text('Error: ${snapshot.error!}');
                 } else if (snapshot.hasData) {
@@ -114,37 +114,11 @@ class _QuizQ_000 extends State<QuizQ_000> {
                 children: [
                   Padding(
                       padding:
-                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Padding(
                       padding:
-                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-                  Container(
-                    alignment: Alignment.center,
-                    height: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0'
-                        ? QuizImageSizeConfig.yokoImageHeight
-                        : QuizImageSizeConfig.tateImageHeight,
-                    width: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0'
-                        ? QuizImageSizeConfig.yokoImageWidth
-                        : QuizImageSizeConfig.tateImageWidth,
-                    child: QuizQ_List().list[QuesitonNum]!.Picture == '' ? Container():Image.asset(QuizQ_List().list[QuesitonNum]!.Picture),
-                  ),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
-                  Container(
-                    width: QuizProblemSizeConfig.width,
-                    child: Text(
-                      QuizQ_List().list[QuesitonNum]!.problem,
-                      style: TextStyle(fontSize: 16),
-                      textAlign: TextAlign.left,
-                    ),
-                  ),
-                  Padding(
-                      padding:
-                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                  _buildQuition(),
                   Container(
                     height: QuizProblemSizeConfig.height,
                     width: QuizProblemSizeConfig.width,
@@ -162,7 +136,7 @@ class _QuizQ_000 extends State<QuizQ_000> {
                       onPressed: () async {
                         SelectQ = QuizQ_List().list[QuesitonNum]!.Select1;
                         myFavariteFlg =
-                            await QuizStatusDb().setFavoriteFlg(QuesitonNum);
+                        await QuizStatusDb().setFavoriteFlg(QuesitonNum);
 
                         if (Setting.soundFlg!) {
                           if (SelectQ ==
@@ -196,7 +170,7 @@ class _QuizQ_000 extends State<QuizQ_000> {
                   ),
                   Padding(
                       padding:
-                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Container(
                     height: QuizProblemSizeConfig.height,
                     width: QuizProblemSizeConfig.width,
@@ -214,7 +188,7 @@ class _QuizQ_000 extends State<QuizQ_000> {
                       onPressed: () async {
                         SelectQ = QuizQ_List().list[QuesitonNum]!.Select2;
                         myFavariteFlg =
-                            await QuizStatusDb().setFavoriteFlg(QuesitonNum);
+                        await QuizStatusDb().setFavoriteFlg(QuesitonNum);
                         if (Setting.soundFlg!) {
                           if (SelectQ ==
                               QuizA_List().list[QuesitonNum]!.Answer) {
@@ -247,7 +221,7 @@ class _QuizQ_000 extends State<QuizQ_000> {
                   ),
                   Padding(
                       padding:
-                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Container(
                     height: QuizProblemSizeConfig.height,
                     width: QuizProblemSizeConfig.width,
@@ -265,7 +239,7 @@ class _QuizQ_000 extends State<QuizQ_000> {
                       onPressed: () async {
                         SelectQ = QuizQ_List().list[QuesitonNum]!.Select3;
                         myFavariteFlg =
-                            await QuizStatusDb().setFavoriteFlg(QuesitonNum);
+                        await QuizStatusDb().setFavoriteFlg(QuesitonNum);
                         if (Setting.soundFlg!) {
                           if (SelectQ ==
                               QuizA_List().list[QuesitonNum]!.Answer) {
@@ -298,7 +272,7 @@ class _QuizQ_000 extends State<QuizQ_000> {
                   ),
                   Padding(
                       padding:
-                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Container(
                     height: QuizProblemSizeConfig.height,
                     width: QuizProblemSizeConfig.width,
@@ -316,7 +290,7 @@ class _QuizQ_000 extends State<QuizQ_000> {
                       onPressed: () async {
                         SelectQ = QuizQ_List().list[QuesitonNum]!.Select4;
                         myFavariteFlg =
-                            await QuizStatusDb().setFavoriteFlg(QuesitonNum);
+                        await QuizStatusDb().setFavoriteFlg(QuesitonNum);
                         if (Setting.soundFlg!) {
                           if (SelectQ ==
                               QuizA_List().list[QuesitonNum]!.Answer) {
@@ -349,7 +323,7 @@ class _QuizQ_000 extends State<QuizQ_000> {
                   ),
                   Padding(
                       padding:
-                          EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+                      EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                 ],
               ),
             ),
@@ -358,4 +332,78 @@ class _QuizQ_000 extends State<QuizQ_000> {
       ),
     );
   }
+
+  Widget _buildQuition() {
+    if (QuizQ_List().list[QuesitonNum]!.Picture != '') {
+      return Column(
+        children: [
+          Padding(
+              padding:
+              EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+          Container(
+            alignment: Alignment.center,
+            height: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0'
+                ? QuizImageSizeConfig.yokoImageHeight
+                : QuizImageSizeConfig.tateImageHeight,
+            width: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0'
+                ? QuizImageSizeConfig.yokoImageWidth
+                : QuizImageSizeConfig.tateImageWidth,
+            child: QuizQ_List().list[QuesitonNum]!.Picture == ''
+                ? Container()
+                : Image.asset(QuizQ_List().list[QuesitonNum]!.Picture),
+          ),
+          Padding(
+              padding:
+              EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+          Container(
+            width: QuizProblemSizeConfig.width,
+            child: Text(
+              QuizQ_List().list[QuesitonNum]!.problem,
+              style: TextStyle(fontSize: 16),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Padding(
+              padding:
+              EdgeInsets.only(top: BasePaddingConfig.
+              basePadding
+              )
+          )
+        ],
+      );
+  }else{
+      return Column(
+        children: [
+          Container(
+            width: QuizProblemSizeConfig.width,
+            child: Text(
+              QuizQ_List().list[QuesitonNum]!.problem,
+              style: TextStyle(fontSize: 16),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Container(
+            alignment: Alignment.center,
+            height: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0'
+                ? QuizImageSizeConfig.yokoImageHeight
+                : QuizImageSizeConfig.tateImageHeight,
+            width: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0'
+                ? QuizImageSizeConfig.yokoImageWidth
+                : QuizImageSizeConfig.tateImageWidth,
+            child: QuizQ_List().list[QuesitonNum]!.Picture == ''
+                ? Container()
+                : Image.asset(QuizQ_List().list[QuesitonNum]!.Picture),
+          ),
+          Padding(
+              padding:
+              EdgeInsets.only(top: BasePaddingConfig.
+              basePadding
+              )
+          )
+        ],
+      );
+
+
+    }
+}
 }

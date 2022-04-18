@@ -4,7 +4,7 @@ class QuizQ_List {
   Map<String, QuizQ> list = {
     '1': QuizQ(
         QID: '1',
-        Picture: 'images/question/que_001.jpg',
+        Picture: '',
         problem: '園内に1km以上の桜並木があることで有名な、神田川沿いに東西に広がる長細い公園は、次のうちどれでしょうか？',
         Select1: '江戸川公園',
         Select2: '礫川公園',
@@ -23,7 +23,7 @@ class QuizQ_List {
         PicturePtn: '0'),
     '3': QuizQ(
         QID: '3',
-        Picture: 'images/question/que_003.jpg',
+        Picture: 'images/question/que_003.jpeg',
         problem:
             '四季折々の魅力がある文京区には、「文京花の５大まつり」というお祭りがあります。その花は、さくら、つつじ、あじさい、うめ、あと一つは何でしょうか？',
         Select1: 'きく',
@@ -59,7 +59,7 @@ class QuizQ_List {
         Select2: '鉄砲坂',
         Select3: '切支丹坂',
         Select4: '稲荷坂',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '7': QuizQ(
         QID: '7',
         Picture: 'images/question/que_007.jpg',
@@ -115,7 +115,7 @@ class QuizQ_List {
         Select2: '東京タワー',
         Select3: '六本木ヒルズ',
         Select4: '東京ドーム',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '13': QuizQ(
         QID: '13',
         Picture: 'images/question/que_013.jpg',
@@ -133,7 +133,7 @@ class QuizQ_List {
         Select2: '兵士',
         Select3: '罪人',
         Select4: '死人',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '15': QuizQ(
         QID: '15',
         Picture: 'images/question/que_015.jpg',
@@ -142,7 +142,7 @@ class QuizQ_List {
         Select2: 'ミラーボール',
         Select3: 'プリクラ',
         Select4: '望遠鏡',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '16': QuizQ(
         QID: '16',
         Picture: 'images/question/que_016.jpg',
@@ -151,11 +151,11 @@ class QuizQ_List {
         Select2: '300年',
         Select3: '500年',
         Select4: '600年',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '17': QuizQ(
         QID: '17',
         Picture: 'images/question/que_017.jpg',
-        problem: '東京三名園は「小石川庭園（文京区）」「浜離宮恩賜庭園（中央区）」と、あと一つは何でしょうか？',
+        problem: '東京三名園は「小石川後楽園（文京区）」「浜離宮恩賜庭園（中央区）」と、あと一つは何でしょうか？',
         Select1: '六義園',
         Select2: '肥後細川庭園',
         Select3: '占春園',
@@ -172,7 +172,7 @@ class QuizQ_List {
         PicturePtn: '0'),
     '19': QuizQ(
         QID: '19',
-        Picture: 'images/question/que_019.jpg',
+        Picture: '',
         problem: '文京区内には様々な駅がありますが、JRの駅はいくつあるでしょうか？',
         Select1: '0駅',
         Select2: '1駅',
@@ -181,17 +181,17 @@ class QuizQ_List {
         PicturePtn: '0'),
     '20': QuizQ(
         QID: '20',
-        Picture: 'images/question/que_020.jpg',
-        problem: '文京区の消防署で、存在しない消防署はどれでしょうか？',
+        Picture: '',
+        problem: '文京区の消防署は２つあります。\n小石川消防署ともう１つは何でしょうか？',
         Select1: '大塚消防署',
         Select2: '本郷消防署',
-        Select3: '小石川消防署',
-        Select4: 'どれも存在する',
+        Select3: '茗荷谷消防署',
+        Select4: '江戸川消防署',
         PicturePtn: '0'),
     '21': QuizQ(
         QID: '21',
-        Picture: 'images/question/que_021.jpg',
-        problem: '文京区は元々２つの区からできています。\n一つは本郷区ですが、もう一つは何区でしょうか？',
+        Picture: 'images/question/que_021.jpeg',
+        problem: '文京区は元々２つの区からできています。\n１つは本郷区ですが、もう１つは何区でしょうか？',
         Select1: '根津区',
         Select2: '白山区',
         Select3: '千駄木区',
@@ -224,10 +224,10 @@ class QuizQ_List {
         Select2: '影ができない',
         Select3: '体が重くなる',
         Select4: '上りと下りで段数が異なる',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '25': QuizQ(
         QID: '25',
-        Picture: 'images/question/que_025.jpg',
+        Picture: '',
         problem: '文京区内で唯一、蛍が見れる場所があります。そこはどこでしょうか？',
         Select1: '六義園',
         Select2: 'ホテル椿山荘東京',
@@ -458,11 +458,11 @@ class QuizQ_List {
     '50': QuizQ(
         QID: '50',
         Picture: 'images/question/que_050.jpg',
-        problem: '神社に祈願するときに奉納する「絵馬」。この絵馬のほとんどは馬の絵が描かれていますが、湯島天神だけは他の動物が描かれています。その動物とは何でしょうか？',
-        Select1: '牛',
-        Select2: '豚',
-        Select3: '鳥',
-        Select4: '羊',
+        problem: 'この画像のうち、文京区は何番でしょうか？',
+        Select1: '1',
+        Select2: '2',
+        Select3: '3',
+        Select4: '4',
         PicturePtn: '0'),
   };
 }

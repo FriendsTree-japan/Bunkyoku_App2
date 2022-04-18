@@ -23,7 +23,7 @@ class QuizA_List {
         URL: 'https://rinsenji.or.jp',
         GoogleMap: 'https://goo.gl/maps/ac9EJ2BFiWU5doXS9',
         CreateDate: '掲載内容は2022年3月24日時点の情報です',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '3': QuizA(
         QID: '3',
         Answer: 'きく',
@@ -57,10 +57,10 @@ class QuizA_List {
         URL: 'https://www.hongo-miharado.co.jp/',
         GoogleMap: 'https://goo.gl/maps/4MUZjRDfbGFrgQ2CA',
         CreateDate: '掲載内容は2022年3月24日時点の情報です',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '6': QuizA(
         QID: '6',
-        Answer: '葛坂',
+        Answer: '切支丹坂',
         Picture: 'images/answer/ans_006.jpg',
         Commentary:
             'キリシタン屋敷が近くにあったことから呼ばれているようですが、「切支丹坂」と言われていた坂は周辺にいくつかあるそうです…\n真の切支丹坂はどこなんでしょうか…',
@@ -68,7 +68,7 @@ class QuizA_List {
         URL: '',
         GoogleMap: 'https://goo.gl/maps/6BsN72Ap11iEd5yf6',
         CreateDate: '掲載内容は2022年3月24日時点の情報です',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '7': QuizA(
         QID: '7',
         Answer: '白山公園',
@@ -102,7 +102,7 @@ class QuizA_List {
         URL: '',
         GoogleMap: 'https://goo.gl/maps/MYVQfgxEARqWHsj56',
         CreateDate: '掲載内容は2022年3月24日時点の情報です',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '10': QuizA(
         QID: '10',
         Answer: '800台',
@@ -138,7 +138,7 @@ class QuizA_List {
         URL: '',
         GoogleMap: 'https://goo.gl/maps/isoc68mY7e8gAx2i6',
         CreateDate: '掲載内容は2022年3月24日時点の情報です',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '13': QuizA(
         QID: '13',
         Answer: '滝',
@@ -149,7 +149,7 @@ class QuizA_List {
         URL: 'https://b-kanko.jp/spot/380',
         GoogleMap: 'https://goo.gl/maps/dyAsi83rLbJrAPf9A',
         CreateDate: '掲載内容は2022年3月24日時点の情報です',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '14': QuizA(
         QID: '14',
         Answer: '罪人',
@@ -218,8 +218,8 @@ class QuizA_List {
         PicturePtn: '0'),
     '20': QuizA(
         QID: '20',
-        Answer: '大塚消防署',
-        Picture: 'images/answer/ans_020.jpg',
+        Answer: '本郷消防署',
+        Picture: '',
         Commentary:
             '文京区の消防署は、小石川消防署と本郷消防署の2つのみです。他にもあるような気がしますが、どれも小石川か本郷どちらかの出張所となります。（選択肢の大塚消防署ですが、小石川消防署の出張所として存在します。）',
         Tips:
@@ -231,7 +231,7 @@ class QuizA_List {
     '21': QuizA(
         QID: '21',
         Answer: '小石川区',
-        Picture: 'images/answer/ans_021.jpg',
+        Picture: 'images/answer/ans_021.jpeg',
         Commentary:
             '1947年に小石川区と本郷区の2区が合併し、文京区が誕生しました。その名の由来は、2区に共通していたイメージ（学問の府）から「文京」と名づけたそうです。今でも消防署が小石川と本郷の2ヶ所にあったりと、2分割しようとすると、なにかとこの2つになるのかもしれませんね。',
         Tips: '',
@@ -262,7 +262,7 @@ class QuizA_List {
         URL: '',
         GoogleMap: 'https://goo.gl/maps/kXwLx15osPzFkQT27',
         CreateDate: '掲載内容は2022年3月24日時点の情報です',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '24': QuizA(
         QID: '24',
         Answer: '上りと下りで段数が異なる',
@@ -275,7 +275,7 @@ class QuizA_List {
         //     'https://www.city.bunkyo.lg.jp/bunka/kanko/kanko/location/places/yureizaka.html',
         GoogleMap: 'https://goo.gl/maps/czwdCCpWf658Bwjz8',
         CreateDate: '掲載内容は2022年3月24日時点の情報です',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '25': QuizA(
         QID: '25',
         Answer: 'ホテル椿山荘東京',
@@ -286,7 +286,7 @@ class QuizA_List {
         URL: 'https://hotel-chinzanso-tokyo.jp',
         GoogleMap: 'https://goo.gl/maps/hWVGHwXp5gjWFHyX7',
         CreateDate: '掲載内容は2022年3月24日時点の情報です',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '26': QuizA(
         QID: '26',
         Answer: '肥後細川庭園',
@@ -560,12 +560,12 @@ class QuizA_List {
         PicturePtn: '0'),
     '50': QuizA(
         QID: '50',
-        Answer: '牛',
+        Answer: '2',
         Picture: 'images/answer/ans_050.jpg',
-        Commentary:'■なぜ馬の絵が描かれているか\n古来、神様は神馬に乗って地上に降りてくるとされていました。元々は生きた馬を奉納する風習だったのですが、平安時代頃から木で作った馬や土で作った馬を奉納するようになったそうです。\nその後、現代のような馬の絵を描いた「絵馬」を奉納するようになったとか。\n\n■なぜ湯島天神は牛なのか\n湯島天神に奉られている菅原道真が生前に「自分の遺骸を牛の背に乗せ、人に引かせず、その牛が立ち止まったところを墓所とするように」との遺言を残したこともあり、牛は菅原道真の使いだとされ、馬ではなく牛になったそうです。（諸説あり）菅原道真を祀っている湯島天神ならではですね。\n\n■なで牛\n湯島天神には「なで牛」の像があります。傷や病気の箇所をさすると回復する、あるいは頭をさすると知恵を授かり賢くなると伝えられているそうです。',
+        Commentary:'文京区は、荒川区、台東区、千代田区、新宿区、豊島区、北区の6区と隣り合っています。三角形に近く、あまり特徴的な形ではないんですね。',
         Tips:'',
         URL: '',
-        GoogleMap: 'https://goo.gl/maps/nabjTikCswccmPEn9',
+        GoogleMap: '',
         CreateDate: '掲載内容は2022年3月24日時点の情報です',
         PicturePtn: '0'),
   };

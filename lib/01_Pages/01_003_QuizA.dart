@@ -590,36 +590,7 @@ class _QuizA_000 extends State<QuizA_000> {
                           Padding(
                               padding: EdgeInsets.only(
                                   top: BasePaddingConfig.basePadding)),
-                          Padding(
-                              padding: EdgeInsets.only(
-                                  top: BasePaddingConfig.basePadding)),
-                          Container(
-                            alignment: Alignment.center,
-                            height:
-                                QuizQ_List().list[QuesitonNum]!.PicturePtn ==
-                                        '0'
-                                    ? QuizImageSizeConfig.yokoImageHeight
-                                    : QuizImageSizeConfig.tateImageHeight,
-                            width: QuizQ_List().list[QuesitonNum]!.PicturePtn ==
-                                    '0'
-                                ? QuizImageSizeConfig.yokoImageWidth
-                                : QuizImageSizeConfig.tateImageWidth,
-                            child: QuizQ_List().list[QuesitonNum]!.Picture == ''
-                                ? Container()
-                                : Image.asset(
-                                    QuizQ_List().list[QuesitonNum]!.Picture),
-                          ),
-                          Padding(
-                              padding: EdgeInsets.only(
-                                  top: BasePaddingConfig.basePadding)),
-                          Container(
-                            width: QuizProblemSizeConfig.width,
-                            child: Text(
-                              QuizQ_List().list[QuesitonNum]!.problem,
-                              style: TextStyle(fontSize: 16),
-                              textAlign: TextAlign.left,
-                            ),
-                          ),
+                          _buildQuition(),
                           _buildSelectedContainer1(),
                           _buildSelectedContainer2(),
                           _buildSelectedContainer3(),
@@ -744,5 +715,62 @@ class _QuizA_000 extends State<QuizA_000> {
         ),
       ),
     );
+  }
+
+  Widget _buildQuition() {
+    if (QuizQ_List().list[QuesitonNum]!.Picture != '') {
+      return Column(
+        children: [
+          Padding(padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+          Container(
+            alignment: Alignment.center,
+            height: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0'
+                ? QuizImageSizeConfig.yokoImageHeight
+                : QuizImageSizeConfig.tateImageHeight,
+            width: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0'
+                ? QuizImageSizeConfig.yokoImageWidth
+                : QuizImageSizeConfig.tateImageWidth,
+            child: QuizQ_List().list[QuesitonNum]!.Picture == ''
+                ? Container()
+                : Image.asset(QuizQ_List().list[QuesitonNum]!.Picture),
+          ),
+          Padding(padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+          Container(
+            width: QuizProblemSizeConfig.width,
+            child: Text(
+              QuizQ_List().list[QuesitonNum]!.problem,
+              style: TextStyle(fontSize: 16),
+              textAlign: TextAlign.left,
+            ),
+          ),
+        ],
+      );
+    } else {
+      return Column(
+        children: [
+          Container(
+            width: QuizProblemSizeConfig.width,
+            child: Text(
+              QuizQ_List().list[QuesitonNum]!.problem,
+              style: TextStyle(fontSize: 16),
+              textAlign: TextAlign.left,
+            ),
+          ),
+          Container(
+            alignment: Alignment.center,
+            height: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0'
+                ? QuizImageSizeConfig.yokoImageHeight
+                : QuizImageSizeConfig.tateImageHeight,
+            width: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0'
+                ? QuizImageSizeConfig.yokoImageWidth
+                : QuizImageSizeConfig.tateImageWidth,
+            child: QuizQ_List().list[QuesitonNum]!.Picture == ''
+                ? Container()
+                : Image.asset(QuizQ_List().list[QuesitonNum]!.Picture),
+          ),
+          Padding(padding: EdgeInsets.only(top: BasePaddingConfig.basePadding)),
+        ],
+      );
+    }
   }
 }
