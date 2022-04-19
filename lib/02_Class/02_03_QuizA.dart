@@ -11,7 +11,7 @@ class QuizA_List {
         Tips: '',
         URL: 'https://b-kanko.jp/spot/272',
         GoogleMap: 'https://goo.gl/maps/LDoHN6RDZE6Ys7ZV8',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '2': QuizA(
         QID: '2',
@@ -22,7 +22,7 @@ class QuizA_List {
         Tips: '■一口メモ\n縄をお地蔵様にかける際、どうしても抱きつくような体勢になってしまうのが面白い。',
         URL: 'https://rinsenji.or.jp',
         GoogleMap: 'https://goo.gl/maps/ac9EJ2BFiWU5doXS9',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '1'),
     '3': QuizA(
         QID: '3',
@@ -33,7 +33,7 @@ class QuizA_List {
         Tips: '',
         URL: 'https://b-kanko.jp/festival',
         GoogleMap: '',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '4': QuizA(
         QID: '4',
@@ -45,7 +45,7 @@ class QuizA_List {
         URL:
             'https://www.city.bunkyo.lg.jp/var/rev0/0226/2854/202032113918.pdf',
         GoogleMap: 'https://goo.gl/maps/8NfQn4g6Ktct7ZaE8',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '5': QuizA(
         QID: '5',
@@ -56,7 +56,7 @@ class QuizA_List {
         Tips: '',
         URL: 'https://www.hongo-miharado.co.jp/',
         GoogleMap: 'https://goo.gl/maps/4MUZjRDfbGFrgQ2CA',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '1'),
     '6': QuizA(
         QID: '6',
@@ -67,7 +67,7 @@ class QuizA_List {
         Tips: '',
         URL: '',
         GoogleMap: 'https://goo.gl/maps/6BsN72Ap11iEd5yf6',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '1'),
     '7': QuizA(
         QID: '7',
@@ -78,7 +78,7 @@ class QuizA_List {
         Tips: '',
         URL: '',
         GoogleMap: 'https://goo.gl/maps/dh5DFcVuaZby2nci7',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '8': QuizA(
         QID: '8',
@@ -89,7 +89,7 @@ class QuizA_List {
         Tips: '',
         URL: 'https://b-kanko.jp/spot/256',
         GoogleMap: 'https://goo.gl/maps/9CDp4N1WEorkLYGr7',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '9': QuizA(
         QID: '9',
@@ -101,7 +101,7 @@ class QuizA_List {
         // URL: 'https://www.city.bunkyo.lg.jp/shisetsu/civiccenter/tenbo.html',
         URL: '',
         GoogleMap: 'https://goo.gl/maps/MYVQfgxEARqWHsj56',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '1'),
     '10': QuizA(
         QID: '10',
@@ -115,7 +115,7 @@ class QuizA_List {
         //     'https://www.city.bunkyo.lg.jp/tetsuzuki/bus/cycle/syearingu.html#ryokin',
         URL: '',
         GoogleMap: '',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '11': QuizA(
         QID: '11',
@@ -127,7 +127,7 @@ class QuizA_List {
         URL: '',
         // URL: 'https://www.city.bunkyo.lg.jp/bunka/kanko/spot/jisha/fukujuin.html',
         GoogleMap: 'https://goo.gl/maps/CXkftUxjPjxReSCLA',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '12': QuizA(
         QID: '12',
@@ -137,7 +137,7 @@ class QuizA_List {
         Tips: '',
         URL: '',
         GoogleMap: 'https://goo.gl/maps/isoc68mY7e8gAx2i6',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '1'),
     '13': QuizA(
         QID: '13',
@@ -148,7 +148,7 @@ class QuizA_List {
         Tips: '',
         URL: 'https://b-kanko.jp/spot/380',
         GoogleMap: 'https://goo.gl/maps/dyAsi83rLbJrAPf9A',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '1'),
     '14': QuizA(
         QID: '14',
@@ -159,7 +159,7 @@ class QuizA_List {
         Tips: '■一口メモ\n現在では見返り坂と見送り坂のちょうど間には、「別れの橋跡」という標識が立っています。',
         URL: '',
         GoogleMap: 'https://goo.gl/maps/C62y46e7frvb6TGq5',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '15': QuizA(
         QID: '15',
@@ -170,7 +170,7 @@ class QuizA_List {
         Tips: '',
         URL: 'https://at-raku.com/attractions/laqua/big-o/',
         GoogleMap: 'https://goo.gl/maps/xyXPhQMLRCN5jCpo9',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '16': QuizA(
         QID: '16',
@@ -181,7 +181,7 @@ class QuizA_List {
         Tips: '',
         URL: 'https://b-kanko.jp/spot/226',
         GoogleMap: 'https://goo.gl/maps/uSAD7ojJhktAEC8aA',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '17': QuizA(
         QID: '17',
@@ -192,7 +192,7 @@ class QuizA_List {
         Tips: '',
         URL: 'https://b-kanko.jp/spot/262',
         GoogleMap: 'https://goo.gl/maps/QiwPukwsQ6DnJFpj6',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '18': QuizA(
         QID: '18',
@@ -203,7 +203,7 @@ class QuizA_List {
         Tips: '',
         URL: 'http://www.hosho.or.jp',
         GoogleMap: 'https://goo.gl/maps/AmWq6FCt9VE6B5qh8',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '19': QuizA(
         QID: '19',
@@ -214,7 +214,7 @@ class QuizA_List {
         Tips: '',
         URL: '',
         GoogleMap: '',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '20': QuizA(
         QID: '20',
@@ -226,7 +226,7 @@ class QuizA_List {
             '■一口メモ\nどちらの消防署にも消防少年団の本拠地があります。アプリ制作メンバーの1人も小学生時代に消防少年団に所属した経験があり、普段は使えない消化器実施訓練や、はしご車に乗る体験が楽しかったそうです。',
         URL: '',
         GoogleMap: '',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '21': QuizA(
         QID: '21',
@@ -239,7 +239,7 @@ class QuizA_List {
         // URL:
         //     'https://www.city.bunkyo.lg.jp/kusejoho/profile/three-minutes/histry.html',
         GoogleMap: '',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '22': QuizA(
         QID: '22',
@@ -250,7 +250,7 @@ class QuizA_List {
         Tips: '',
         URL: 'https://www.u-tokyo.ac.jp/ja/about/campus-guide/b07_04_a.html',
         GoogleMap: 'https://goo.gl/maps/eb1paSn6rPuQtRxHA',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '23': QuizA(
         QID: '23',
@@ -261,7 +261,7 @@ class QuizA_List {
         Tips: '',
         URL: '',
         GoogleMap: 'https://goo.gl/maps/kXwLx15osPzFkQT27',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '1'),
     '24': QuizA(
         QID: '24',
@@ -274,7 +274,7 @@ class QuizA_List {
         // URL:
         //     'https://www.city.bunkyo.lg.jp/bunka/kanko/kanko/location/places/yureizaka.html',
         GoogleMap: 'https://goo.gl/maps/czwdCCpWf658Bwjz8',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '1'),
     '25': QuizA(
         QID: '25',
@@ -285,19 +285,19 @@ class QuizA_List {
         Tips: '',
         URL: 'https://hotel-chinzanso-tokyo.jp',
         GoogleMap: 'https://goo.gl/maps/hWVGHwXp5gjWFHyX7',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '1'),
     '26': QuizA(
         QID: '26',
         Answer: '肥後細川庭園',
         Picture: 'images/answer/ans_026.jpg',
         Commentary:
-            '■肥後細川庭園\n幕末は熊本の細川家の下屋敷でしたが、その後東京都が買収し、昭和36年に「新江戸川公園」と名付けられました。\n「肥後細川庭園」と名付けられたのは平成29年度でかなり最近のようです。\n大きな池を中心として、その周りを一周したり、後ろに見える台地となっている樹林地をゆくと、永青文庫や和敬塾にも行けます。\n四季折々の草木が生えているので、いつ行っても自然が美しい庭園となっています。\n\n■松聲閣（しょうせいかく）\n細川家の学問所や住まいとして使われていた建物で、現在はお抹茶がいただけるスペースができています。\n庭園を眺めながらのお抹茶は格別でした…',
+            '■肥後細川庭園\n幕末は熊本の細川家の下屋敷でしたが、その後東京都が買収し、昭和36年に「新江戸川公園」と名付けられました。\n「肥後細川庭園」と名付けられたのは平成29年度でかなり最近のようです。\n大きな池を中心として、その周りを一周したり、後ろに見える台地となっている樹林地をゆくと、永青文庫や和敬塾にも行けます。\n四季折々の草木が生えているので、いつ行っても自然が美しい庭園となっています。\n\n■松聲閣(しょうせいかく)\n細川家の学問所や住まいとして使われていた建物で、現在はお抹茶がいただけるスペースができています。\n庭園を眺めながらのお抹茶は格別でした…',
         Tips:
-            '■一口メモ\n松聲閣でお抹茶をいただいた際に、細川家の家紋が入った「加勢以多（かせいた）」という名前のお茶請け菓子も楽しめます。その名前の由来は…給仕の方がご説明してくださいます…',
+            '■一口メモ\n松聲閣でお抹茶をいただいた際に、細川家の家紋が入った「加勢以多(かせいた)」という名前のお茶請け菓子も楽しめます。その名前の由来は…給仕の方がご説明してくださいます…',
         URL: 'https://www.higo-hosokawa.jp/',
         GoogleMap: 'https://goo.gl/maps/4zgzuAaT9EbZcZgi7',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '27': QuizA(
         QID: '27',
@@ -308,8 +308,8 @@ class QuizA_List {
         Tips: '',
         URL: '',
         GoogleMap: 'https://goo.gl/maps/9GfybG59tQuSaXuWA',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
-        PicturePtn: '0'),
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
+        PicturePtn: '1'),
     '28': QuizA(
         QID: '28',
         Answer: '後楽園駅',
@@ -320,18 +320,18 @@ class QuizA_List {
         URL:
             'https://wwwtb.mlit.go.jp/kanto/tetudou/station100/tokyo/eki100_2tokyo.html',
         GoogleMap: 'https://goo.gl/maps/BuU5AqXGZhfMbddx7',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
-        PicturePtn: '0'),
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
+        PicturePtn: '1'),
     '29': QuizA(
         QID: '29',
         Answer: '港区',
-        Picture: 'images/answer/ans_029.jpg',
+        Picture: 'images/answer/ans_029.jpeg',
         Commentary:
             '坂学会によると、僅差で1位は港区(130)、2位が文京区(127)のようです。どこからを坂と呼ぶのかにもよって逆転してしまいそうですね。\nちなみ東京23区で一番坂が少ない区は、足立区と江東区の「2」です。差がすごいですね。',
         Tips: '',
         URL: 'http://www.sakagakkai.org/profile/list-Tokyo23ku.html',
         GoogleMap: '',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '30': QuizA(
         QID: '30',
@@ -342,7 +342,7 @@ class QuizA_List {
         Tips: '',
         URL: '',
         GoogleMap: 'https://goo.gl/maps/4pGZxkoA6VsjPYsL9',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '31': QuizA(
         QID: '31',
@@ -354,18 +354,18 @@ class QuizA_List {
         URL:
             'https://www.bunkyo-gourmet.jp/wbunkyop/wp-content/themes/bunkyotheme/assets/files/bunkyo_gourmet_map.pdf',
         GoogleMap: '',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '32': QuizA(
         QID: '32',
         Answer: '小説家',
         Picture: 'images/answer/ans_032.jpg',
         Commentary:
-            '■樋口一葉\n18歳の頃に父親が他界し戸主となった樋口一葉は、後一家を養うため小説家を志すも、なかなかうまく行かず、質屋に駆け込んでは原稿代を稼ぐ毎日。その後、彼女の小説が大ヒットするも、肺結核を患い24歳の若さでこの世を去ったそうです。\n\n■伊勢谷質屋\n一葉が駆け込んだ質屋は現在、文京区本郷に「旧伊勢谷質屋」として現存しています。\n時期によっては一般公開もされているため、是非一度足を運んでみてはいかがでしょうか。',
+            '■樋口一葉\n18歳の頃に父親が他界し戸主となった樋口一葉は、後一家を養うため小説家を志すも、なかなかうまく行かず、質屋に駆け込んでは原稿代を稼ぐ毎日。その後、彼女の小説が大ヒットするも、肺結核を患い24歳の若さでこの世を去ったそうです。\n\n■伊勢谷質屋\n一葉が駆け込んだ質屋は現在、文京区本郷に「旧伊勢谷質屋」として現存しています。\n是非一度足を運んでみてはいかがでしょうか。',
         Tips: '',
-        URL: 'https://www.atomi.ac.jp/univ/about/campus/iseya/',
+        URL: '',
         GoogleMap: 'https://goo.gl/maps/ufdnQQ58jAUYdNhu7',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '33': QuizA(
         QID: '33',
@@ -376,7 +376,7 @@ class QuizA_List {
         Tips: '■一口メモ\nここから、眼病治療にご利益があるそうです。',
         URL: 'https://b-kanko.jp/wp-content/uploads/2021/03/おさんぽくん_日.pdf',
         GoogleMap: 'https://goo.gl/maps/9vJUx9YSdsVJaqDX9',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '34': QuizA(
         QID: '34',
@@ -387,7 +387,7 @@ class QuizA_List {
         Tips: '',
         URL: 'https://www.tokyo-dome.co.jp/aamo/about/',
         GoogleMap: 'https://goo.gl/maps/TYMjhxKBC8zb3xM36',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '35': QuizA(
         QID: '35',
@@ -398,8 +398,8 @@ class QuizA_List {
         Tips: '■一口メモ\n飴細工を体験できるワークショップがあるそうです。江戸から続く日本文化...ぜひ一度体験したいものです！',
         URL: 'https://ame-yoshihara.shop-pro.jp',
         GoogleMap: 'https://goo.gl/maps/xPHGD6PBedMABfFDA',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
-        PicturePtn: '0'),
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
+        PicturePtn: '1'),
     '36': QuizA(
         QID: '36',
         Answer: '森鴎外',
@@ -407,10 +407,10 @@ class QuizA_List {
         Commentary:
             '■森鴎外記念館\n森鴎外記念館では、彼がどのような人物であったか、何を大切にしてきたか、何を成し遂げてきたかを知ることができます。\n国語の授業で登場してきた舞姫。その作者が森鴎外です。\n彼が舞姫などの文学作品を通して世の中に伝えたかったとは...熱い想いを知りたい方は、ぜひ記念館に足を運んでみてはいかがでしょうか。',
         Tips: '■一口メモ\n夏目漱石の記念館は新宿区、樋口一葉の記念館は台東区、石川啄木の記念館は岩手県盛岡市にあるようです。',
-        URL: 'https://moriogai-kinenkan.jp',
+        URL: '',
         GoogleMap: 'https://goo.gl/maps/TwR9bXYMRkxCm7rA6',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
-        PicturePtn: '0'),
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
+        PicturePtn: '1'),
     '37': QuizA(
         QID: '37',
         Answer: '江戸時代',
@@ -420,19 +420,19 @@ class QuizA_List {
         Tips: '',
         URL: 'https://www.bg.s.u-tokyo.ac.jp/koishikawa/koyomi/',
         GoogleMap: 'https://goo.gl/maps/GGiiqGHxvjigoZGLA',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '38': QuizA(
         QID: '38',
         Answer: '本棚',
         Picture: 'images/answer/ans_038.jpg',
         Commentary:
-            'あまりにも美しい本棚なので、写真を撮る目的で足を運ぶ人も多いようです。「館内を回ってちょっと疲れたな」ってときには、館内にカフェが併設されているので、そこでゆっくりするのがおすすめです！',
+            'あまりにも美しい本棚なので、思わず「おー！」と言ってしまいます。「館内を回ってちょっと疲れたな」ってときには、館内にカフェが併設されているので、そこでゆっくりするのがおすすめです！',
         Tips:
             '■一口メモ\nカフェのメニューには、マルコポーロセット、マテオリッチセットや、マリーアントワネットセット(1日限定10食)があります。マリーアントワネットセットすごく気になりますね...',
         URL: 'http://www.toyo-bunko.or.jp/museum/museum_index.php',
         GoogleMap: 'https://goo.gl/maps/uLRWRcy2mS3Ffqur9',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '39': QuizA(
         QID: '39',
@@ -445,19 +445,19 @@ class QuizA_List {
         URL: '',
         // URL: 'https://www.city.bunkyo.lg.jp/index.html',
         GoogleMap: '',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '40': QuizA(
         QID: '40',
         Answer: '300円',
-        Picture: 'images/answer/ans_040.jpg',
+        Picture: 'images/answer/ans_040.jpeg',
         Commentary:
             'ちなみに1回の利用は100円です。利用料金が安いのも嬉しいですが、巡回ルートが「目白台・小日向ルート」「千駄木・駒込ルート」「本郷・湯島ルート」の3ルートもあります。様々なニーズに沿った巡回コースがあることは利用者側にとっては嬉しい限りですね！',
         Tips: '',
         URL: '',
         // URL: 'https://www.city.bunkyo.lg.jp/tetsuzuki/bus/b-guru/ryokin.html',
         GoogleMap: '',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '41': QuizA(
         QID: '41',
@@ -468,7 +468,7 @@ class QuizA_List {
         Tips: '',
         URL: 'https://b-kanko.jp/spot/380',
         GoogleMap: 'https://goo.gl/maps/ehvCyGN6L1KWEUCv8',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '42': QuizA(
         QID: '42',
@@ -480,7 +480,7 @@ class QuizA_List {
             'アプリ制作メンバーも実際に足を運んでみましたが、園内は都会であることを忘れられるくらい、落ち着いた空間が広がっていました。庭園って凄く素敵な場所なんですね...！',
         URL: 'https://www.higo-hosokawa.jp/',
         GoogleMap: 'https://goo.gl/maps/4zgzuAaT9EbZcZgi7',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '43': QuizA(
         QID: '43',
@@ -491,7 +491,7 @@ class QuizA_List {
         Tips: '',
         URL: '',
         GoogleMap: '',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '44': QuizA(
         QID: '44',
@@ -503,70 +503,72 @@ class QuizA_List {
             '■一口メモ\n菅原道真は最初は学問の神様でなく実は怨霊として恐れられていたそうです。日本三大怨霊の1つにもあげられています。一体何が…',
         URL: 'https://www.yushimatenjin.or.jp/pc/engi/f_engi.htm',
         GoogleMap: 'https://goo.gl/maps/xqkqi1UYo7zKiu2u8',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '45': QuizA(
         QID: '45',
-        Answer: '骨董市',
+        Answer: '一言地蔵',
         Picture: 'images/answer/ans_045.jpg',
         Commentary:
-            '■護国寺\n桂昌院と徳川綱吉が建立したお寺になります。まったりしている猫ちゃんとよく会えるため、写真好きの間でもちょっとした有名スポットになっているそうです。\n\n■骨董品\n希少価値のある古美術品や古道具のことです。どのような骨董品があるか、お宝探しの感覚で足を運んでみてはいかがでしょうか。',
+            '一言だけ願いを叶えてくれるお地蔵様だそうです。不老門をくぐり右手に進むと、大師堂があり、その辺りにいらっしゃいます。願い事は一言だけなので、くれぐれも欲張りせず、慎重に選びましょう！',
         Tips: '',
         URL: 'http://gokokujikottouichi.g1.xrea.com/',
         GoogleMap: 'https://goo.gl/maps/HLchm9LbsNTaVh7U9',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '46': QuizA(
         QID: '46',
         Answer: '石川啄木',
-        Picture: 'images/answer/ans_046.jpg',
+        Picture: 'images/answer/ans_046.jpeg',
         Commentary:
             '■作品の内容\n働いても働いても私の生活は楽にならず、じっと手を見ている。当時の労働階級の悲哀を見事に表現した、心に迫る名歌ですね。\n\n■作品とは裏腹に...\n数々の有名な詩を残してきた石川啄木。さぞかし立派な人物であったかと言うと、実はそうでもなかったみたいです。\n・学生時代カンニングがばれ退学処分\n・結婚式をすっぽかす\n・友人\n・知人には借金しまくる\n・妻が読めないローマ字で日記に書く（妻に言えないようなことを書いていたとか…）\n\n■石川啄木の生涯\n石川啄木は去年26歳で文京区で命を落とします。その命を落とされた場所の隣接地に「石川啄木終焉の地歌碑」及び「石川啄木顕彰室」があります。\nどんな作品を生み出したのか、どんな人物像だったのか、興味がある方は足を運んでみてはいかがでしょうか。',
         Tips: '',
         URL: 'https://b-kanko.jp/spot/250',
         GoogleMap: 'https://goo.gl/maps/gw4T4c3iaJ5NCkk5A',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '47': QuizA(
         QID: '47',
         Answer: '鼠',
         Picture: 'images/answer/ans_047.jpg',
-        Commentary:
-            '鼠ではないと上がり降りができないって、相当急な坂道ですよね。ちなみに鼠坂の壁には、ネズミの絵が書いてあるそうです。',
-                Tips:'■一口メモ\n朝日が昇る/夕日が沈む時間は、鼠坂の写真を撮るのに最高のタイミングです！',
+        Commentary: '鼠ではないと上がり降りができないって、相当急な坂道ですよね。ちなみに鼠坂の壁には、ネズミの絵が書いてあるそうです。',
+        Tips: '■一口メモ\n朝日が昇る/夕日が沈む時間は、鼠坂の写真を撮るのに最高のタイミングです！',
         URL: 'https://b-kanko.jp/spot/386',
         GoogleMap: 'https://goo.gl/maps/v9bCxc4vrZLMGcjH8',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '48': QuizA(
         QID: '48',
         Answer: '春日局',
-        Picture: 'images/answer/ans_048.jpg',
-        Commentary:'■春日局\nこの春日局の墓所が文京区の「麟祥院（りんしょういん）」にあり、その手前の通りは春日局から名前をとって「春日通り」と名付けられたそうです。\n春日局は徳川家光の乳母で、大奥のボス的権力をもっていたそう。そこで桂昌院に目をつけたんですね。\n\n■桂昌院\n八百屋の娘として生まれた桂昌院は、三代将軍徳川家光の側室となり、徳川綱吉を出産しました。\nその後、綱吉が将軍となったことで当時の女性としては最高位の官位となったそうです。まさに玉の輿。\n\n■玉の輿\n位の高い人(貴人)が乗る美しい乗り物のことを「玉の輿」と呼ぶようで、貴人へ嫁ぐ際にも「玉の輿」に乗って移動していたそうです。',
-        Tips:'',
+        Picture: 'images/answer/ans_048.jpeg',
+        Commentary:
+            '■春日局\nこの春日局の墓所が文京区の「麟祥院（りんしょういん）」にあり、その手前の通りは春日局から名前をとって「春日通り」と名付けられたそうです。\n春日局は徳川家光の乳母で、大奥のボス的権力をもっていたそう。そこで桂昌院に目をつけたんですね。\n\n■桂昌院\n八百屋の娘として生まれた桂昌院は、三代将軍徳川家光の側室となり、徳川綱吉を出産しました。\nその後、綱吉が将軍となったことで当時の女性としては最高位の官位となったそうです。まさに玉の輿。\n\n■玉の輿\n位の高い人(貴人)が乗る美しい乗り物のことを「玉の輿」と呼ぶようで、貴人へ嫁ぐ際にも「玉の輿」に乗って移動していたそうです。',
+        Tips: '',
         URL: '',
         GoogleMap: 'https://goo.gl/maps/cxR1ucD7iFLxbHtM7',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
-        PicturePtn: '0'),
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
+        PicturePtn: '1'),
     '49': QuizA(
         QID: '49',
         Answer: '牛',
         Picture: 'images/answer/ans_049.jpg',
-        Commentary:'■なぜ馬の絵が描かれているか\n古来、神様は神馬に乗って地上に降りてくるとされていました。元々は生きた馬を奉納する風習だったのですが、平安時代頃から木で作った馬や土で作った馬を奉納するようになったそうです。\nその後、現代のような馬の絵を描いた「絵馬」を奉納するようになったとか。\n\n■なぜ湯島天神は牛なのか\n湯島天神に奉られている菅原道真が生前に「自分の遺骸を牛の背に乗せ、人に引かせず、その牛が立ち止まったところを墓所とするように」との遺言を残したこともあり、牛は菅原道真の使いだとされ、馬ではなく牛になったそうです。（諸説あり）菅原道真を祀っている湯島天神ならではですね。\n\n■なで牛\n湯島天神には「なで牛」の像があります。傷や病気の箇所をさすると回復する、あるいは頭をさすると知恵を授かり賢くなると伝えられているそうです。',
-        Tips:'',
+        Commentary:
+            '■なぜ馬の絵が描かれているか\n古来、神様は神馬に乗って地上に降りてくるとされていました。元々は生きた馬を奉納する風習だったのですが、平安時代頃から木で作った馬や土で作った馬を奉納するようになったそうです。\nその後、現代のような馬の絵を描いた「絵馬」を奉納するようになったとか。\n\n■なぜ湯島天神は牛なのか\n湯島天神に奉られている菅原道真が生前に「自分の遺骸を牛の背に乗せ、人に引かせず、その牛が立ち止まったところを墓所とするように」との遺言を残したこともあり、牛は菅原道真の使いだとされ、馬ではなく牛になったそうです。（諸説あり）菅原道真を祀っている湯島天神ならではですね。\n\n■なで牛\n湯島天神には「なで牛」の像があります。傷や病気の箇所をさすると回復する、あるいは頭をさすると知恵を授かり賢くなると伝えられているそうです。',
+        Tips: '',
         URL: '',
         GoogleMap: 'https://goo.gl/maps/nabjTikCswccmPEn9',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '50': QuizA(
         QID: '50',
         Answer: '2',
         Picture: 'images/answer/ans_050.jpg',
-        Commentary:'文京区は、荒川区、台東区、千代田区、新宿区、豊島区、北区の6区と隣り合っています。三角形に近く、あまり特徴的な形ではないんですね。',
-        Tips:'',
+        Commentary:
+            '文京区は、荒川区、台東区、千代田区、新宿区、豊島区、北区の6区と隣り合っています。三角形に近く、あまり特徴的な形ではないんですね。',
+        Tips: '',
         URL: '',
         GoogleMap: '',
-        CreateDate: '掲載内容は2022年3月24日時点の情報です',
+        CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
   };
 }

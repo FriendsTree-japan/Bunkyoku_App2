@@ -236,7 +236,7 @@ class QuizQ_List {
         PicturePtn: '0'),
     '26': QuizQ(
         QID: '26',
-        Picture: 'images/question/que_026.jpg',
+        Picture: '',
         problem:
             '以前は「新江戸川公園」として呼ばれており、平成29年に改名された、園内に学問所として使われていた建物があるのは次のうちどれでしょう？',
         Select1: '江戸川公園',
@@ -246,7 +246,7 @@ class QuizQ_List {
         PicturePtn: '0'),
     '27': QuizQ(
         QID: '27',
-        Picture: 'images/question/que_027.jpg',
+        Picture: '',
         problem: '「ラジオ体操発祥の地」と言われ、銅像も建てられている公園は次のうちどれでしょうか？',
         Select1: '教育の森公園',
         Select2: '大塚公園',
@@ -255,7 +255,7 @@ class QuizQ_List {
         PicturePtn: '0'),
     '28': QuizQ(
         QID: '28',
-        Picture: 'images/question/que_028.jpg',
+        Picture: '',
         problem: '区内で唯一、関東の駅百選に選ばれた駅があります。それは何駅でしょうか？',
         Select1: '茗荷谷駅',
         Select2: '東大前駅',
@@ -264,7 +264,7 @@ class QuizQ_List {
         PicturePtn: '0'),
     '29': QuizQ(
         QID: '29',
-        Picture: 'images/question/que_029.jpg',
+        Picture: '',
         problem: '東京23区で坂の数が最も多い区は何区でしょうか？',
         Select1: '港区',
         Select2: '文京区',
@@ -273,7 +273,7 @@ class QuizQ_List {
         PicturePtn: '0'),
     '30': QuizQ(
         QID: '30',
-        Picture: 'images/question/que_030.jpg',
+        Picture: '',
         problem: '夏目漱石が文京区で執筆した処女作は、次のうちどれでしょうか？',
         Select1: 'こころ',
         Select2: '吾輩は猫である',
@@ -282,7 +282,7 @@ class QuizQ_List {
         PicturePtn: '0'),
     '31': QuizQ(
         QID: '31',
-        Picture: 'images/question/que_031.jpg',
+        Picture: 'images/question/que_031.png',
         problem: '文京区と姉妹都市を提携しているカイザースラウテルン市があるのは、次のうちどの国でしょうか？',
         Select1: 'ドイツ',
         Select2: 'フランス',
@@ -291,7 +291,7 @@ class QuizQ_List {
         PicturePtn: '0'),
     '32': QuizQ(
         QID: '32',
-        Picture: 'images/question/que_032.jpg',
+        Picture: '',
         problem: '5,000円札に印字されている樋口一葉。彼女の職業は次のうちどれでしょうか？',
         Select1: '小説家',
         Select2: '看護師',
@@ -300,7 +300,7 @@ class QuizQ_List {
         PicturePtn: '0'),
     '33': QuizQ(
         QID: '33',
-        Picture: 'images/question/que_033.jpg',
+        Picture: '',
         problem: '源覚寺の閻魔さまの別名は、何閻魔でしょうか？',
         Select1: 'あずき閻魔',
         Select2: 'おはぎ閻魔',
@@ -324,7 +324,7 @@ class QuizQ_List {
         Select2: 'アメ細工 吉原',
         Select3: '飴細工 吉原',
         Select4: '雨細工 吉原',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '36': QuizQ(
         QID: '36',
         Picture: 'images/question/que_036.jpg',
@@ -337,13 +337,13 @@ class QuizQ_List {
         PicturePtn: '0'),
     '37': QuizQ(
         QID: '37',
-        Picture: 'images/question/que_037.jpg',
+        Picture: 'images/question/que_037.jpeg',
         problem: '日本で最も古い植物園である「小石川植物園」。いつの時代に創設されたでしょうか。',
         Select1: '奈良時代',
         Select2: '江戸時代',
         Select3: '明治時代',
         Select4: '大正時代',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '38': QuizQ(
         QID: '38',
         Picture: 'images/question/que_038.jpg',
@@ -376,7 +376,7 @@ class QuizQ_List {
         PicturePtn: '0'),
     '41': QuizQ(
         QID: '41',
-        Picture: 'images/question/que_041.jpg',
+        Picture: 'images/question/que_041.png',
         problem: '千駄木駅から徒歩1分にある須藤公園の池には、「ある動物に注意」という看板が立っています。その動物とは何でしょうか？',
         Select1: 'わに',
         Select2: 'かっぱ',
@@ -391,10 +391,10 @@ class QuizQ_List {
         Select2: '池泉鑑賞式',
         Select3: '池泉回遊式',
         Select4: '池泉中水式',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '43': QuizQ(
         QID: '43',
-        Picture: 'images/question/que_043.jpg',
+        Picture: '',
         problem: '文京区内では、歴史の教科書にも出てくるような、有名な遺産が発掘されています。それは以下のうち、どれでしょうか？',
         Select1: '縄文土器',
         Select2: '弥生土器',
@@ -403,7 +403,7 @@ class QuizQ_List {
         PicturePtn: '0'),
     '44': QuizQ(
         QID: '44',
-        Picture: 'images/question/que_044.jpg',
+        Picture: '',
         problem: '湯島天神にいらっしゃる学問の神様は次のうち誰でしょうか？',
         Select1: '菅原道真',
         Select2: '源頼朝',
@@ -413,15 +413,15 @@ class QuizQ_List {
     '45': QuizQ(
         QID: '45',
         Picture: 'images/question/que_045.jpg',
-        problem: '東京の都心にありながらも、江戸の面影をいまに伝える護国寺。\nその護国寺では、毎月第2土曜日に決まってあるイベントが開催されます。そのイベントとは何でしょうか？',
-        Select1: 'ヨガ',
-        Select2: '骨董市',
-        Select3: '座禅',
-        Select4: '住職体験',
-        PicturePtn: '0'),
+        problem: '江戸の面影を残す、護国寺。そこには珍しいお地蔵様がいらっしゃいますが、次のうちどれでしょうか？',
+        Select1: '一言地蔵',
+        Select2: '二言地蔵',
+        Select3: '三言地蔵',
+        Select4: '四言地蔵',
+        PicturePtn: '1'),
     '46': QuizQ(
         QID: '46',
-        Picture: 'images/question/que_046.jpg',
+        Picture: '',
         problem: '「はたらけど はたらけど猶なほわが生活くらし楽にならざり ぢっと手を見る」この有名な詩を読んだ詩人は次のうち誰でしょうか？',
         Select1: '石川啄木',
         Select2: '与謝野晶子',
@@ -436,10 +436,10 @@ class QuizQ_List {
         Select2: '蛇',
         Select3: '蛙',
         Select4: '土竜',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '48': QuizQ(
         QID: '48',
-        Picture: 'images/question/que_048.jpg',
+        Picture: '',
         problem: '庶民から側室までのぼりつめ、玉の輿の語源となった桂昌院。彼女を側室候補として部屋子に任命したのは次のうち誰でしょうか？',
         Select1: '北条政子',
         Select2: '春日局',
@@ -448,7 +448,7 @@ class QuizQ_List {
         PicturePtn: '0'),
     '49': QuizQ(
         QID: '49',
-        Picture: 'images/question/que_049.jpg',
+        Picture: '',
         problem: '神社に祈願するときに奉納する「絵馬」。この絵馬のほとんどは馬の絵が描かれていますが、湯島天神だけは他の動物が描かれています。その動物とは何でしょうか？',
         Select1: '牛',
         Select2: '豚',
