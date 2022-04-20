@@ -579,8 +579,8 @@ class _QuizA_000 extends State<QuizA_000> {
                           EdgeInsets.only(top: BasePaddingConfig.basePadding)),
                   Container(
                       width: QuizQ_List().list[QuesitonNum]!.PicturePtn == '0'
-                          ? QuizImageSizeConfig.yokoImageWidth + 20
-                          : QuizImageSizeConfig.tateImageWidth + 20,
+                          ? QuizProblemSizeConfig.width + 20
+                          : QuizProblemSizeConfig.width + 20,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                         color: ColorConfig.WeakGray,

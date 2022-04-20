@@ -27,7 +27,7 @@ class QuizA_List {
     '3': QuizA(
         QID: '3',
         Answer: 'きく',
-        Picture: 'images/answer/ans_003.jpg',
+        Picture: 'images/answer/ans_003.jpeg',
         Commentary:
             '・さくら祭り(3月下旬〜4月上旬 播磨坂）\n・つつじ祭り（4月〜5月上旬 根津神社）\n・あじさい祭り（6月 白山神社）\n・きく祭り（11月 湯島天満宮）\n・うめ祭り（2月〜3月上旬 湯島天満宮）',
         Tips: '',
@@ -106,9 +106,9 @@ class QuizA_List {
     '10': QuizA(
         QID: '10',
         Answer: '800台',
-        Picture: 'images/answer/ans_010.jpg',
+        Picture: 'images/answer/ans_010.png',
         Commentary:
-            'なんと800台(2022年2月25日時点)も...\nしかもなんと全ての自転車に電動アシスト付き機能がついているそうです。文京区は坂が多いので、電動アシスト付き自転車は本当に助かります。時間毎/日毎で貸し出し可能なようなので、詳しくはぜひ下記をチェックしてください。',
+            'なんと800台(2022年2月25日時点)も...\nしかもなんと全ての自転車に電動アシスト付き機能がついているそうです。\n文京区は坂が多いので、電動アシスト付き自転車は本当に助かります。時間毎/日毎で貸し出し可能なようなので、詳しくはぜひ下記をチェックしてください。',
         Tips:
             '■一口メモ\n区外でも同じシステムで運営しているため、文京区外のポートにも返却できるそうです。都内の移動がもっと便利になりますね！',
         // URL:
@@ -163,13 +163,12 @@ class QuizA_List {
         PicturePtn: '0'),
     '15': QuizA(
         QID: '15',
-        Answer: 'カラオケ',
-        Picture: 'images/answer/ans_015.jpg',
-        Commentary:
-            '1周の約15分間、歌い放題！カラオケの人気曲から季節の定番曲、洋楽まで幅広いジャンルから選べるそうです。外を眺めながらのカラオケってなかなかできる機会が少ないので新鮮ですね！\n観覧車の利用料金は850円。他のアトラクションも1日乗り放題の場合は4,200円。観覧車で歌える楽曲はこちらから確認できます！',
+        Answer: '10',
+        Picture: 'images/answer/ans_015.png',
+        Commentary: 'こんなに沢山のツアーがあるんですね！\n詳しくは文京区観光協会のホームページをご覧ください。\n※2022/4/1時点の情報のためツアー数が変更となる場合があります。\nまた、新型コロナウイルスの影響で中止となっている場合があります。',
         Tips: '',
-        URL: 'https://at-raku.com/attractions/laqua/big-o/',
-        GoogleMap: 'https://goo.gl/maps/xyXPhQMLRCN5jCpo9',
+        URL: 'https://b-kanko.jp/guide',
+        GoogleMap: '',
         CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '16': QuizA(
@@ -204,11 +203,11 @@ class QuizA_List {
         URL: 'http://www.hosho.or.jp',
         GoogleMap: 'https://goo.gl/maps/AmWq6FCt9VE6B5qh8',
         CreateDate: '掲載内容は2022年4月1日時点の情報です',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '19': QuizA(
         QID: '19',
         Answer: '0駅',
-        Picture: 'images/answer/ans_019.jpg',
+        Picture: 'images/answer/ans_019.png',
         Commentary:
             '実は文京区内には一つもJRの駅がありません。駒込駅や水道橋駅など近い駅はあるものの、どれも区外になっています。\n駅はたくさんあるように思えますが、どれも地下鉄です。',
         Tips: '',
@@ -219,7 +218,7 @@ class QuizA_List {
     '20': QuizA(
         QID: '20',
         Answer: '本郷消防署',
-        Picture: '',
+        Picture: 'images/answer/ans_020.jpg',
         Commentary:
             '文京区の消防署は、小石川消防署と本郷消防署の2つのみです。他にもあるような気がしますが、どれも小石川か本郷どちらかの出張所となります。（選択肢の大塚消防署ですが、小石川消防署の出張所として存在します。）',
         Tips:
@@ -380,13 +379,12 @@ class QuizA_List {
         PicturePtn: '0'),
     '34': QuizA(
         QID: '34',
-        Answer: 'and More',
+        Answer: 'ぶんたろう',
         Picture: 'images/answer/ans_034.jpg',
-        Commentary:
-            '■「Gallery AaMo」とは\n東京ドームの敷地内にある。東京ドームシティらしい楽しさとライブ感に満ちた、大人のための遊べるギャラリーで、展示される内容が時期ごとに変化します。\n\n■展示物の例\n　・地上最強「刃牙展」\n　・ゴールデンカムイ展\n\n■「AaMo」に込められた思い\n「AaMo」の「A」は「Art」「Amusement」の略。そして「aMo」は「and More」の意。\n\n新しい価値が創造され展開されるギャラリーであり、東京の新名所として認知されていく、という意味がこめられているそうです。かっこいい...',
+        Commentary: '実は、Youtubeにぶんたろう公式チャンネルというものがあります。文京区の魅力と笑いの両方をお届けしてくれる動画なので、興味のある方はぜひ観てみてください。',
         Tips: '',
-        URL: 'https://www.tokyo-dome.co.jp/aamo/about/',
-        GoogleMap: 'https://goo.gl/maps/TYMjhxKBC8zb3xM36',
+        URL: 'https://www.youtube.com/channel/UCRyrNtTB3DK_G4JtvgHogWA',
+        GoogleMap: '',
         CreateDate: '掲載内容は2022年4月1日時点の情報です',
         PicturePtn: '0'),
     '35': QuizA(
@@ -487,7 +485,7 @@ class QuizA_List {
         Answer: '弥生土器',
         Picture: 'images/answer/ans_043.jpg',
         Commentary:
-            '文京区弥生町で発掘された土器が、縄文時代のものと違う時代のものとして新発見されたため、土地の名前から「弥生土器」と呼ばれるようになったと言います。',
+            '文京区弥生町で発掘された土器が、縄文時代のものと違う時代のものとして新発見されたため、土地の名前から「弥生土器」と呼ばれるようになったと言われています。',
         Tips: '',
         URL: '',
         GoogleMap: '',
@@ -507,15 +505,14 @@ class QuizA_List {
         PicturePtn: '0'),
     '45': QuizA(
         QID: '45',
-        Answer: '一言地蔵',
-        Picture: 'images/answer/ans_045.jpg',
-        Commentary:
-            '一言だけ願いを叶えてくれるお地蔵様だそうです。不老門をくぐり右手に進むと、大師堂があり、その辺りにいらっしゃいます。願い事は一言だけなので、くれぐれも欲張りせず、慎重に選びましょう！',
+        Answer: '本郷図書館',
+        Picture: 'images/answer/ans_036.jpg',
+        Commentary: '■本郷図書館\n本郷図書館の歴史は1910年から始まり、のちの昭和37年に森鴎外の住居跡地に「鴎外記念本郷図書館」として開設されました。\nその後、平成18年に鴎外記念室と分離し、移設された図書館が今の本郷図書館になります。もう100年以上の歴史があるんですね。\nちなみに住居跡地は現在「森鴎外記念館」となっており、季節によって様々な森鴎外に関する展示がされています。',
         Tips: '',
-        URL: 'http://gokokujikottouichi.g1.xrea.com/',
-        GoogleMap: 'https://goo.gl/maps/HLchm9LbsNTaVh7U9',
+        URL: '',
+        GoogleMap: 'https://goo.gl/maps/BshPojDh8CsikuBaA',
         CreateDate: '掲載内容は2022年4月1日時点の情報です',
-        PicturePtn: '0'),
+        PicturePtn: '1'),
     '46': QuizA(
         QID: '46',
         Answer: '石川啄木',
