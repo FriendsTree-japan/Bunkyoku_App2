@@ -64,13 +64,7 @@ class SizeConfig {
     smallFontSize = 12.0;
 
     //各ウィジェッsアイズを定義
-    if(screenHeight > 1800){
-      widgetHeightSizeFirst = 560.0;
-      widgetHeightSizeSecond = 280.0;
-      widgetHeightSizeThird = 280.0;
-      widgetHeightSizePhoto = 400;
-
-    }else if (screenHeight > 900) {
+if (screenHeight > 900) {
       widgetHeightSizeFirst = 280.0;
       widgetHeightSizeSecond = 140.0;
       widgetHeightSizeThird = 140.0;
@@ -88,10 +82,7 @@ class SizeConfig {
     }
 
     //各ウィジェット間のPaddingの値を定義
-    if(screenHeight > 1800){
-      widgetPaddingSize = 52.0;
-    }
-    else if (screenHeight > 900) {
+  if (screenHeight > 900) {
       widgetPaddingSize = 26.0;
     } else if (screenHeight > 700) {
       widgetPaddingSize = 20.0;
