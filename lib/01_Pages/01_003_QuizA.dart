@@ -467,6 +467,7 @@ class _QuizA_000 extends State<QuizA_000> {
     Future<String> correctCount = QuizStatusDb().getCorrectCount();
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,

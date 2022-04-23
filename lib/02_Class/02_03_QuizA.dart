@@ -346,7 +346,7 @@ class QuizA_List {
     '31': QuizA(
         QID: '31',
         Answer: 'ドイツ',
-        Picture: 'images/answer/ans_031.jpg',
+        Picture: 'images/answer/ans_031.jpeg',
         Commentary:
             '文京区とドイツ・カイザースラウテルン市は1988年に姉妹都市を提携しました。大学や研究機関、緑が多いところが似てるということで選ばれたそう。\n小・中学校全校の給食に、ドイツの文化に親しみを持ってもらうことを目的としてドイツ料理を提供する日、その名も「ドイツ料理の日」があるそうです。楽しそうですね！',
         Tips: '',
