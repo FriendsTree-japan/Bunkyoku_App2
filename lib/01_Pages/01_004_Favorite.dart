@@ -27,7 +27,7 @@ class _Favorite extends State<Favorite> {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text('お気に入り'),
+          title: Text('お気に入り',style: TextStyle(fontSize: 25),),
           backgroundColor: ColorConfig.Green,
           automaticallyImplyLeading: false,
         ),

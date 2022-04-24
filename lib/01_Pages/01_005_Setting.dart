@@ -24,7 +24,7 @@ class _SettingState extends State<Setting> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('設定'),
+        title: Text('設定',style: TextStyle(fontSize: 25)),
         backgroundColor: ColorConfig.Green,
         automaticallyImplyLeading: false,
       ),

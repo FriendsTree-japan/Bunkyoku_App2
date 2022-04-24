@@ -78,7 +78,7 @@ class _QuizeListState extends State<QuizeList> {
           height: QuizListSizeConfig.containerWidthSize,
           decoration: BoxDecoration(
             color: ColorConfig.White,
-            border: Border.all(color: ColorConfig.Black),
+            border: Border.all(color: ColorConfig.Green),
             borderRadius: BorderRadius.circular(10),
           ),
           child: TextButton(
@@ -105,7 +105,7 @@ class _QuizeListState extends State<QuizeList> {
           width: QuizListSizeConfig.containerHeightSize,
           height: QuizListSizeConfig.containerWidthSize,
           decoration: BoxDecoration(
-            color: ColorConfig.WakamonoGreen,
+            color: ColorConfig.Green,
             borderRadius: BorderRadius.circular(10),
           ),
           child: TextButton(
@@ -204,15 +204,23 @@ class _QuizeListState extends State<QuizeList> {
     BasePaddingConfig().init(context);
     SizeConfig().init(context);
     Future<String> correctCount = QuizStatusDb().getCorrectCount();
+    final highlightStyle = TextStyle(
+      color: ColorConfig.titleOrange);
 
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('文京区アプリ'),
+        title: RichText(text:
+        TextSpan(children: [
+          TextSpan(text:'文京',style: TextStyle(fontSize: 25)),
+          TextSpan(text:'Quiz',style: TextStyle(
+              color: ColorConfig.titleOrange,fontSize: 25),)
+        ]),
+        ),
         backgroundColor: ColorConfig.Green,
         automaticallyImplyLeading: false,
       ),
-      backgroundColor: ColorConfig.WeakGreen,
+      backgroundColor: ColorConfig.White,
       body: Column(
         children: [
           Column(
