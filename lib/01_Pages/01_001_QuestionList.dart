@@ -317,13 +317,11 @@ class _QuizeListState extends State<QuizeList> {
                             child: Container(
                               height: 40,
                               color: ColorConfig.WeakBlack,
-                              child: Expanded(
                                 child: Marquee(
                                   text: _buildCalender(), style: TextStyle(color: ColorConfig.White),
                                   velocity: 50,
                                   blankSpace: 40.0,
                                 ),
-                              ),
                             ), // なにかしらのWidget
                           ),
                     ],),
