@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bunkyokuApp4">
+    package="com.friendsTree.bunkyoku_app2">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="文京区Quiz"
+        android:label="文京Quiz"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
