@@ -113,10 +113,11 @@ class HomePageState extends State<HomePage>
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-            _pageController.animateToPage(index,
-                duration: Duration(milliseconds: 500), curve: Curves.easeOut);
+          setState(()   {
+            _currentIndex =  index;
+             _pageController.animateToPage(index,
+                duration: Duration(milliseconds: 10), curve: Curves.fastLinearToSlowEaseIn);
+            // duration: Duration(milliseconds: 70), curve: Curves.easeOut);
           });
         },
         items: myBottomNavBarItems(),
