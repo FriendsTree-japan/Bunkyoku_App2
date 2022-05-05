@@ -38,7 +38,7 @@ class _SettingState extends State<Setting> {
                 style: TextStyle(fontSize: 20, color: Colors.black)),
             onTap: () {
               UrlMove().UrlMoving(
-                  'https://dented-handball-204.notion.site/04dc826e23724da68deadd89078285ef');
+                  'https://dented-handball-204.notion.site/Google-c39aec9a009d42b883251e2120c1ecd4');
               // _RulesURL();
             },
           ),
